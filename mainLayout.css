@@ -1,0 +1,71 @@
+.navbar-default .navbar-brand {
+    color: #43BFE8;
+}
+#corkboard {
+	background-image: url("corkboard.png");
+}
+.thumbnail {
+	background-color:transparent;
+	border-color: transparent;
+	position: relative
+}
+
+.requestedItem {
+	color: #43BFE8;
+	position: absolute;
+	top: 5px;
+	left: 15px;
+}
+
+#liked {
+	color: #43BFE8;	
+}
+#disliked {
+	color: #43BFE8;	
+}
+
+.buttons {
+	color: #43BFE8;
+}
+
+#logo {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.day {
+	display: inline-block;
+	padding-left: 50px;
+	position: relative;
+	width: 19%;
+	height: 250px;
+}
+
+.sticky {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 0;
+}
+
+.menu_text {
+	position: absolute;
+	top: -5px;
+	left: 5px;
+	width: 100%;
+	color: #43BFE8;
+}
+
+form {
+	background-color: #fff;
+	padding: 20px;
+}
+
+h2 {
+	color: #43BFE8;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	display: block;
+	position: relative;
+}
