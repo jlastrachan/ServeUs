@@ -57,24 +57,17 @@ $(document).ready(function() {
  							"<span class='badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
       				"</div> </div> </a> </div> ");
       	$("#liked"+request).click(function(evt){
-      		//console.log ("just liked it!");
+      		console.log ("just liked it!");
       		var currNum = parseInt($("#numLiked" + request).text());
       		//console.log ("current liked:" + currNum);
       		var newNum = currNum + 1;
       		$("#numLiked" + request).text(newNum);
      	});
      	$("#disliked"+request).click(function(evt){
-      		//console.log ("just liked it!");
+      		console.log ("just disliked liked it!");
       		var newNum;
-      		if ($("#numDisliked" + request).text() == '0') {
-      			newNum = 1;
-      		}
-      		else {
-      			var currNum = parseInt($("#numDisliked" + request).text());
-      		
-      		//console.log ("current liked:" + currNum);
-      			 newNum = currNum + 1;
-      		}
+      		var currNum = parseInt($("#numDisliked" + request).text());
+      		var newNum = currNum + 1;
       		$("#numDisliked" + request).text(newNum);
      	});
       	
