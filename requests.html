@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!--
+  
+  Requests Webpage
+  
+-->	
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requests</title>
+
+<!-- Load style sheets -->
+<link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="mainLayout.css" />
+
+
+<!-- Load any supplemental Javascript libraries here -->
+<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="checker.js"></script>
+<script type="text/javascript" src="boardEvent.js"></script>
+<script type="text/javascript" src="board.js"></script>
+<script type="text/javascript" src="rules.js"></script>
+<script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+
+// do javascript stuff here
+
+$(document).ready(function() {
+
+	$("#btnSubmit").click(function(evt) {
+	// add new sticky note to $(stickies)
+		var request = $(newRequest).val();
+		$(stickies).append("<div class= 'col-xs-4'>" +
+   			"<a href='#' class='thumbnail'>" +
+      		"<img src= 'stickynote.png'>" +
+      		"<div class = 'requestedItem'>" +
+      			"<h4>" + request + " </h4>" +
+      			"<div class = 'btn-toolbar'>" + 
+      				//"<div class = 'btn-group'>"+
+      					"<div class = 'btn-group' id ='buttons'>"+
+      						"<button type='button' class='btn btn-sm' id = 'liked"+request+"'> " +
+ 							"<span class='glyphicon glyphicon-thumbs-up'> </span> </button>"+// </div>" +
+ 					//"<div class = 'btn-group'>"+
+ 							//"<button type='button' class='btn btn-info btn-sm'> " +
+ 							"<span class='badge'>1</span> </div>" + 
+ 					"<div class = 'btn-group pull-right' id='space'> </div>"+ // blank space?
+ 					"<div class = 'btn-group pull-right'>"+
+ 						"<button type='button' class='btn btn-sm' id = 'disliked"+request+"'> " +
+ 						"<span10 class='glyphicon glyphicon-thumbs-down'> </span> </button> "+//</div>"+
+ 					//"<div class = 'btn-group'>"+
+ 						//"<button type='button' class='btn btn-info btn-sm'> " +
+ 						"<span class='badge'>0</span> </div>" + 
+      			 // instead of nutella, whatever request has been made
+      		"</div> </div> </div> </a> </div> ");
+      	$(newRequest).val() = "";	
+		
+	});
+});
+	// fix spacing
+	
+	// add button behavior
+
+</script>
+
+</head>
+
+<body id = corkboard>
+
+	
+	
+	<!-- 
+	Way #1:
+	-->
+	<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> Serve Us </a> 
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+    	<ul class="nav navbar-nav">
+    	
+      	<li class="active"> <a href="#"> Requests </a></li>
+ 	  	<li><a href="#"> Menu </a></li>
+    	<li><a href="#"> Contact </a></li>
+    	
+    	</ul>
+ 		<ul class="nav navbar-nav navbar-right">
+ 		<li class="disabled" ><a href="#"> Sarah K. Walker </a></li>
+ 		</ul>
+ 	</div>
+ 	</nav>
+ 	
+	<div class="container" id="stickies">
+		<!-- make this update automatically.... SCRIPTS :D -->
+		<div class="row">
+  			
+  			<form class="form-inline" role="form">
+  				<div class="form-group">
+    				<!-- <label class="sr-only" for="newRequest"> New Request </label> -->
+   				 	<input type="text" class="form-control" id="newRequest" placeholder="New Request">
+  				</div>
+  
+  				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Submit </button>
+			</form>
+  			
+  		</div>
+  		
+  		
+	</div>
+	
+		
+	<!-- Image for Logo?? Not working sizewise
+	<img src="logo.png" alt="ServeUs" class="img-rounded" width="300px"> </a>
+	
+	
+	also need to link the menu and contact to eann's 
+	-->
+	
+	
+	 
+
+
+
+
+<!-- do html stuff here! -->
+
+</body>
+
+</html>

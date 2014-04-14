@@ -1,0 +1,51 @@
+.navbar-default .navbar-brand {
+    color: #43BFE8;
+}
+#corkboard {
+	background-image: url("corkboard.png");
+}
+.thumbnail {
+	background-color:transparent;
+	border-color: transparent;
+	position: relative
+}
+
+#house_team_pics {
+	height: 50px;
+	width: 50px;
+	position: relative;
+	margin: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    float: left;
+}
+
+
+.buttons {
+	color: #43BFE8;
+}
+
+#space {
+	width: 40px;
+	right-border: 10px;
+}
+
+.leftPerson{
+	float: left;
+	margin: 10px;
+	width: 300px;
+}
+
+.middlePerson{
+	float: left;
+	margin: 10px;
+	width: 300px;
+}
+
+th,td{
+	padding: 15px;
+}
