@@ -1,0 +1,61 @@
+.navbar-default .navbar-brand {
+    color: #19D1D1;
+}
+#corkboard {
+	background-image: url("corkboard.png");
+}
+.thumbnail {
+	background-color:transparent;
+	border-color: transparent;
+	position: relative
+}
+
+.requestedItem {
+	color: #19D1D1;
+	position: absolute;
+	top: 5px;
+	left: 15px;
+}
+
+#liked {
+	color: #43BFE8;	
+}
+#disliked {
+	color: #43BFE8;	
+}
+
+.buttons {
+	color: #43BFE8;
+}
+
+.badge {
+	color: white;
+	background-color: #19D1D1;
+}
+
+#homepageSticky {
+	color: #19D1D1;
+	position: absolute;
+	top: 5px;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+#signIn {
+	margin-top: 9px;
+}
+
+#infoSection {	
+	background-color:  #FFFFA3;
+}
+
+.text-center {
+	margin-left:15px;
+	margin-right:15px;
+}
+
+/*.normalText{
+	position:absolute;
+	top: 0px;
+	//left:0px;
+}*/
