@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<!--
+  
+  stuff to do:
+  
+  requests page:
+  * fix layout/sizing stuff
+  * save data -> refreshing doesn't clear it all
+  * edit/remove functionality for the person in charge
+  overall:
+  * sign in
+  * homepage
+  * link to stuff
+  
+-->	
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> ServeUs Homepage</title>
+
+<!-- Load style sheets -->
+<link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="mainLayout.css" />
+
+
+<!-- Load any supplemental Javascript libraries here -->
+<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="checker.js"></script>
+<script type="text/javascript" src="boardEvent.js"></script>
+<script type="text/javascript" src="board.js"></script>
+<script type="text/javascript" src="rules.js"></script>
+<script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+
+// do javascript stuff here
+
+$(document).ready(function() {
+	// do something here!
+});
+
+</script>
+</head>
+
+<body id = corkboard>
+
+	<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> Serve Us </a> 
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+    	<ul class="nav navbar-nav">
+    	
+      	<li> <a href="requests.html#"> Requests </a></li>
+ 	  	<li><a href="menu.html#"> Menu </a></li>
+    	<li><a href="contact.html#"> Contact </a></li>
+    	
+    	</ul>
+ 		<ul class="nav navbar-nav navbar-right">
+ 		<li class="disabled" > 
+ 			<form class="form-inline" role="form" id = "signIn">
+  				<div class="form-group">
+   				 	<input type="email" class="form-control" id="username" placeholder="Username">
+  				</div>
+  				<div class="form-group">
+   				 	<input type="text" class="form-control" id="password" placeholder="Password">
+  				</div>
+  				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Login </button>
+			</form>
+  			<!-- <a href="#"> Sarah K. Walker </a></li> -->
+ 		</ul>
+ 	</div>
+ 	</nav>
+ 	
+ 	<div class = "container">
+ 		<div class="jumbotron" id = "infoSection">
+  			<h1>Welcome to ServeUs!</h1>
+	  		<p>ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
+  			<p>  <a class="btn btn-info btn-lg text-center" role="button">Login </a> <a class="btn btn-info btn-lg" role="button"> Sign Up</a>  </p>
+  			 <!-- <a class="btn btn-info btn-lg text-center" role="button"> Sign Up </a> </p>  -->
+		</div>
+	</div>
+ 	
+	<div class="container" id="stickies">
+		<!-- make this update automatically.... SCRIPTS :D -->
+		<div class="row">
+  		</div>
+  		
+  		
+  		
+  		<div class= 'col-xs-4'>
+  			<a href='requests.html#' class='thumbnail'>
+      		<img src= 'stickynote.png'>
+      		<div class = 'text-center' id= 'homepageSticky'>
+      			<h1>Requests</h1>
+      			<br> <br> <br>
+      			<h4> <i> Click here to look at current order requests or add a new one to the menu </h4> </i>
+          	</div>
+          	</a> 
+        </div>
+        
+        <div class= 'col-xs-4'>
+  			<a href='#' class='thumbnail'>
+      		<img src= 'stickynote.png'>
+      		<div class = 'text-center' id= 'homepageSticky'>
+      			<h1>Menu</h1>
+      			<br> <br> <br>
+      			<h4> <i> Click here to look at the menu for this week and comment on meals </h4> </i>
+          	</div>
+          	</a> 
+        </div>
+        
+        <div class= 'col-xs-4'>
+  			<a href='#' class='thumbnail'>
+      		<img src= 'stickynote.png'>
+      		<div class = 'text-center' id= 'homepageSticky'>
+      			<h1>Contact</h1>
+      			<br> <br> <br>
+      			<h4> <i> Click here to contact the housing team </h4> </i>
+          	</div>
+          	</a> 
+        </div>  
+   
+	</div>
+
+	<!--<div class = "container">
+		<div class="well">
+    		Project for 6.813 Spring 2014
+	    	<br> By Jenny Astrachan, Eann Tuann, and Sarah Walker
+		</div>  
+	</div> -->
+</body>

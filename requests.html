@@ -5,13 +5,13 @@
   stuff to do:
   
   requests page:
-  * change coloring/layout [mostly just the badge buttons]
+  * fix layout/sizing stuff
   * save data -> refreshing doesn't clear it all
   * edit/remove functionality for the person in charge
-  
   overall:
   * sign in
-  * homepage
+  * minor updates to homepage
+  * link to stuff [know how to now :) ]
   
 -->	
 <html>
@@ -51,13 +51,13 @@ $(document).ready(function() {
       			"<h4>" + request + " </h4>" +
       			"<div class = 'btn-toolbar'>" + 
       					"<div class = 'btn-group' id ='buttons'>"+
-      						"<span class='badge badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
+      						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
       						" </span> </span>" + 
- 							"<span class='badge badge-info' id = 'numLiked" +request+"'>1</span> </div>" + 
+ 							"<span class='badge-info' id = 'numLiked" +request+"'>1</span> </div>" + 
  						"<div class = 'btn-group'>"+
- 							"<span class='badge badge-info' id = 'disliked"+request+"'> <span class='glyphicon glyphicon-thumbs-down'>" +
+ 							"<span class='badge-info' id = 'disliked"+request+"'> <span class='glyphicon glyphicon-thumbs-down'>" +
       						" </span> </span>" + 
- 							"<span class='badge badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
+ 							"<span class='badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
       				"</div> </div> </a> </div> ");
       	$("#liked"+request).click(function(evt){
       		//console.log ("just liked it!");
@@ -93,11 +93,6 @@ $(document).ready(function() {
 
 <body id = corkboard>
 
-	
-	
-	<!-- 
-	Way #1:
-	-->
 	<nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 	<div class="navbar-header">
@@ -107,7 +102,7 @@ $(document).ready(function() {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> Serve Us </a> 
+      <a class="navbar-brand" href="homepage.html#"> Serve Us </a> 
     </div>
     <div class="collapse navbar-collapse" id="navigation">
     	<ul class="nav navbar-nav">
@@ -125,7 +120,7 @@ $(document).ready(function() {
  	
 	<div class="container" id="stickies">
 		<!-- make this update automatically.... SCRIPTS :D -->
-		<div class="row">
+		<!--<div class="row"> -->
   			
   			<form class="form-inline" role="form">
   				<div class="form-group">
@@ -136,7 +131,7 @@ $(document).ready(function() {
   				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Submit </button>
 			</form>
   			
-  		</div>
+  		<!--</div> -->
   		
   		
 	</div>
