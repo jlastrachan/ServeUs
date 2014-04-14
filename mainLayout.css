@@ -1,5 +1,5 @@
 .navbar-default .navbar-brand {
-    color: #43BFE8;
+    color: #19D1D1;
 }
 #corkboard {
 	background-image: url("corkboard.png");
@@ -11,7 +11,7 @@
 }
 
 .requestedItem {
-	color: #43BFE8;
+	color: #19D1D1;
 	position: absolute;
 	top: 5px;
 	left: 15px;
@@ -28,44 +28,34 @@
 	color: #43BFE8;
 }
 
-#logo {
-	vertical-align: middle;
-	display: inline-block;
+.badge {
+	color: white;
+	background-color: #19D1D1;
 }
 
-.day {
-	display: inline-block;
-	padding-left: 50px;
-	position: relative;
-	width: 19%;
-	height: 250px;
-}
-
-.sticky {
+#homepageSticky {
+	color: #19D1D1;
 	position: absolute;
-	left: 0;
-	top: 0;
-	border: 0;
+	top: 5px;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
-.menu_text {
-	position: absolute;
-	top: -5px;
-	left: 5px;
-	width: 100%;
-	color: #43BFE8;
+#signIn {
+	margin-top: 10px;
 }
 
-form {
-	background-color: #fff;
-	padding: 20px;
+#infoSection {	
+	background-color:  #FFFFA3;
 }
 
-h2 {
-	color: #43BFE8;
-	background-color: #fff;
-	padding: 10px;
-	border-radius: 5px;
-	display: block;
-	position: relative;
+.text-center {
+	margin-left:15px;
+	margin-right:15px;
 }
+
+/*.normalText{
+	position:absolute;
+	top: 0px;
+	//left:0px;
+}*/
