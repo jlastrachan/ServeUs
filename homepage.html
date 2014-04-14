@@ -36,7 +36,7 @@
 // do javascript stuff here
 
 $(document).ready(function() {
-	$(btnSubmit).click(function(evt){
+	$('#btnSubmit').click(function(evt){
 		console.log('in click');
 		var user = $('#username').val();
 		console.log ("welcome" + user);
@@ -48,6 +48,31 @@ $(document).ready(function() {
 		$('#signIn').remove();
 		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
 	});
+	
+	$('#contactSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'contactInfo'> contact members of the house team </div>");
+	});
+	
+	$('#contactSticky').mouseleave (function(){
+		$('#contactInfo').remove();
+	});
+	
+	$('#menuSticky').mouseenter(function(){
+		$(this).prepend("<div id = 'menuInfo'> view this week's menu and comment on recent dinners </div>");
+	});
+	
+	$('#menuSticky').mouseleave (function(){
+		$('#menuInfo').remove();
+	});
+	
+	$('#requestSticky').mouseenter(function(){
+		$(this).prepend("<div id = 'requestInfo'> view current food requests and add your own </div>");
+	});
+	
+	$('#requestSticky').mouseleave (function(){
+		$('#requestInfo').remove();
+	});
+	
 });
 
 </script>
@@ -93,7 +118,7 @@ $(document).ready(function() {
  	<div class = "container">
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
-	  		<p>ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
+	  		<p style ='color:#777;' >ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
   			<p>  <a class="btn btn-info btn-lg text-center" role="button">Login </a> <a class="btn btn-info btn-lg" role="button"> Sign Up</a>  </p>
   			 <!-- <a class="btn btn-info btn-lg text-center" role="button"> Sign Up </a> </p>  -->
 		</div>
@@ -106,35 +131,32 @@ $(document).ready(function() {
   		
   		
   		
-  		<div class= 'col-xs-4'>
+  		<div class= 'col-xs-4' id = 'requestSticky'>
   			<a href='requests.html#' class='thumbnail'>
       		<img src= 'stickynote.png'>
-      		<div class = 'text-center' id= 'homepageSticky'>
+      		<div id= 'request'>
       			<h1>Requests</h1>
-      			<br> <br> <br>
-      			<h4> <i> Click here to look at current order requests or add a new one to the menu </h4> </i>
           	</div>
           	</a> 
         </div>
         
-        <div class= 'col-xs-4'>
+        <div class= 'col-xs-4' id='menuSticky'>
   			<a href='menu.html#' class='thumbnail'>
       		<img src= 'stickynote.png'>
-      		<div class = 'text-center' id= 'homepageSticky'>
+      		<div id= 'menu' >
       			<h1>Menu</h1>
-      			<br> <br> <br>
-      			<h4> <i> Click here to look at the menu for this week and comment on meals </h4> </i>
           	</div>
           	</a> 
         </div>
         
-        <div class= 'col-xs-4'>
+        <div class= 'col-xs-4' id= 'contactSticky'>
   			<a href='contact.html#' class='thumbnail'>
       		<img src= 'stickynote.png'>
-      		<div class = 'text-center' id= 'homepageSticky'>
+      		<div id = 'contact'>
       			<h1>Contact</h1>
-      			<br> <br> <br>
-      			<h4> <i> Click here to contact the housing team </h4> </i>
+      			<!--<div >
+      				<<br> <br> <br> <br> <br> <br> <!-- make the div larger -->
+          		</div> -->
           	</div>
           	</a> 
         </div>  
