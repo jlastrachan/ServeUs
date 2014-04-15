@@ -10,6 +10,11 @@
 	position: relative
 }
 
+#stickyImage {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 .requestedItem {
 	color: #43BFE8;
 	position: absolute;
@@ -37,8 +42,8 @@
 	color: #43BFE8;
 	position: absolute;
 	top: 5px;
-	margin-right: 15px;
-	margin-left: 15px;
+	margin-right: 50px;
+	margin-left: 10px;
 }
 
 #contactInfo {
@@ -46,16 +51,16 @@
 	position: absolute;
 	z-index: 2;
 	top: 100px;
-	margin-right: 15px;
-	margin-left: 15px;*/
+	margin-right: 50px;
+	margin-left: 10px;
 }
 
 #request {
 	color: #43BFE8;
 	position: absolute;
 	top: 5px;
-	margin-right: 15px;
-	margin-left: 15px;
+	margin-right: 50px;
+	margin-left: 10px;
 }
 
 #requestInfo {
@@ -63,8 +68,8 @@
 	position: absolute;
 	z-index: 2;
 	top: 100px;
-	margin-right: 15px;
-	margin-left: 15px;*/
+	margin-right: 50px;
+	margin-left: 10px;
 }
 
 
@@ -72,8 +77,8 @@
 	color: #43BFE8;
 	position: absolute;
 	top: 5px;
-	margin-right: 15px;
-	margin-left: 15px;
+	margin-right: 50px;
+	margin-left: 10px;
 }
 
 #menuInfo {
@@ -81,8 +86,8 @@
 	position: absolute;
 	z-index: 2;
 	top: 100px;
-	margin-right: 15px;
-	margin-left: 15px;*/
+	margin-right: 50px;
+	margin-left: 10px;
 }
 
 
@@ -94,14 +99,3 @@
 	background-color:  #FFFFA3;
 	color: #43BFE8;
 }
-
-.text-center {
-	margin-left:15px;
-	margin-right:15px;
-}
-
-/*.normalText{
-	position:absolute;
-	top: 0px;
-	//left:0px;
-}*/

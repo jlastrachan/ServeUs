@@ -37,15 +37,41 @@
 // do javascript stuff here
 
 $(document).ready(function() {
+	$("#likedstrawberries").click(function(evt){
+      var currNum = parseInt($("#numLikedstrawberries").text());
+      var newNum = currNum + 1;
+      $("#numLikedstrawberries").text(newNum);
+     });
+     
+	$("#dislikedstrawberries").click(function(evt){
+      	var currNum = parseInt($("#numDislikedstrawberries").text());
+      	var newNum = currNum + 1;
+		$("#numDislikedstrawberries").text(newNum);
+	});
+	
+	$("#likedpitachips").click(function(evt){
+      var currNum = parseInt($("#numLikedpitachips").text());
+      var newNum = currNum + 1;
+      $("#numLikedpitachips").text(newNum);
+     });
+     
+	$("#dislikedpitachips").click(function(evt){
+      	var currNum = parseInt($("#numDislikedpitachips").text());
+      	var newNum = currNum + 1;
+		$("#numDislikedpitachips").text(newNum);
+	});
 
 	$("#btnSubmit").click(function(evt) {
-		var request = $(newRequest).val();
+		var requestName = $(newRequest).val();
+		var request = $(newRequest).val().replace(/[ .,!?]/g,'');
 		if (request == '') {return;}
+		//request.replace(/ /g,'');
+		console.log(request);
 		$(stickies).append("<div class= 'col-xs-4'>" +
    			"<a href='#' class='thumbnail'>" +
       		"<img src= 'stickynote.png'>" +
       		"<div class = 'requestedItem'>" +
-      			"<h4>" + request + " </h4>" +
+      			"<h4>" + requestName + " </h4>" +
       			"<div class = 'btn-toolbar'>" + 
       					"<div class = 'btn-group' id ='buttons'>"+
       						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
@@ -83,6 +109,7 @@ $(document).ready(function() {
 
 <body id = corkboard>
 
+	<!-- navigation bar-->
 	<nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 	<div class="navbar-header">
@@ -102,6 +129,7 @@ $(document).ready(function() {
     	<li><a href="#"> Contact </a></li>
     	
     	</ul>
+    	<!-- current user: TODO, update depending on who is logged in -->
  		<ul class="nav navbar-nav navbar-right">
  		<li class="disabled" ><a href="#"> Sarah K. Walker </a></li>
  		</ul>
@@ -109,38 +137,59 @@ $(document).ready(function() {
  	</nav>
  	
 	<div class="container" id="stickies">
-		<!-- make this update automatically.... SCRIPTS :D -->
-		<!--<div class="row"> -->
+	
+		<!-- form for writing in a new request --> 
+  		<form class="form-inline" role="form">
+  			<div class="form-group">
+  				<!-- <label class="sr-only" for="newRequest"> New Request </label> -->   				 	
+  				<input type="text" class="form-control" id="newRequest" placeholder="New Request">
+  			</div>
+  			<button type="submit" class="btn btn-sm" id = "btnSubmit"> Submit </button>
+		</form>
   			
-  			<form class="form-inline" role="form">
-  				<div class="form-group">
-    				<!-- <label class="sr-only" for="newRequest"> New Request </label> -->
-   				 	<input type="text" class="form-control" id="newRequest" placeholder="New Request">
-  				</div>
-  
-  				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Submit </button>
-			</form>
-  			
-  		<!--</div> -->
-  		
-  		
+  		<!-- start off with some stickies on the page --> 
+  		<div class= 'col-xs-4'>
+   			<a href='#' class='thumbnail'>
+   			<img src= 'stickynote.png'>
+    		<div class = 'requestedItem'>
+				<h4> strawberries </h4>
+				<div class = 'btn-toolbar'>
+      				<div class = 'btn-group' id ='buttons'>
+    					<span class='badge-info' id = 'likedstrawberries'> <span class='glyphicon glyphicon-thumbs-up'>
+      			 		</span> </span>
+ 						<span class='badge-info' id = 'numLikedstrawberries'>3</span>
+ 					 </div>
+				<div class = 'btn-group'>
+ 					<span class='badge-info' id = 'dislikedstrawberries'> <span class='glyphicon glyphicon-thumbs-down'>
+ 					  </span> </span>
+ 					<span class='badge-info' id ='numDislikedstrawberries'>0</span> </div> 
+      			</div> 
+			</div> 
+			</a>
+      	</div> 
+      	
+      	<div class= 'col-xs-4'>
+   			<a href='#' class='thumbnail'>
+   			<img src= 'stickynote.png'>
+    		<div class = 'requestedItem'>
+				<h4> pita chips </h4>
+				<div class = 'btn-toolbar'>
+      				<div class = 'btn-group' id ='buttons'>
+    					<span class='badge-info' id = 'likedpitachips'> <span class='glyphicon glyphicon-thumbs-up'>
+      			 		</span> </span>
+ 						<span class='badge-info' id = 'numLikedpitachips'>5</span>
+ 					 </div>
+				<div class = 'btn-group'>
+ 					<span class='badge-info' id = 'dislikedpitachips'> <span class='glyphicon glyphicon-thumbs-down'>
+ 					  </span> </span>
+ 					<span class='badge-info' id ='numDislikedpitachips'>1</span> </div> 
+      			</div> 
+			</div> 
+			</a>
+      	</div> 
+      	
 	</div>
 	
-		
-	<!-- Image for Logo?? Not working sizewise
-	<img src="logo.png" alt="ServeUs" class="img-rounded" width="300px"> </a>
-	
-	
-	also need to link the menu and contact to eann's 
-	-->
-	
-	
-	 
-
-
-
-
-<!-- do html stuff here! -->
 
 </body>
 
