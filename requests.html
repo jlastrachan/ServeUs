@@ -29,27 +29,83 @@
 
 <!-- Load any supplemental Javascript libraries here -->
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="checker.js"></script>
-<script type="text/javascript" src="boardEvent.js"></script>
-<script type="text/javascript" src="board.js"></script>
-<script type="text/javascript" src="rules.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
 
 // do javascript stuff here
+/*$.fn.editable.defaults.mode = 'inline';
+$.fn.editable.defaults.showbuttons = false;
+$.fn.editable.defaults.url = '/post';
+$.fn.editable.defaults.type = 'text';
+
+*/
 
 $(document).ready(function() {
+	$(newRequest).val('');
+	$('#houseTeam').prop('disabled', false);
+	var hTeam = false;
+	
+	var allRequests = new Array();
+	var requestNames = new Array();
+	allRequests.push("strawberries");
+	allRequests.push ("pitachips");
+	console.log("working here");
+	
+	$('#houseTeam').click(function(evt){
+		console.log("just clicked hosue team");
+		$('#houseTeam').prop('disabled', true); // only for now... easier this way!
+		for (var i =0; i< allRequests.length; i++) {
+			var request = allRequests[i];
+			$('#'+request+'text').attr('contenteditable',"true");
+			$('#'+request+'text').css('cursor', 'text' );
+			$('#delete'+request).append("<button class = 'btn btn-sm' style='background-color:transparent' id = 'deleted" + request+"'> <span class = 'glyphicon glyphicon-remove'></span> </button>");
+			$('#deleted'+request).click(function(evt){
+				$(this).parents('li').remove();	
+			});
+			
+		}
+		hTeam = true;
+	});
+
+	$("#likedstrawberries").click(function(evt){
+      var currNum = parseInt($("#numLikedstrawberries").text());
+      var newNum = currNum + 1;
+      $("#numLikedstrawberries").text(newNum);
+     });
+     
+	$("#dislikedstrawberries").click(function(evt){
+      	var currNum = parseInt($("#numDislikedstrawberries").text());
+      	var newNum = currNum + 1;
+		$("#numDislikedstrawberries").text(newNum);
+	});
+	
+	$("#likedpitachips").click(function(evt){
+      var currNum = parseInt($("#numLikedpitachips").text());
+      var newNum = currNum + 1;
+      $("#numLikedpitachips").text(newNum);
+     });
+     
+	$("#dislikedpitachips").click(function(evt){
+      	var currNum = parseInt($("#numDislikedpitachips").text());
+      	var newNum = currNum + 1;
+		$("#numDislikedpitachips").text(newNum);
+	});
 
 	$("#btnSubmit").click(function(evt) {
-		var request = $(newRequest).val();
+		console.log("pressed submit button");
+		var requestName = $(newRequest).val();
+		var request = $(newRequest).val().replace(/[ .,!?]/g,'');
 		if (request == '') {return;}
-		$(stickies).append("<div class= 'col-xs-4'>" +
-   			"<a href='#' class='thumbnail'>" +
+		allRequests.push(request);
+		
+		$('#stickies').append("<li class = 'col-xs-4'>" +
+   			"<a href='#' class='thumbnail' id='sticky" + request+"'>" +
       		"<img src= 'stickynote.png'>" +
       		"<div class = 'requestedItem'>" +
-      			"<h4>" + request + " </h4>" +
+      			"<span id = 'delete"+request+"' style = 'margin-left:-7px' > </span> <br>" +
+      			"<h4 id = '"+request+"text'>" + requestName + " </h4>" + 
       			"<div class = 'btn-toolbar'>" + 
       					"<div class = 'btn-group' id ='buttons'>"+
       						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
@@ -59,31 +115,28 @@ $(document).ready(function() {
  							"<span class='badge-info' id = 'disliked"+request+"'> <span class='glyphicon glyphicon-thumbs-down'>" +
       						" </span> </span>" + 
  							"<span class='badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
-      				"</div> </div> </a> </div> ");
+      				"</div> </div> </a> </li> ");
       	$("#liked"+request).click(function(evt){
-      		//console.log ("just liked it!");
       		var currNum = parseInt($("#numLiked" + request).text());
-      		//console.log ("current liked:" + currNum);
       		var newNum = currNum + 1;
       		$("#numLiked" + request).text(newNum);
      	});
      	$("#disliked"+request).click(function(evt){
-      		//console.log ("just liked it!");
-      		var newNum;
-      		if ($("#numDisliked" + request).text() == '0') {
-      			newNum = 1;
-      		}
-      		else {
-      			var currNum = parseInt($("#numDisliked" + request).text());
-      		
-      		//console.log ("current liked:" + currNum);
-      			 newNum = currNum + 1;
-      		}
+      		var currNum = parseInt($("#numDisliked" + request).text());
+      		var newNum = currNum + 1;
       		$("#numDisliked" + request).text(newNum);
      	});
-      	
+     	if (hTeam) {
+     		$('#delete'+request).append("<button class = 'btn btn-sm' style='background-color:transparent' id = 'deleted" + request+"'> <span class = 'glyphicon glyphicon-remove'></span> </button>");
+			$('#deleted'+request).click(function(evt){
+				$(this).parents('li').remove();	
+			});
+			$('#'+request+'text').attr('contenteditable',"true");
+			$('#'+request+'text').css('cursor', 'text' );
+     	}
       	$(newRequest).val('');
-	});
+      	
+	})
 });
 	
 	// add button behavior
@@ -94,6 +147,7 @@ $(document).ready(function() {
 
 <body id = corkboard>
 
+	<!-- navigation bar-->
 	<nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 	<div class="navbar-header">
@@ -103,55 +157,89 @@ $(document).ready(function() {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="homepage.html#"> Serve Us </a> 
+      <a class="navbar-brand" href="index.html#"> Serve Us </a> 
     </div>
     <div class="collapse navbar-collapse" id="navigation">
     	<ul class="nav navbar-nav">
     	
       	<li class="active"> <a href="#"> Requests </a></li>
- 	  	<li><a href="#"> Menu </a></li>
-    	<li><a href="#"> Contact </a></li>
+ 	  	<li><a href="menu.html#"> Menu </a></li>
+    	<li><a href="contact.html#"> Contact </a></li>
     	
     	</ul>
+    	<!-- current user: TODO, update depending on who is logged in -->
  		<ul class="nav navbar-nav navbar-right">
  		<li class="disabled" ><a href="#"> Sarah K. Walker </a></li>
  		</ul>
  	</div>
  	</nav>
  	
-	<div class="container" id="stickies">
-		<!-- make this update automatically.... SCRIPTS :D -->
-		<!--<div class="row"> -->
+	<div class="container">
+	
+		<!-- form for writing in a new request --> 
+  		<form class="form-inline" role="form">
+  			<div class="form-group">
+  				<!-- <label class="sr-only" for="newRequest"> New Request </label> -->   				 	
+  				<input type="text" class="form-control" id="newRequest" placeholder="New Request">
+  			</div>
+  			<button type="submit" class="btn btn-sm" id = "btnSubmit"> Submit </button>
+  			<button type="submit" class="btn btn-sm pull-right" id = "houseTeam" > Part of House Team? </button>
+		</form>
+		
+		<br>
+		<br>
   			
-  			<form class="form-inline" role="form">
-  				<div class="form-group">
-    				<!-- <label class="sr-only" for="newRequest"> New Request </label> -->
-   				 	<input type="text" class="form-control" id="newRequest" placeholder="New Request">
-  				</div>
-  
-  				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Submit </button>
-			</form>
-  			
-  		<!--</div> -->
-  		
-  		
+  		<!-- start off with some stickies on the page --> 
+  		<!--<div class= 'col-xs-4' > -->
+  		<ul class="thumbnails" id = "stickies">
+  		<li class = 'col-xs-4'>
+   			<a href='#' class='thumbnail' id = 'stickystrawberries'>
+   			<img src= 'stickynote.png'>
+    		<div class = 'requestedItem'>
+				<span id = 'deletestrawberries' style = "margin-left:-7px"> </span>
+				<br><h4 id = 'strawberriestext'> strawberries </h4>
+				<div class = 'btn-toolbar'>
+      				<div class = 'btn-group' id ='buttons'>
+    					<span class='badge-info' id = 'likedstrawberries'> <span class='glyphicon glyphicon-thumbs-up'>
+      			 		</span> </span>
+ 						<span class='badge-info' id = 'numLikedstrawberries'>3</span>
+ 					 </div>
+				<div class = 'btn-group'>
+ 					<span class='badge-info' id = 'dislikedstrawberries'> <span class='glyphicon glyphicon-thumbs-down'>
+ 					  </span> </span>
+ 					<span class='badge-info' id ='numDislikedstrawberries'>0</span> </div> 
+      			</div> 
+			</div> 
+			</a>
+		</li>
+      	<!--</div> -->
+      	
+      	<!--<div class= 'col-xs-4' >-->
+      	<li class = 'col-xs-4'>
+   			<a href='#' class='thumbnail' id = 'stickypitachips'>
+   			<img src= 'stickynote.png'>
+    		<div class = 'requestedItem'>
+				<span id = 'deletepitachips' style = "margin-left:-7px"> </span> <br>
+				<h4 id = 'pitachipstext'> pita chips </h4>
+				<div class = 'btn-toolbar'>
+      				<div class = 'btn-group' id ='buttons'>
+    					<span class='badge-info' id = 'likedpitachips'> <span class='glyphicon glyphicon-thumbs-up'>
+      			 		</span> </span>
+ 						<span class='badge-info' id = 'numLikedpitachips'>5</span>
+ 					 </div>
+				<div class = 'btn-group'>
+ 					<span class='badge-info' id = 'dislikedpitachips'> <span class='glyphicon glyphicon-thumbs-down'>
+ 					  </span> </span>
+ 					<span class='badge-info' id ='numDislikedpitachips'>1</span> </div> 
+      			</div> 
+			</div> 
+			</a>
+      	<!--</div> -->
+      	</li>
+      	</ul>
+      	
 	</div>
 	
-		
-	<!-- Image for Logo?? Not working sizewise
-	<img src="logo.png" alt="ServeUs" class="img-rounded" width="300px"> </a>
-	
-	
-	also need to link the menu and contact to eann's 
-	-->
-	
-	
-	 
-
-
-
-
-<!-- do html stuff here! -->
 
 </body>
 

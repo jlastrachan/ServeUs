@@ -28,10 +28,6 @@
 
 <!-- Load any supplemental Javascript libraries here -->
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="checker.js"></script>
-<script type="text/javascript" src="boardEvent.js"></script>
-<script type="text/javascript" src="board.js"></script>
-<script type="text/javascript" src="rules.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -40,7 +36,43 @@
 // do javascript stuff here
 
 $(document).ready(function() {
-	// do something here!
+	$('#btnSubmit').click(function(evt){
+		console.log('in click');
+		var user = $('#username').val();
+		console.log ("welcome" + user);
+		$('#username').remove();
+		$('#password').remove();
+		//$('#login').remove();
+		$('btnSubmit').remove();
+
+		$('#signIn').remove();
+		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
+	});
+	
+	$('#contactSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'contactInfo'> contact members of the house team </div>");
+	});
+	
+	$('#contactSticky').mouseleave (function(){
+		$('#contactInfo').remove();
+	});
+	
+	$('#menuSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'menuInfo'> view this week's menu and comment on  <br> recent dinners </div>");
+	});
+	
+	$('#menuSticky').mouseleave (function(){
+		$('#menuInfo').remove();
+	});
+	
+	$('#requestSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'requestInfo'> view current food requests and add your own </div>");
+	});
+	
+	$('#requestSticky').mouseleave (function(){
+		$('#requestInfo').remove();
+	});
+	
 });
 
 </script>
@@ -67,18 +99,18 @@ $(document).ready(function() {
     	<li><a href="contact.html#"> Contact </a></li>
     	
     	</ul>
- 		<ul class="nav navbar-nav navbar-right">
- 		<li class="disabled" > 
+ 		<ul class="nav navbar-nav navbar-right" id = "login">
+ 		<li class="disabled"> 
  			<form class="form-inline" role="form" id = "signIn">
   				<div class="form-group">
    				 	<input type="email" class="form-control" id="username" placeholder="Username">
   				</div>
   				<div class="form-group">
-   				 	<input type="text" class="form-control" id="password" placeholder="Password">
+   				 	<input type="password" class="form-control" id="password" placeholder="Password">
   				</div>
   				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Login </button>
 			</form>
-  			<!-- <a href="#"> Sarah K. Walker </a></li> -->
+			</li>
  		</ul>
  	</div>
  	</nav>
@@ -86,58 +118,40 @@ $(document).ready(function() {
  	<div class = "container">
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
-	  		<p>ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
-  			<p>  <a class="btn btn-info btn-lg text-center" role="button">Login </a> <a class="btn btn-info btn-lg" role="button"> Sign Up</a>  </p>
-  			 <!-- <a class="btn btn-info btn-lg text-center" role="button"> Sign Up </a> </p>  -->
+	  		<p style ='color:#777;' >ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
+  			<p>  <a class="btn btn-info btn-lg text-center" role="button">Login </a> <a class="btn btn-lg" role="button" > Sign Up</a>  </p>
 		</div>
 	</div>
  	
 	<div class="container" id="stickies">
-		<!-- make this update automatically.... SCRIPTS :D -->
-		<div class="row">
-  		</div>
-  		
-  		
-  		
-  		<div class= 'col-xs-4'>
+		<br>
+		
+  		<div class= 'col-xs-4' id = 'requestSticky'>
   			<a href='requests.html#' class='thumbnail'>
-      		<img src= 'stickynote.png'>
-      		<div class = 'text-center' id= 'homepageSticky'>
-      			<h1>Requests</h1>
-      			<br> <br> <br>
-      			<h4> <i> Click here to look at current order requests or add a new one to the menu </h4> </i>
+      		<img src= 'stickynote.png' id = 'stickyImage'>
+      		<div id= 'request'>
+      			<h1 class = 'text-center'>Requests</h1>
           	</div>
           	</a> 
         </div>
         
-        <div class= 'col-xs-4'>
-  			<a href='#' class='thumbnail'>
-      		<img src= 'stickynote.png'>
-      		<div class = 'text-center' id= 'homepageSticky'>
-      			<h1>Menu</h1>
-      			<br> <br> <br>
-      			<h4> <i> Click here to look at the menu for this week and comment on meals </h4> </i>
+        <div class= 'col-xs-4' id='menuSticky'>
+  			<a href='menu.html#' class='thumbnail'>
+      		<img src= 'stickynote.png'id = 'stickyImage'>
+      		<div id= 'menu' class = "text-center">
+      			<h1 class = 'text-center'>Menu</h1>
           	</div>
           	</a> 
         </div>
         
-        <div class= 'col-xs-4'>
-  			<a href='#' class='thumbnail'>
-      		<img src= 'stickynote.png'>
-      		<div class = 'text-center' id= 'homepageSticky'>
-      			<h1>Contact</h1>
-      			<br> <br> <br>
-      			<h4> <i> Click here to contact the housing team </h4> </i>
+        <div class= 'col-xs-4' id= 'contactSticky'>
+  			<a href='contact.html#' class='thumbnail'>
+      		<img src= 'stickynote.png' id = 'stickyImage'>
+      		<div id = 'contact' class = "text-center">
+      			<h1 class = 'text-center'> Contact</h1>
           	</div>
           	</a> 
         </div>  
    
 	</div>
-
-	<!--<div class = "container">
-		<div class="well">
-    		Project for 6.813 Spring 2014
-	    	<br> By Jenny Astrachan, Eann Tuann, and Sarah Walker
-		</div>  
-	</div> -->
 </body>

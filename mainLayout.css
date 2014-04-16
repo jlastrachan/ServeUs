@@ -56,38 +56,41 @@ table{
 
 #chef-title{
 	padding: 10px; 
-	width: 65%;
+	width: 63%;
 	left: 100px;
-	margin-left: 18%;
+	margin-left: 19%;
 	background: white; 
-	border: black 2px solid;
+	border: black 1.5px solid;
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	font-family: "Georgia", Garamound, serif;
 }
 
 #house-manager-title{
 	padding: 10px; 
-	width: 65%;
+	width: 63%;
 	left: 100px;
 	margin-left: 18%;
 	background: white; 
-	border: black 2px solid;
+	border: black 1.5px solid;
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	font-family: "Georgia", Garamound, serif;
 }
 
 #food-manager-title{
 	padding: 10px; 
-	width: 65%;
+	width: 63%;
 	left: 100px;
 	margin-left: 18%;
 	background: white; 
-	border: black 2px solid;
+	border: black 1.5px solid;
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	font-family: "Georgia", Garamound, serif;
 }
 .row{
 	margin-bottom: 10px;
@@ -155,7 +158,14 @@ form {
 	position: absolute;
 	top: 60%;
 	left: 35%
+}
 
+.font{
+	font-family: "Georgia", Garamound, serif;
+}
+
+.font{
+	font-size: 18px;
 }
 
 .long_sticky_img{
@@ -175,6 +185,7 @@ form {
 	height: 100px;
 	width: 500px;
 	background-color:#FFFF77;
+	font-family: "Georgia", Garamound, serif;
 	border-color: gray;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -189,6 +200,8 @@ form {
 
 .comment_box{
 	position: relative;
+	font-family: "Georgia", Garamound, serif;
+	color: #808080;
 	left: 100px;
 	top: 100px;
 }
@@ -325,10 +338,12 @@ textarea{
 
 }
 
+
 .menu_row {
 	padding-top: 20px;
 	display: flex;
 	/*text-align: center;*/
+
 }
 
 /*#suggest_box {
