@@ -8,7 +8,8 @@
   * save data -> refreshing doesn't clear it all
   * fix the way person in charge can edit stuff [depending on login]
   * fix linking
-  * sign in
+  
+  * sign up...
   
 -->	
 <html>
@@ -35,16 +36,16 @@
 
 $(document).ready(function() {
 	$('#btnSubmit').click(function(evt){
-		console.log('in click');
+		//console.log('in click');
 		var user = $('#username').val();
-		console.log ("welcome" + user);
+		//console.log ("welcome" + user);
 		$('#username').remove();
 		$('#password').remove();
 		//$('#login').remove();
 		$('btnSubmit').remove();
 
 		$('#signIn').remove();
-		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
+		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #19758D'> Welcome, " + user + "! </span> </h4> </form> <li>");
 	});
 	
 	$('#contactSticky').mouseenter(function(){
@@ -75,10 +76,19 @@ $(document).ready(function() {
 		console.log("logged in!");
 		if(($('#modalusername').val()=="" )|| ($('#modalpassword').val()=="")){
 			console.log("error signing in");
-			//$('#failedlogin').alert();
+			
 		}
 		else {
-		console.log("logged you in!");	
+			var user = $('#modalusername').val();	
+			$('#signinModal').hide();
+			$(this).attr("data-dismiss",'modal');
+			
+			$('#username').remove();
+			$('#password').remove();
+			$('btnSubmit').remove();
+
+			$('#signIn').remove();
+			$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
 		}
 		// do something?!
 	});
@@ -98,7 +108,7 @@ $(document).ready(function() {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> Serve Us </a> 
+      <a class="navbar-brand" href="#"> ServeUs </a> 
     </div>
     <div class="collapse navbar-collapse" id="navigation">
     	<ul class="nav navbar-nav">
@@ -128,7 +138,7 @@ $(document).ready(function() {
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
 	  		<p style ='color:#777;' >ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
-  			<p>  <a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" > Sign Up</a>  </p>
+  			<p>  <a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" id = "signupbtn" > Sign Up</a>  </p>
 		</div>
 	</div>
 	
@@ -150,7 +160,7 @@ $(document).ready(function() {
 					</form>
       			</div>
      			<div class="modal-footer">
-	    	    	<button type="submit" class="btn btn-sm" id = "modalLogin" data-dismiss="modal"> Login </button>
+	    	    	<button type="submit" class="btn btn-sm" id = "modalLogin"> Login </button>
     	    	</div>
     	    </div>
     	</div>
