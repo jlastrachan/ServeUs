@@ -1,8 +1,9 @@
 .navbar-default .navbar-brand {
-    color: #43BFE8;
+    color: #19758D;
 }
 #corkboard {
 	background-image: url("corkboard.png");
+	font-family: 'Georgia';
 }
 .thumbnail {
 	background-color:transparent;
@@ -16,30 +17,40 @@
 }
 
 .requestedItem {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	top: 5px;
 	left: 15px;
 }
 
-#liked {
-	color: #43BFE8;	
+#loginbtn {
+	background-color: #19758D;
+	border-color: #19758D; 
 }
+
+#signupbtn {
+	color: #19758D;
+}
+
+#liked {
+	color: #19758D;
+}
+
 #disliked {
-	color: #43BFE8;	
+	color: #19758D;
 }
 
 .buttons {
-	color: #43BFE8;
+	color: #19758D;
 }
 
 .badge {
 	color: white;
-	background-color: #43BFE8;
+	background-color: #19758D;
 }
 
 #contact {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	top: 5px;
 	margin-right: 50px;
@@ -47,7 +58,7 @@
 }
 
 #contactInfo {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	z-index: 2;
 	top: 100px;
@@ -56,7 +67,7 @@
 }
 
 #request {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	top: 5px;
 	margin-right: 50px;
@@ -64,7 +75,7 @@
 }
 
 #requestInfo {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	z-index: 2;
 	top: 100px;
@@ -74,7 +85,7 @@
 
 
 #menu {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	top: 5px;
 	margin-right: 50px;
@@ -82,7 +93,7 @@
 }
 
 #menuInfo {
-	color: #43BFE8;
+	color: #19758D;
 	position: absolute;
 	z-index: 2;
 	top: 100px;
@@ -97,5 +108,5 @@
 
 #infoSection {	
 	background-color:  #FFFFA3;
-	color: #43BFE8;
+	color: #19758D;
 }
