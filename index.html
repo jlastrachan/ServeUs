@@ -4,14 +4,12 @@
   
   stuff to do:
   
-  requests page:
   * fix layout/sizing stuff
   * save data -> refreshing doesn't clear it all
-  * edit/remove functionality for the person in charge
-  overall:
-  * sign in
-  * homepage
-  * link to stuff
+  * fix the way person in charge can edit stuff [depending on login]
+  * fix linking
+  
+  * sign up...
   
 -->	
 <html>
@@ -29,7 +27,8 @@
 <!-- Load any supplemental Javascript libraries here -->
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+<!--<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script> -->
 <script type="text/javascript">
 
 
@@ -37,16 +36,16 @@
 
 $(document).ready(function() {
 	$('#btnSubmit').click(function(evt){
-		console.log('in click');
+		//console.log('in click');
 		var user = $('#username').val();
-		console.log ("welcome" + user);
+		//console.log ("welcome" + user);
 		$('#username').remove();
 		$('#password').remove();
 		//$('#login').remove();
 		$('btnSubmit').remove();
 
 		$('#signIn').remove();
-		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
+		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #19758D'> Welcome, " + user + "! </span> </h4> </form> <li>");
 	});
 	
 	$('#contactSticky').mouseenter(function(){
@@ -73,6 +72,26 @@ $(document).ready(function() {
 		$('#requestInfo').remove();
 	});
 	
+	$('#modalLogin').click(function(evt){
+		console.log("logged in!");
+		if(($('#modalusername').val()=="" )|| ($('#modalpassword').val()=="")){
+			console.log("error signing in");
+			
+		}
+		else {
+			var user = $('#modalusername').val();	
+			$('#signinModal').hide();
+			$(this).attr("data-dismiss",'modal');
+			
+			$('#username').remove();
+			$('#password').remove();
+			$('btnSubmit').remove();
+
+			$('#signIn').remove();
+			$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
+		}
+		// do something?!
+	});
 });
 
 </script>
@@ -89,7 +108,7 @@ $(document).ready(function() {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> Serve Us </a> 
+      <a class="navbar-brand" href="#"> ServeUs </a> 
     </div>
     <div class="collapse navbar-collapse" id="navigation">
     	<ul class="nav navbar-nav">
@@ -119,13 +138,40 @@ $(document).ready(function() {
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
 	  		<p style ='color:#777;' >ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
-  			<p>  <a class="btn btn-info btn-lg text-center" role="button">Login </a> <a class="btn btn-lg" role="button" > Sign Up</a>  </p>
+  			<p>  <a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" id = "signupbtn" > Sign Up</a>  </p>
 		</div>
 	</div>
- 	
+	
+	<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			 <div class="modal-header">
+      				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       				 <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+     			 </div>
+      			<div class="modal-body">
+       				 <form class="form-inline" role="form" id = "signIn">
+  						<div class="form-group">
+   				 			<input type="email" class="form-control" id="modalusername" placeholder="Username">
+		  				</div>
+  						<div class="form-group">
+   						 	<input type="password" class="form-control" id="modalpassword" placeholder="Password">
+		  				</div>
+					</form>
+      			</div>
+     			<div class="modal-footer">
+	    	    	<button type="submit" class="btn btn-sm" id = "modalLogin"> Login </button>
+    	    	</div>
+    	    </div>
+    	</div>
+    	
+    	<!-- <div class="alert alert-danger" id ="failedlogin"> <h4> Could not log you in </h4> </div> -->
+		<br>
+    	
+	</div>
+	
 	<div class="container" id="stickies">
 		<br>
-		
   		<div class= 'col-xs-4' id = 'requestSticky'>
   			<a href='requests.html#' class='thumbnail'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
