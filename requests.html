@@ -51,7 +51,70 @@ $(document).ready(function() {
 	var requestNames = new Array();
 	allRequests.push("strawberries");
 	allRequests.push ("pitachips");
-	console.log("working here");
+	
+	
+	// start out with 2 stickies already
+	// strawberries
+	$('#stickies').append("<li class = 'col-xs-4' id = 'requestSticky'>" +
+   		"<a href='#' class='thumbnail' id='stickystrawberries'>" +
+    	  	"<img src= 'stickynote.png' id = 'stickyImage'>" +
+    		"<div class = 'requestedItem'>" +
+      			"<span id = 'deletestrawberries' style = 'margin-left:-7px' > </span> <br>" +
+      			"<h4 style = 'margin=left: 15px'id = 'strawberriestext'>strawberries</h4>" + 
+      			"<div class = 'btn-toolbar'>" + 
+    				"<div class = 'btn-group' id ='buttons'>"+
+  						"<span class='badge-info' id = 'likedstrawberries'> <span class='glyphicon glyphicon-thumbs-up'>" +
+  						" </span> </span>" + 
+ 						"<span class='badge-info' id = 'numLikedstrawberries'>1</span>"+
+ 					"</div>" + 
+ 					"<div class = 'btn-group'>"+
+ 						"<span class='badge-info' id = 'dislikedstrawberries'> <span class='glyphicon glyphicon-thumbs-down'>" +
+      					" </span> </span>" + 
+ 						"<span class='badge-info' id ='numDislikedstrawberries'>0</span> </div>" + 
+      				"</div>"+
+      			" </div> </a> </li> ");
+      			
+      	$("#likedstrawberries").click(function(evt){
+      		var currNum = parseInt($("#numLikedstrawberries").text());
+      		var newNum = currNum + 1;
+      		$("#numLikedstrawberries").text(newNum);
+     	});
+     	$("#dislikedstrawberries").click(function(evt){
+      		var currNum = parseInt($("#numDislikedstrawberries").text());
+      		var newNum = currNum + 1;
+      		$("#numDislikedstrawberries").text(newNum);
+     	});
+     	
+	// pita chips
+	$('#stickies').append("<li class = 'col-xs-4' id = 'requestSticky'>" +
+   		"<a href='#' class='thumbnail' id='stickypitachips'>" +
+    	  	"<img src= 'stickynote.png' id = 'stickyImage'>" +
+    		"<div class = 'requestedItem'>" +
+      			"<span id = 'deletepitachips' style = 'margin-left:-7px' > </span> <br>" +
+      			"<h4 style = 'margin=left: 15px'id = 'pitachipstext'>pita chips</h4>" + 
+      			"<div class = 'btn-toolbar'>" + 
+    				"<div class = 'btn-group' id ='buttons'>"+
+  						"<span class='badge-info' id = 'likedpitachips'> <span class='glyphicon glyphicon-thumbs-up'>" +
+  						" </span> </span>" + 
+ 						"<span class='badge-info' id = 'numLikedpitachips'>1</span>"+
+ 					"</div>" + 
+ 					"<div class = 'btn-group'>"+
+ 						"<span class='badge-info' id = 'dislikedpitachips'> <span class='glyphicon glyphicon-thumbs-down'>" +
+      					" </span> </span>" + 
+ 						"<span class='badge-info' id ='numDislikedpitachips'>0</span> </div>" + 
+      				"</div>"+
+      			" </div> </a> </li> ");
+      	$("#likedpitachips").click(function(evt){
+      		var currNum = parseInt($("#numLikedpitachips").text());
+      		var newNum = currNum + 1;
+      		$("#numLikedpitachips").text(newNum);
+     	});
+     	$("#dislikedpitachips").click(function(evt){
+      		var currNum = parseInt($("#numDislikedpitachips").text());
+      		var newNum = currNum + 1;
+      		$("#numDislikedpitachips").text(newNum);
+     	});
+	
 	
 	$('#houseTeam').click(function(evt){
 		console.log("just clicked hosue team");
@@ -60,7 +123,7 @@ $(document).ready(function() {
 			var request = allRequests[i];
 			$('#'+request+'text').attr('contenteditable',"true");
 			$('#'+request+'text').css('cursor', 'text' );
-			$('#delete'+request).append("<button class = 'btn btn-sm' style='background-color:transparent' id = 'deleted" + request+"'> <span class = 'glyphicon glyphicon-remove'></span> </button>");
+			$('#delete'+request).append("<button class = 'btn btn-sm' style='background-color:transparent' id = 'deleted" + request+"'> <span style = 'margin-left:-7px' class = 'glyphicon glyphicon-remove'></span> </button>");
 			$('#deleted'+request).click(function(evt){
 				$(this).parents('li').remove();	
 			});
@@ -69,29 +132,7 @@ $(document).ready(function() {
 		hTeam = true;
 	});
 
-	$("#likedstrawberries").click(function(evt){
-      var currNum = parseInt($("#numLikedstrawberries").text());
-      var newNum = currNum + 1;
-      $("#numLikedstrawberries").text(newNum);
-     });
-     
-	$("#dislikedstrawberries").click(function(evt){
-      	var currNum = parseInt($("#numDislikedstrawberries").text());
-      	var newNum = currNum + 1;
-		$("#numDislikedstrawberries").text(newNum);
-	});
 	
-	$("#likedpitachips").click(function(evt){
-      var currNum = parseInt($("#numLikedpitachips").text());
-      var newNum = currNum + 1;
-      $("#numLikedpitachips").text(newNum);
-     });
-     
-	$("#dislikedpitachips").click(function(evt){
-      	var currNum = parseInt($("#numDislikedpitachips").text());
-      	var newNum = currNum + 1;
-		$("#numDislikedpitachips").text(newNum);
-	});
 
 	$("#btnSubmit").click(function(evt) {
 		console.log("pressed submit button");
@@ -100,12 +141,12 @@ $(document).ready(function() {
 		if (request == '') {return;}
 		allRequests.push(request);
 		
-		$('#stickies').append("<li class = 'col-xs-4'>" +
+		$('#stickies').append("<li class = 'col-xs-4' id = 'requestSticky'>" +
    			"<a href='#' class='thumbnail' id='sticky" + request+"'>" +
-      		"<img src= 'stickynote.png'>" +
+      		"<img src= 'stickynote.png' id = 'stickyImage'>" +
       		"<div class = 'requestedItem'>" +
       			"<span id = 'delete"+request+"' style = 'margin-left:-7px' > </span> <br>" +
-      			"<h4 id = '"+request+"text'>" + requestName + " </h4>" + 
+      			"<h4 style = 'margin=left: 15px'id = '"+request+"text'>" + requestName + " </h4>" + 
       			"<div class = 'btn-toolbar'>" + 
       					"<div class = 'btn-group' id ='buttons'>"+
       						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
@@ -127,7 +168,7 @@ $(document).ready(function() {
       		$("#numDisliked" + request).text(newNum);
      	});
      	if (hTeam) {
-     		$('#delete'+request).append("<button class = 'btn btn-sm' style='background-color:transparent' id = 'deleted" + request+"'> <span class = 'glyphicon glyphicon-remove'></span> </button>");
+     		$('#delete'+request).append("<button  class = 'btn btn-sm' style='background-color:transparent; margin-left:-7px' id = 'deleted" + request+"'> <span class = 'glyphicon glyphicon-remove'></span> </button>");
 			$('#deleted'+request).click(function(evt){
 				$(this).parents('li').remove();	
 			});
@@ -191,51 +232,7 @@ $(document).ready(function() {
   			
   		<!-- start off with some stickies on the page --> 
   		<!--<div class= 'col-xs-4' > -->
-  		<ul class="thumbnails" id = "stickies">
-  		<li class = 'col-xs-4'>
-   			<a href='#' class='thumbnail' id = 'stickystrawberries'>
-   			<img src= 'stickynote.png'>
-    		<div class = 'requestedItem'>
-				<span id = 'deletestrawberries' style = "margin-left:-7px"> </span>
-				<br><h4 id = 'strawberriestext'> strawberries </h4>
-				<div class = 'btn-toolbar'>
-      				<div class = 'btn-group' id ='buttons'>
-    					<span class='badge-info' id = 'likedstrawberries'> <span class='glyphicon glyphicon-thumbs-up'>
-      			 		</span> </span>
- 						<span class='badge-info' id = 'numLikedstrawberries'>3</span>
- 					 </div>
-				<div class = 'btn-group'>
- 					<span class='badge-info' id = 'dislikedstrawberries'> <span class='glyphicon glyphicon-thumbs-down'>
- 					  </span> </span>
- 					<span class='badge-info' id ='numDislikedstrawberries'>0</span> </div> 
-      			</div> 
-			</div> 
-			</a>
-		</li>
-      	<!--</div> -->
-      	
-      	<!--<div class= 'col-xs-4' >-->
-      	<li class = 'col-xs-4'>
-   			<a href='#' class='thumbnail' id = 'stickypitachips'>
-   			<img src= 'stickynote.png'>
-    		<div class = 'requestedItem'>
-				<span id = 'deletepitachips' style = "margin-left:-7px"> </span> <br>
-				<h4 id = 'pitachipstext'> pita chips </h4>
-				<div class = 'btn-toolbar'>
-      				<div class = 'btn-group' id ='buttons'>
-    					<span class='badge-info' id = 'likedpitachips'> <span class='glyphicon glyphicon-thumbs-up'>
-      			 		</span> </span>
- 						<span class='badge-info' id = 'numLikedpitachips'>5</span>
- 					 </div>
-				<div class = 'btn-group'>
- 					<span class='badge-info' id = 'dislikedpitachips'> <span class='glyphicon glyphicon-thumbs-down'>
- 					  </span> </span>
- 					<span class='badge-info' id ='numDislikedpitachips'>1</span> </div> 
-      			</div> 
-			</div> 
-			</a>
-      	<!--</div> -->
-      	</li>
+  		<ul class="thumbnails" id = "stickies" >
       	</ul>
       	
 	</div>
