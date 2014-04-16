@@ -36,6 +36,15 @@ $(document).ready(function() {
     }
   });
 
+  $("#click-image-left").mouseenter(function(){
+    console.log("here mouse enter");
+    document.getElementById("chef-title").style.background="#43BFE8";
+  });
+
+  $('#click-image-left').mouseleave(function(){
+    document.getElementById("chef-title").style.background="white";
+  });
+
   $("#click-image-middle").click(function(evt){
     if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(67, 191, 232)"){
       document.getElementById("house-manager-title").style.background="white";
@@ -87,7 +96,7 @@ function clearContents(element) {
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand font" href="homepage.html" style = "font-size:25px;"> Serve Us </a> 
+    <a class="navbar-brand font" href="index.html" style = "font-size:25px;"> ServeUs </a> 
   </div>
   <div class="collapse navbar-collapse" id="navigation">
    <ul class="nav navbar-nav nav-tabs">
@@ -112,7 +121,7 @@ function clearContents(element) {
       <!--<button type="button" id="house-team-btn" -->
       <h3 id = "chef-title"> Chef Lisa</h3>
       <p><a href="#" class="btn btn-default" role="send" data-toggle="buttons">
-        <input type="image" id="click-image-left" class = "image" src = "happy_girl.png" alt = "Chef picture" width="150" height="150">
+        <input type="image" id="click-image-left" class = "image img-circle" src = "happy_girl.png" alt = "Chef picture" width="150" height="150">
       </a></p>
     </div>
   </div>
