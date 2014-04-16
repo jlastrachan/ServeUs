@@ -1,6 +1,10 @@
 .navbar-default .navbar-brand {
     color: #43BFE8;
 }
+
+body {
+	font-family: Georgia;
+}
 #corkboard {
 	background-image: url("corkboard.png");
 }
@@ -332,9 +336,11 @@ textarea{
 .menu_text {
 	position: absolute;
 	top: -5px;
-	left: 5px;
-	width: 100%;
+	left: 20px;
+	width: 200px;
 	color: #43BFE8;
+	margin-left: auto;
+	margin-right: auto;
 
 }
 
