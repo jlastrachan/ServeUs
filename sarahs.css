@@ -110,4 +110,13 @@
 #infoSection {	
 	background-color:  #FFFFA3;
 	color: #478595;
+	//color: #19758D;
+}
+
+.font{
+	font-family: "Georgia", Garamound, serif;
+}
+
+.font{
+	font-size: 18px;
 }
