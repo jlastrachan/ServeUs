@@ -4,14 +4,11 @@
   
   stuff to do:
   
-  requests page:
   * fix layout/sizing stuff
   * save data -> refreshing doesn't clear it all
-  * edit/remove functionality for the person in charge
-  overall:
+  * fix the way person in charge can edit stuff [depending on login]
+  * fix linking
   * sign in
-  * homepage
-  * link to stuff
   
 -->	
 <html>
@@ -29,7 +26,8 @@
 <!-- Load any supplemental Javascript libraries here -->
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+<!--<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script> -->
 <script type="text/javascript">
 
 
@@ -73,6 +71,17 @@ $(document).ready(function() {
 		$('#requestInfo').remove();
 	});
 	
+	$('#modalLogin').click(function(evt){
+		console.log("logged in!");
+		if(($('#modalusername').val()=="" )|| ($('#modalpassword').val()=="")){
+			console.log("error signing in");
+			//$('#failedlogin').alert();
+		}
+		else {
+		console.log("logged you in!");	
+		}
+		// do something?!
+	});
 });
 
 </script>
@@ -119,13 +128,40 @@ $(document).ready(function() {
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
 	  		<p style ='color:#777;' >ServeUs is a tool for fraternities and sororities to order snack foods and plan meals more efficiently. Blahblahblah I'm bored. </p>
-  			<p>  <a class="btn btn-info btn-lg text-center" role="button">Login </a> <a class="btn btn-lg" role="button" > Sign Up</a>  </p>
+  			<p>  <a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" > Sign Up</a>  </p>
 		</div>
 	</div>
- 	
+	
+	<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			 <div class="modal-header">
+      				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       				 <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+     			 </div>
+      			<div class="modal-body">
+       				 <form class="form-inline" role="form" id = "signIn">
+  						<div class="form-group">
+   				 			<input type="email" class="form-control" id="modalusername" placeholder="Username">
+		  				</div>
+  						<div class="form-group">
+   						 	<input type="password" class="form-control" id="modalpassword" placeholder="Password">
+		  				</div>
+					</form>
+      			</div>
+     			<div class="modal-footer">
+	    	    	<button type="submit" class="btn btn-sm" id = "modalLogin" data-dismiss="modal"> Login </button>
+    	    	</div>
+    	    </div>
+    	</div>
+    	
+    	<!-- <div class="alert alert-danger" id ="failedlogin"> <h4> Could not log you in </h4> </div> -->
+		<br>
+    	
+	</div>
+	
 	<div class="container" id="stickies">
 		<br>
-		
   		<div class= 'col-xs-4' id = 'requestSticky'>
   			<a href='requests.html#' class='thumbnail'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
