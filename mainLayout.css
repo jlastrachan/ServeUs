@@ -64,6 +64,8 @@ table{
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 	font-family: "Georgia", Garamound, serif;
 }
 
@@ -77,6 +79,8 @@ table{
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 	font-family: "Georgia", Garamound, serif;
 }
 
@@ -90,6 +94,8 @@ table{
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 	font-family: "Georgia", Garamound, serif;
 }
 .row{
@@ -101,63 +107,29 @@ table{
 	margin-bottom: 10px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 }
-
-/*
-.caption{
-	position: absolute;
-	width: 300px;
-	height: 75px;
-}*/
-/*
-#long_sticky_img{
-	background-image: url('long_sticky.png');
-	background-repeat:no-repeat;
-	background-position: center bottom;
-	position: absolute;
-	left: 0%;
-	top: 0;
-	width = 600px; 
-	height = 200px;
-}*/
-
-/*form {
-	position: absolute; 
-	left: 1200px;
-	display: inline-block;
-	z-index: 10;
-	}*/
-
-/*
-form {
-	/*position: absolute;
-
-	background: url('long_sticky.png') no-repeat 0 0;
-
-	border-spacing: 500px;
-	width: 800px;
-	margin: 10px auto;
-	margin-bottom: 40px;
-}*/
 
 #sticky_container{
 	position: relative;
     top: 60%;
-    left: 30%;
+    left: 29%;
     margin-top: 10px;
-
 }
 
 .btn-default{
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 	margin-top: 10px;
 }
 
 #btnSubmit{
 	position: absolute;
 	top: 60%;
-	left: 35%
+	left: 25%
 }
 
 .font{
@@ -189,6 +161,8 @@ form {
 	border-color: gray;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 	/*color: #707070;*/
 }
 
@@ -223,6 +197,8 @@ form {
     border-radius: 7px;
     -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
 }
 
 .glowing-border:focus { 
@@ -238,54 +214,6 @@ form {
     box-shadow: 0 0 10px #9ecaed;
     
 }
-/*
-.form-control{
-	width: 500px;
-	height: 150px;
-}
-*/
-
-/*
-.form-group{
-	background-color:#FFFF66; 
-	width:500px; 
-	height:70px"
-	border: 1px solid #000000;
-}*/
-
-/*
-textarea{
-	background-color:#FFFF66;
-	border: 1px solid #000000; 
-	z-index: 100;
-}
-
-.circular {
-	width: 10em; 
-	height: 10em;
-	-webkit-border-radius: 5em; 
-	-moz-border-radius: 5em;
-	text-align: center; 
-	margin-top: 4.5em;
-    background:red;
-}
-
-.circular1 {
-	display: block;
-    width: 140px;
-    height: 140px;
-    background: #E6E7ED;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    background-image: url('house_manager.jpg');
-    background-position:50% 50%;
-    background-repeat:no-repeat; 
-    text-align: center; 
-}
-
-.circular1 img{
-	margin-top: 7px;
-}*/
 
 .requestedItem {
 	color: #43BFE8;
@@ -311,18 +239,22 @@ textarea{
 }
 
 .day {
-	display: inline-block;
-	padding-left: 50px;
+	/*display: inline-block;*/
+	float: left;
 	position: relative;
-	width: 19%;
+	width: 20%;
 	height: 250px;
+
 }
 
 .sticky {
-	position: absolute;
+	/*position: absolute;
 	left: 0;
-	top: 0;
+	top: 0;*/
 	border: 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .menu_text {
@@ -331,18 +263,26 @@ textarea{
 	left: 5px;
 	width: 100%;
 	color: #43BFE8;
+
 }
 
-form {
-	/*background-color: #fff;*/
-	/*padding: 20px;*/
+
+.menu_row {
+	padding-top: 20px;
+	display: flex;
+	/*text-align: center;*/
+
 }
+
+/*#suggest_box {
+	background-color: rgb(248, 248, 248);
+}*/
 
 h2 {
 	color: #43BFE8;
-	background-color: #fff;
+	background-color: rgb(248, 248, 248);
 	padding: 10px;
 	border-radius: 5px;
-	display: block;
-	position: relative;
+	/*display: block;*/
+	/*position: relative;*/
 }
