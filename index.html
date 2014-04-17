@@ -8,7 +8,6 @@
   * save data -> refreshing doesn't clear it all
   * fix the way person in charge can edit stuff [depending on login]
   * fix linking
-  
   * sign up...
   
 -->	
@@ -45,11 +44,11 @@ $(document).ready(function() {
 		$('btnSubmit').remove();
 
 		$('#signIn').remove();
-		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #19758D'> Welcome, " + user + "! </span> </h4> </form> <li>");
+		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #478595'> Welcome, " + user + "! </span> </h4> </form> <li>");
 	});
 	
 	$('#contactSticky').mouseenter(function(){
-		$(this).prepend("<div class = 'text-center' id = 'contactInfo'> contact members of the house team </div>");
+		$(this).prepend("<div id = 'contactInfo'> contact members of the house team </div>");
 	});
 	
 	$('#contactSticky').mouseleave (function(){
@@ -57,7 +56,7 @@ $(document).ready(function() {
 	});
 	
 	$('#menuSticky').mouseenter(function(){
-		$(this).prepend("<div class = 'text-center' id = 'menuInfo'> view this week's menu and comment on  <br> recent dinners </div>");
+		$(this).prepend("<div id = 'menuInfo'> view this week's menu and comment on recent dinners </div>");
 	});
 	
 	$('#menuSticky').mouseleave (function(){
@@ -65,18 +64,28 @@ $(document).ready(function() {
 	});
 	
 	$('#requestSticky').mouseenter(function(){
-		$(this).prepend("<div class = 'text-center' id = 'requestInfo'> view current food requests and add your own </div>");
+		$(this).prepend("<div id = 'requestInfo'> view current food requests and add your own </div>");
 	});
 	
 	$('#requestSticky').mouseleave (function(){
 		$('#requestInfo').remove();
 	});
 	
+	$('#modalusername').click(function(evt){
+		$('#failedlogin').remove();
+	});
+	
+	$('#modalpassword').click(function(evt){
+		$('#failedlogin').remove();
+	});
+	
+	// $('failedlogin').remove();
+	
 	$('#modalLogin').click(function(evt){
+		$('failedlogin').remove();
 		console.log("logged in!");
 		if(($('#modalusername').val()=="" )|| ($('#modalpassword').val()=="")){
-			console.log("error signing in");
-			
+			$('#modalbody').append('<br> <div class="alert alert-danger" id ="failedlogin"> <h4> Could not log you in </h4> </div>');
 		}
 		else {
 			var user = $('#modalusername').val();	
@@ -88,7 +97,7 @@ $(document).ready(function() {
 			$('btnSubmit').remove();
 
 			$('#signIn').remove();
-			$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info'> Welcome, " + user + "! </span> </h4> </form> <li>");
+			$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #19758D;'> Welcome, " + user + "! </span> </h4> </form> <li>");
 		}
 		// do something?!
 	});
@@ -108,14 +117,14 @@ $(document).ready(function() {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> ServeUs </a> 
+      <a class="navbar-brand" href="#" style="font-size:25px;"> ServeUs </a> 
     </div>
     <div class="collapse navbar-collapse" id="navigation">
-    	<ul class="nav navbar-nav">
+    	<ul class="nav navbar-nav nav-tabs">
     	
-      	<li> <a href="requests.html#"> Requests </a></li>
- 	  	<li><a href="menu.html#"> Menu </a></li>
-    	<li><a href="contact.html#"> Contact </a></li>
+      	<li> <a href="requests.html#" class = "font font-size"> Requests </a></li>
+ 	  	<li><a href="menu.html#" class = "font font-size"> Menu </a></li>
+    	<li><a href="contact.html#" class = "font font-size"> Contact </a></li>
     	
     	</ul>
  		<ul class="nav navbar-nav navbar-right" id = "login">
@@ -149,7 +158,7 @@ $(document).ready(function() {
       				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
        				 <h4 class="modal-title" id="myModalLabel">Sign In</h4>
      			 </div>
-      			<div class="modal-body">
+      			<div class="modal-body" id = "modalbody">
        				 <form class="form-inline" role="form" id = "signIn">
   						<div class="form-group">
    				 			<input type="email" class="form-control" id="modalusername" placeholder="Username">
@@ -165,12 +174,11 @@ $(document).ready(function() {
     	    </div>
     	</div>
     	
-    	<!-- <div class="alert alert-danger" id ="failedlogin"> <h4> Could not log you in </h4> </div> -->
 		<br>
     	
 	</div>
 	
-	<div class="container" id="stickies">
+	<div class="container" c>
 		<br>
   		<div class= 'col-xs-4' id = 'requestSticky'>
   			<a href='requests.html#' class='thumbnail'>

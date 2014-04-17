@@ -1,5 +1,5 @@
 .navbar-default .navbar-brand {
-    color: #19758D;
+    color: #478595;
 }
 #corkboard {
 	background-image: url("corkboard.png");
@@ -24,33 +24,34 @@
 }
 
 #loginbtn {
-	background-color: #19758D;
-	border-color: #19758D; 
+	background-color: #478595;
+	border-color: #478595; 
 }
 
 #signupbtn {
-	color: #19758D;
+	color: #478595;
 }
 
 #liked {
-	color: #19758D;
+	color: #478595;
 }
 
 #disliked {
-	color: #19758D;
+	color: #478595;
 }
 
 .buttons {
-	color: #19758D;
+	color: #478595;
 }
 
 .badge {
 	color: white;
-	background-color: #19758D;
+	background-color: #478595;
 }
 
+
 #contact {
-	color: #19758D;
+	color: #478595;
 	position: absolute;
 	top: 5px;
 	margin-right: 50px;
@@ -58,7 +59,7 @@
 }
 
 #contactInfo {
-	color: #19758D;
+	color: #478595;
 	position: absolute;
 	z-index: 2;
 	top: 100px;
@@ -67,7 +68,7 @@
 }
 
 #request {
-	color: #19758D;
+	color: #478595;
 	position: absolute;
 	top: 5px;
 	margin-right: 50px;
@@ -75,7 +76,7 @@
 }
 
 #requestInfo {
-	color: #19758D;
+	color: #478595;
 	position: absolute;
 	z-index: 2;
 	top: 100px;
@@ -85,7 +86,7 @@
 
 
 #menu {
-	color: #19758D;
+	color: #478595;
 	position: absolute;
 	top: 5px;
 	margin-right: 50px;
@@ -93,7 +94,7 @@
 }
 
 #menuInfo {
-	color: #19758D;
+	color: #478595;
 	position: absolute;
 	z-index: 2;
 	top: 100px;
@@ -108,5 +109,14 @@
 
 #infoSection {	
 	background-color:  #FFFFA3;
-	color: #19758D;
+	color: #478595;
+	//color: #19758D;
+}
+
+.font{
+	font-family: "Georgia", Garamound, serif;
+}
+
+.font{
+	font-size: 18px;
 }

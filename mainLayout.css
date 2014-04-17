@@ -64,7 +64,8 @@ table{
 	left: 100px;
 	margin-left: 19%;
 	background: white; 
-	border: black 1.5px solid;
+	color: #19758D;
+	border: #19758D 2px solid;
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -79,7 +80,8 @@ table{
 	left: 100px;
 	margin-left: 18%;
 	background: white; 
-	border: black 1.5px solid;
+	color: #19758D;
+	border: #19758D 2px solid;
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -94,7 +96,8 @@ table{
 	left: 100px;
 	margin-left: 18%;
 	background: white; 
-	border: black 1.5px solid;
+	color: #19758D;
+	border: #19758D 2px solid;
 	text-align: center;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -162,7 +165,8 @@ table{
 	width: 500px;
 	background-color:#FFFF77;
 	font-family: "Georgia", Garamound, serif;
-	border-color: gray;
+	color: #19758D;
+	border: #19758D 1.5px solid;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 20px;
