@@ -247,7 +247,6 @@ table{
 }
 
 .day {
-	/*display: inline-block;*/
 	float: left;
 	position: relative;
 	width: 20%;
@@ -255,9 +254,6 @@ table{
 }
 
 .sticky {
-	/*position: absolute;*/
-	/*left: 0;
-	top: 0;*/
 	border: 0;
 	display: block;
 	margin-right: auto;
@@ -274,6 +270,10 @@ table{
 	margin-right: auto;
 }
 
+#switch_house_team {
+	margin: 25;
+}
+
 .menu_row {
 	padding-top: 20px;
 	display: flex;
@@ -284,6 +284,4 @@ h2 {
 	background-color: #f8f8f8;
 	padding: 10px;
 	border-radius: 5px;
-	/*display: block;
-	position: relative;*/
 }
