@@ -1,5 +1,5 @@
 .navbar-default .navbar-brand {
-    color: #43BFE8;
+    color: #478595;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 
 .buttons {
-	color: #43BFE8;
+	color: #19758D;
 }
 
 #space {
@@ -227,14 +227,14 @@ table{
 }
 
 #liked {
-	color: #43BFE8;	
+	color: #478595;	
 }
 #disliked {
-	color: #43BFE8;	
+	color: #478595;	
 }
 
 .buttons {
-	color: #43BFE8;
+	color: #478595;
 }
 
 #logo {
@@ -243,18 +243,21 @@ table{
 }
 
 .day {
-	display: inline-block;
-	padding-left: 50px;
+	/*display: inline-block;*/
+	float: left;
 	position: relative;
-	width: 19%;
+	width: 20%;
 	height: 250px;
 }
 
 .sticky {
-	position: absolute;
-	left: 0;
-	top: 0;
+	/*position: absolute;*/
+	/*left: 0;
+	top: 0;*/
 	border: 0;
+	display: block;
+	margin-right: auto;
+	margin-left:auto;
 }
 
 .menu_text {
@@ -262,19 +265,21 @@ table{
 	top: -5px;
 	left: 20px;
 	width: 200px;
-	color: #43BFE8;
+	color: #478595;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-form {
-	/*background-color: #fff;*/
-	/*padding: 20px;*/
+.menu_row {
+	padding-top: 20px;
+	display: flex;
 }
 
 h2 {
-	color: #43BFE8;
-	background-color: #fff;
+	color: #478595;
+	background-color: #f8f8f8;
 	padding: 10px;
 	border-radius: 5px;
-	display: block;
-	position: relative;
+	/*display: block;
+	position: relative;*/
 }
