@@ -21,6 +21,7 @@
 	position: absolute;
 	top: 5px;
 	left: 15px;
+	font-family: 'Shadows Into Light Two', cursive;
 }
 
 #loginbtn {
@@ -29,7 +30,8 @@
 }
 
 #signupbtn {
-	color: #478595;
+	color: 
+	;
 }
 
 #liked {
