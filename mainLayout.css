@@ -1,5 +1,5 @@
 .navbar-default .navbar-brand {
-    color: #478595;
+    color: #43BFE8;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 
 .buttons {
-	color: #19758D;
+	color: #43BFE8;
 }
 
 #space {
@@ -43,13 +43,18 @@ body {
 	width: 300px;
 }
 
+/*
 th,td{
 	padding: 10px;
+}*/
+
+.row{
+	text-align: center;
 }
 
 table{
-	border-spacing: 500px;
-	width: 800px;
+	/*border-spacing: 300px;
+	width: 800px;*/
 	margin: 10px auto;
 	margin-bottom: 40px;
 }
@@ -59,64 +64,54 @@ table{
 }
 
 #chef-title{
-	padding: 10px; 
-	width: 63%;
-	left: 100px;
-	margin-left: 19%;
+	padding: 8px; 
+	width: 105%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
 	font-family: "Georgia", Garamound, serif;
+	font-size: 18px;
 }
 
 #house-manager-title{
-	padding: 10px; 
-	width: 63%;
-	left: 100px;
-	margin-left: 18%;
+	padding: 8px; 
+	width: 105%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
 	font-family: "Georgia", Garamound, serif;
+	font-size: 18px;
 }
 
 #food-manager-title{
-	padding: 10px; 
-	width: 63%;
-	left: 100px;
-	margin-left: 18%;
+	padding: 8px; 
+	width: 105%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
 	font-family: "Georgia", Garamound, serif;
+	font-size: 18px;
 }
 .row{
 	margin-bottom: 10px;
+	margin-left: 20%;
 }
 
+.btn{
+	padding: 0px;
+}
+
+.btn-img{
+	margin-left: 0%;
+}
+/*
 .image{
 	margin-top: 10px;
 	margin-bottom: 10px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
-}
+}*/
 
 #sticky_container{
 	position: relative;
@@ -126,19 +121,27 @@ table{
 }
 
 .btn-default{
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
 	margin-top: 10px;
 }
 
 #btnSubmit{
-	position: absolute;
+	position: 50%;
 	top: 60%;
 	left: 25%
+	
 }
 
+.submit{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 20px;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 18px;
+	padding: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
 .font{
 	font-family: "Georgia", Garamound, serif;
 }
@@ -155,22 +158,24 @@ table{
 .long_sticky_img img{
 	display: block;
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .long_sticky_img textarea{
 	position: absolute;
-	top: 12%;
-	left: 8%;
-	height: 100px;
-	width: 500px;
-	background-color:#FFFF77;
+	top: 8%;
+	left: 2%;
+	height: 175px;
+	width: 575px;
+	background-color: transparent;
+	border-color: transparent;
 	font-family: "Georgia", Garamound, serif;
-	color: #19758D;
-	border: #19758D 1.5px solid;
+	color: #FFFFFF;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 20px;
 	border-radius: 10px;
+
 	/*color: #707070;*/
 }
 
@@ -193,14 +198,6 @@ table{
 }
 
 .glowing-border {
-
-	/*
-    margin: auto;
-    background-color: #1f5afe;
-    -webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	*/
     border: 7px solid #00FF66;
     border-radius: 7px;
     -webkit-border-radius: 10px;
@@ -210,13 +207,6 @@ table{
 }
 
 .glowing-border:focus { 
-	/*
-	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  	padding: 3px 0px 3px 3px;
-  	margin: 5px 1px 3px 0px;
-  	border: 1px solid rgba(81, 203, 238, 1);
-	*/
-	/*box-shadow: 0 0 5px rgba(81, 203, 238, 1);*/
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
@@ -231,14 +221,14 @@ table{
 }
 
 #liked {
-	color: #478595;	
+	color: #43BFE8;	
 }
 #disliked {
-	color: #478595;	
+	color: #43BFE8;	
 }
 
 .buttons {
-	color: #478595;
+	color: #43BFE8;
 }
 
 #logo {
@@ -247,17 +237,18 @@ table{
 }
 
 .day {
-	float: left;
+	display: inline-block;
+	padding-left: 50px;
 	position: relative;
-	width: 20%;
+	width: 19%;
 	height: 250px;
 }
 
 .sticky {
+	position: absolute;
+	left: 0;
+	top: 0;
 	border: 0;
-	display: block;
-	margin-right: auto;
-	margin-left:auto;
 }
 
 .menu_text {
@@ -265,28 +256,15 @@ table{
 	top: -5px;
 	left: 20px;
 	width: 200px;
-	color: #478595;
-	margin-left: auto;
-	margin-right: auto;
-	font-family: 'Shadows Into Light Two', cursive;
-	font-size: 18;
-}
-
-#switch_house_team {
-	margin: 25;
-}
-
-.menu_row {
-	padding-top: 20px;
-	display: flex;
-}
-h4 {
-	font-size: 22;
+	color: #43BFE8;
 }
 
 h2 {
-	color: #478595;
-	background-color: #f8f8f8;
+	color: #43BFE8;
+	background-color: #fff;
 	padding: 10px;
 	border-radius: 5px;
+	display: block;
+	position: relative;
 }
+
