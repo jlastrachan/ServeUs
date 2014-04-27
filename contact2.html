@@ -5,7 +5,7 @@
   Contact Webpage
   Author: Eann Tuan
   
--->	
+--> 
 <html>
 
 <head>
@@ -140,9 +140,9 @@ function clearContents(element) {
 
 </head>
 
-<body id = corkboard>	
+<body id = corkboard> 
 <nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
+  <div class="container-fluid">
    <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -168,9 +168,10 @@ function clearContents(element) {
 
 </div>
 
-<div class = "row">
+<!--div class = "row">
 
-  <div class = "col-sm-5 col-md-3 ui-helper-center tiles">
+  <div class = "col-sm-5 col-md-3 ui-helper-center tiles"-->
+   <li class = 'col-xs-4'> 
     <div class = "caption" style="width=300px; height=50px">
       <!--<button type="button" id="house-team-btn" -->
       <button type="button" class="btn btn-default" id = "chef-title">Chef Lisa</button>
@@ -179,10 +180,21 @@ function clearContents(element) {
         <input type="image" id="click-image-left" class = "image" src = "http://i783.photobucket.com/albums/yy116/eann_tuan/dc5f7367-dc59-427a-9e43-871ad4369c29_zpsca79efd7.jpg" alt = "Chef picture" width="250" height="250">
       </a></p>
     </div>
-  </div>
+  </li>
 
-  <div class = "col-sm-5 col-md-3 ui-helper-center tiles">
+  <!-- <div class = "col-sm-5 col-md-3 ui-helper-center tiles">
     <div class = "caption">
+      <button type="button" class="btn btn-default" id = "house-manager-title">House Manager Kim</button>
+      <!--<h3 id="house-manager-title"> House Manager Emily</h3>->
+      <p><a href="#" class="btn btn-default" role="send" data-toggle="buttons">
+        <input type ="image" id="click-image-middle" class = "image" src = "http://i783.photobucket.com/albums/yy116/eann_tuan/24b52871-9a88-46f2-9236-073bd48cd92a_zpse2e2d028.jpg" alt = "House Manager picture" width="250" height="250">
+      </a></p>
+      <!--<p><a href="#" class="btn btn-default" role="send">Send message</a></p>->
+    </div>
+  </div>
+-->
+  <li class = 'col-xs-4'>
+     <div class = "caption">
       <button type="button" class="btn btn-default" id = "house-manager-title">House Manager Kim</button>
       <!--<h3 id="house-manager-title"> House Manager Emily</h3>-->
       <p><a href="#" class="btn btn-default" role="send" data-toggle="buttons">
@@ -190,9 +202,9 @@ function clearContents(element) {
       </a></p>
       <!--<p><a href="#" class="btn btn-default" role="send">Send message</a></p>-->
     </div>
-  </div>
-
-  <div class = "col-sm-5 col-md-3 ui-helper-center">
+</li>
+ <!-- <div class = "col-sm-5 col-md-3 ui-helper-center tiles">-->
+ <li class = 'col-xs-4'>
     <div class = "caption">
       <button type="button" class="btn btn-default" id = "food-manager-title">Food Manager Lisa</button>
       <!--<h3 id = "food-manager-title"> Food Manager Kim</h3>-->
@@ -202,7 +214,7 @@ function clearContents(element) {
       <!--<p><a href="#" class="btn btn-default" role="send">Send message</a></p>-->
     </div>
   </div>
-</div>
+</li>
 
 <div id = "sticky_container" class="ui-helper-center">
   <div class = "long_sticky_img">   
