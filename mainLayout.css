@@ -65,7 +65,7 @@ table{
 
 #chef-title{
 	padding: 8px; 
-	width: 105%;
+	width: 100%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
@@ -76,7 +76,7 @@ table{
 
 #house-manager-title{
 	padding: 8px; 
-	width: 105%;
+	width: 100%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
@@ -87,7 +87,7 @@ table{
 
 #food-manager-title{
 	padding: 8px; 
-	width: 105%;
+	width: 100%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
