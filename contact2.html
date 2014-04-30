@@ -31,50 +31,28 @@ $(document).ready(function() {
   var hasBeenClickedLeft = false;
   var hasBeenClickedMiddle = false;
   var hasBeenClickedRight = false;
+  var selected = false;
 
-	$('#text').data("Type Comment Here");
+  $('#text').data("Type Comment Here");
 
-  $("#click-image-left").click(function(evt){
-    console.log("click image in here")
-    console.log(document.getElementById("chef-title").style.borderColor);
+
+  $("#select-all").click(function(evt){
+    document.getElementById("chef-title").style.backgroundColor="#FFFF99";
+    document.getElementById("house-manager-title").style.background="#FFFF99";
+    document.getElementById("food-manager-title").style.background="#FFFF99";
+
+    /*
     if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
       document.getElementById("chef-title").style.background="white";
       console.log(document.getElementById("chef-title").style.borderColor);
-      hasBeenClickedLeft = false;
     }
     else{
       console.log("Here before change in for loop");
       document.getElementById("chef-title").style.backgroundColor="#FFFF99";
       console.log("here: " + document.getElementById("chef-title").style.borderColor);
-      hasBeenClickedLeft = true;
     }
-    console.log("left " + hasBeenClickedLeft);
-  });
+    
 
-  $("#chef-title").click(function(evt){
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      hasBeenClickedLeft = false;
-    }
-    else{
-      document.getElementById("chef-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
-    }
-    console.log("left chef title" + hasBeenClickedLeft);
-  });
-
-  $("#click-image-middle").click(function(evt){
-    console.log("border color: " + document.getElementById("house-manager-title").style.backgroundColor + "here");
-    if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      console.log(document.getElementById("house-manager-title").style.borderColor);
-      document.getElementById("house-manager-title").style.backgroundColor="";
-    }
-    else{
-      document.getElementById("house-manager-title").style.backgroundColor="#FFFF99";
-    }
-  });
-
-  $("#house-manager-title").click(function(evt){
     if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
       document.getElementById("house-manager-title").style.background="white";
       hasBeenClickedLeft = false;
@@ -83,9 +61,82 @@ $(document).ready(function() {
       document.getElementById("house-manager-title").style.background="#FFFF99";
       hasBeenClickedLeft = true;
     }
-    console.log("left" + hasBeenClickedLeft);
+
+    if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      document.getElementById("food-manager-title").style.background="white";
+      hasBeenClickedLeft = false;
+    }
+    else{
+      document.getElementById("food-manager-title").style.background="#FFFF99";
+      hasBeenClickedLeft = true;
+    }
+*/
+/*
+    if(selected==false){
+      document.getElementById("select-all").innerText = 'Unselect All';
+      selected=true;
+    }
+    else{
+      document.getElementById("select-all").innerText = 'Select All';
+      selected=false;
+    }
+    
+*/
   });
 
+$("#click-image-left").click(function(evt){
+  console.log("click image in here")
+  console.log(document.getElementById("chef-title").style.borderColor);
+  if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
+    document.getElementById("chef-title").style.background="white";
+    console.log(document.getElementById("chef-title").style.borderColor);
+    hasBeenClickedLeft = false;
+  }
+  else{
+    console.log("Here before change in for loop");
+    document.getElementById("chef-title").style.backgroundColor="#FFFF99";
+    console.log("here: " + document.getElementById("chef-title").style.borderColor);
+    hasBeenClickedLeft = true;
+  }
+  console.log("left " + hasBeenClickedLeft);
+});
+
+$("#chef-title").click(function(evt){
+  if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
+    document.getElementById("chef-title").style.background="white";
+    hasBeenClickedLeft = false;
+  }
+  else{
+    document.getElementById("chef-title").style.background="#FFFF99";
+    hasBeenClickedLeft = true;
+  }
+  console.log("left chef title" + hasBeenClickedLeft);
+});
+
+$("#click-image-middle").click(function(evt){
+  console.log("border color: " + document.getElementById("house-manager-title").style.backgroundColor + "here");
+  if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+    console.log(document.getElementById("house-manager-title").style.borderColor);
+    document.getElementById("house-manager-title").style.backgroundColor="";
+  }
+  else{
+    document.getElementById("house-manager-title").style.backgroundColor="#FFFF99";
+  }
+});
+
+$("#house-manager-title").click(function(evt){
+  if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+    document.getElementById("house-manager-title").style.background="white";
+    hasBeenClickedLeft = false;
+  }
+  else{
+    document.getElementById("house-manager-title").style.background="#FFFF99";
+    hasBeenClickedLeft = true;
+  }
+  console.log("left" + hasBeenClickedLeft);
+});
+
+/*
   $("#click-image-left").click(function(evt){
     if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
       document.getElementById("chef-title").style.background="white";
@@ -97,40 +148,40 @@ $(document).ready(function() {
     }
     console.log("left" + hasBeenClickedLeft);
   });
-
-  $("#click-image-right").click(function(evt){
-   if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("food-manager-title").style.background="white";
-    }
-    else{
-      document.getElementById("food-manager-title").style.background="#FFFF99";
-    }
-  });
-
-  $("#food-manager-title").click(function(evt){
-    if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("food-manager-title").style.background="white";
-      hasBeenClickedLeft = false;
-    }
-    else{
-      document.getElementById("food-manager-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
-    }
-    console.log("left" + hasBeenClickedLeft);
-  });
-
-/*
-  $("#btnSubmit").click(function(evt) {
-    console.log("here btn submit: " + document.getElementById("comment-box").value);
-    if(document.getElementById("comment-box").value="Type comment here." || document.getElementById("comment-box").value=""){
-      console.log("here in for loop");
-    }
-  });
 */
-  /*page reload on 'close' button click for submit modal*/
-  $('#myModal').on('hidden.bs.modal', function () {
-   location.reload();
- })
+$("#click-image-right").click(function(evt){
+ if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+  document.getElementById("food-manager-title").style.background="white";
+}
+else{
+  document.getElementById("food-manager-title").style.background="#FFFF99";
+}
+});
+
+$("#food-manager-title").click(function(evt){
+  if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+    document.getElementById("food-manager-title").style.background="white";
+    hasBeenClickedLeft = false;
+  }
+  else{
+    document.getElementById("food-manager-title").style.background="#FFFF99";
+    hasBeenClickedLeft = true;
+  }
+  console.log("left" + hasBeenClickedLeft);
+});
+
+
+$("#btnSubmit").click(function(evt) {
+  console.log("here btn submit: " + document.getElementById("comment-box").value);
+  if(document.getElementById("comment-box").value="Type comment here." || document.getElementById("comment-box").value=""){
+    console.log("here in for loop");
+  }
+});
+
+/*page reload on 'close' button click for submit modal*/
+$('#myModal').on('hidden.bs.modal', function () {
+ location.reload();
+})
 
 //clears text box upon click
 function clearContents(element) {
@@ -144,7 +195,7 @@ function clearContents(element) {
 
 <body id = corkboard> 
 
-<nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation">
    <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -171,48 +222,52 @@ function clearContents(element) {
 
 <div class="container">
 
- 
-   <div class= 'col-xs-4'>
-      <button type="button" class="btn btn-default" id = "chef-title" >Chef Eann</button>
-      <a href="#" class="btn btn-default btn-img" role="send" data-toggle="buttons" style= "background-color: transparent">
-        <img src= "http://i783.photobucket.com/albums/yy116/eann_tuan/dc5f7367-dc59-427a-9e43-871ad4369c29_zpsca79efd7.jpg" id = "click-image-left" width='100%'>
-      </a>
-    </div>
 
-  <div class = 'col-xs-4'>
-      <button type="button" class="btn btn-default" id = "house-manager-title">House Manager Jenny</button>
-      <a href="#" class="btn btn-default" role="send" data-toggle="buttons" style= "background-color: transparent">
-        <img  id="click-image-middle" src = "http://i783.photobucket.com/albums/yy116/eann_tuan/24b52871-9a88-46f2-9236-073bd48cd92a_zpse2e2d028.jpg" alt = "House Manager picture" width = '100%' >
-      </a>
-	</div>
- <!-- <div class = "col-sm-5 col-md-3 ui-helper-center tiles">-->
- <div class = 'col-xs-4'>
-    <!-- <div class = "caption"> -->
-      <button type="button" class="btn btn-default" id = "food-manager-title">Food Manager Sarah</button>
-      <!--<h3 id = "food-manager-title"> Food Manager Kim</h3>-->
-      <a href="#" class="btn btn-default" role="send" data-toggle="buttons" style= "background-color: transparent">
-        <img id="click-image-right" class = "image" src = "http://i783.photobucket.com/albums/yy116/eann_tuan/fa02f86e-45c1-4fd3-85f6-363c87730b5d_zpsf536c591.jpg" alt = "Food Manager picture" width = '100%' >
-      </a>
-      <!--<p><a href="#" class="btn btn-default" role="send">Send message</a></p>-->
-    <!--</div>-->
+ <div class= 'col-xs-4'>
+  <button type="button" class="btn btn-default" id = "chef-title" >Chef Eann</button>
+  <a href="#" class="btn btn-default btn-img" role="send" data-toggle="buttons" style= "background-color: transparent">
+    <img src= "http://i783.photobucket.com/albums/yy116/eann_tuan/dc5f7367-dc59-427a-9e43-871ad4369c29_zpsca79efd7.jpg" id = "click-image-left" width='100%'>
+  </a>
+</div>
+
+<div class = 'col-xs-4'>
+  <button type="button" class="btn btn-default" id = "house-manager-title">House Manager Jenny</button>
+  <a href="#" class="btn btn-default" role="send" data-toggle="buttons" style= "background-color: transparent">
+    <img  id="click-image-middle" src = "http://i783.photobucket.com/albums/yy116/eann_tuan/24b52871-9a88-46f2-9236-073bd48cd92a_zpse2e2d028.jpg" alt = "House Manager picture" width = '100%' >
+  </a>
+</div>
+<!-- <div class = "col-sm-5 col-md-3 ui-helper-center tiles">-->
+<div class = 'col-xs-4'>
+  <!-- <div class = "caption"> -->
+  <button type="button" class="btn btn-default" id = "food-manager-title">Food Manager Sarah</button>
+  <!--<h3 id = "food-manager-title"> Food Manager Kim</h3>-->
+  <a href="#" class="btn btn-default" role="send" data-toggle="buttons" style= "background-color: transparent">
+    <img id="click-image-right" class = "image" src = "http://i783.photobucket.com/albums/yy116/eann_tuan/fa02f86e-45c1-4fd3-85f6-363c87730b5d_zpsf536c591.jpg" alt = "Food Manager picture" width = '100%' >
+  </a>
+  <!--<p><a href="#" class="btn btn-default" role="send">Send message</a></p>-->
+  <!--</div>-->
   <!-- </div>-->
 </div>
+
+</div>
+
+<div id = "select-all-container">
+  <button type="button" class="btn btn-default select-all-btn" id = "select-all" style-"left:40%;">Select All</button>
 </div>
 
 
-
- <div id = "sticky_container" class="ui-helper-center">
+<div id = "sticky_container" class="ui-helper-center">
   <div class = "long_sticky_img"> 
-    <img src = "blackboard.png" alt = "Comment Box" width = "100%" height= "200px">
+    <img src = "blackboard.png" alt = "Comment Box" width = "89%" height= "200px">
     <div class = "form">
       <form class="form-inline" role="form">
         <div class="form-group">
-          <textarea class = "image" id="text" name = "text" rows ="5" cols="80" onfocus="this.value='';" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
+          <textarea class = "image" id="text" name = "text" rows ="7" cols="80" onfocus="this.value='';" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:20px;"></textarea>
         </div>
         <br>
         <button <button type = "button" class = "submit" id = "bthSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
-		<br>
-		<br>
+        <br>
+        <br>
         <!--bootstrap modal for submit button-->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
