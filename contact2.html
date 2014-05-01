@@ -28,63 +28,21 @@
 
 $(document).ready(function() {
 
-  document.getElementById("text").value = '';
+	document.getElementById"text").value = '';
+//console.log("value:" + $('comment-box').value);
+ // getElementById("comment-box").value = "";
 
   var hasBeenClickedLeft = false;
   var hasBeenClickedMiddle = false;
   var hasBeenClickedRight = false;
   var selected = false;
+  });
 
-  $('#text').data("Type Comment Here");
-
-
-  $("#select-all").click(function(evt){
+$("#select-all").click(function(evt){
     document.getElementById("chef-title").style.backgroundColor="#FFFF99";
     document.getElementById("house-manager-title").style.background="#FFFF99";
     document.getElementById("food-manager-title").style.background="#FFFF99";
-
-    /*
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      console.log(document.getElementById("chef-title").style.borderColor);
-    }
-    else{
-      console.log("Here before change in for loop");
-      document.getElementById("chef-title").style.backgroundColor="#FFFF99";
-      console.log("here: " + document.getElementById("chef-title").style.borderColor);
-    }
-    
-
-    if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("house-manager-title").style.background="white";
-      hasBeenClickedLeft = false;
-    }
-    else{
-      document.getElementById("house-manager-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
-    }
-
-    if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("food-manager-title").style.background="white";
-      hasBeenClickedLeft = false;
-    }
-    else{
-      document.getElementById("food-manager-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
-    }
-*/
-/*
-    if(selected==false){
-      document.getElementById("select-all").innerText = 'Unselect All';
-      selected=true;
-    }
-    else{
-      document.getElementById("select-all").innerText = 'Select All';
-      selected=false;
-    }
-    
-*/
-  });
+    });
 
 $("#click-image-left").click(function(evt){
   console.log("click image in here")
@@ -138,19 +96,6 @@ $("#house-manager-title").click(function(evt){
   console.log("left" + hasBeenClickedLeft);
 });
 
-/*
-  $("#click-image-left").click(function(evt){
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      hasBeenClickedLeft = false;
-    }
-    else{
-      document.getElementById("chef-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
-    }
-    console.log("left" + hasBeenClickedLeft);
-  });
-*/
 $("#click-image-right").click(function(evt){
  if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
   document.getElementById("food-manager-title").style.background="white";
@@ -172,7 +117,6 @@ $("#food-manager-title").click(function(evt){
   console.log("left" + hasBeenClickedLeft);
 });
 
-<<<<<<< HEAD
   $("#food-manager-title").click(function(evt){
     if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
       document.getElementById("food-manager-title").style.background="white";
@@ -184,45 +128,17 @@ $("#food-manager-title").click(function(evt){
     }
     console.log("left" + hasBeenClickedLeft);
   });
-/*$("#btnSubmit").click(function(evt) {
-	console.log ("submitting");
-	document.getElementById("text").value = '';
-	console.log ("done submitting"); 	
-});
-*/
-
-/*
-  $("#btnSubmit").click(function(evt) {
-    console.log("here btn submit: " + document.getElementById("comment-box").value);
-    if(document.getElementById("comment-box").value="Type comment here." || document.getElementById("comment-box").value=""){
-      console.log("here in for loop");
-    }
-  });
-*/
+  
   /*page reload on 'close' button click for submit modal*/
   $('#myModal').on('hidden.bs.modal', function () {
- //  location.reload();
-   document.getElementById("text").value = '';
- })
-=======
+ 	document.getElementById("comment-box").value = '';
+ });
 
 $("#btnSubmit").click(function(evt) {
   console.log("here btn submit: " + document.getElementById("comment-box").value);
   if(document.getElementById("comment-box").value="Type comment here." || document.getElementById("comment-box").value=""){
     console.log("here in for loop");
   }
-});
-
-/*page reload on 'close' button click for submit modal*/
-$('#myModal').on('hidden.bs.modal', function () {
- location.reload();
-})
->>>>>>> f1541cc55e186f0628dfdee96764e520e71574d2
-
-//clears text box upon click
-function clearContents(element) {
-  element.value = '';
-}
 });
 
 </script>
@@ -284,42 +200,26 @@ function clearContents(element) {
   <!--</div>-->
   <!-- </div>-->
 </div>
-<<<<<<< HEAD
-=======
-
-</div>
->>>>>>> f1541cc55e186f0628dfdee96764e520e71574d2
 
 <div id = "select-all-container">
   <button type="button" class="btn btn-default select-all-btn" id = "select-all" style-"left:40%;">Select All</button>
 </div>
 
 
-<<<<<<< HEAD
+
  <div id = "sticky_container" class = 'col-xs-12' > <!-- class="ui-helper-center" -->
-=======
-<div id = "sticky_container" class="ui-helper-center">
->>>>>>> f1541cc55e186f0628dfdee96764e520e71574d2
   <div class = "long_sticky_img"> 
     <img src = "blackboard.png" alt = "Comment Box" width = "89%" height= "200px">
     <div class = "form">
       <form class="form-inline" role="form">
         <div class="form-group">
-<<<<<<< HEAD
-          <textarea class = "image" id="text" name = "text" rows ="5" cols="80" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
+          <textarea class = "image" rows ="5" cols="80" id="text" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
         </div>
         <br>
-        <button <button type = "button" class = "submit" id = "btnSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
+        <button type = "button" class = "submit" id = "btnSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
 		<br>
 		<br>
-=======
-          <textarea class = "image" id="text" name = "text" rows ="7" cols="80" onfocus="this.value='';" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:20px;"></textarea>
-        </div>
-        <br>
-        <button <button type = "button" class = "submit" id = "bthSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
-        <br>
-        <br>
->>>>>>> f1541cc55e186f0628dfdee96764e520e71574d2
+
         <!--bootstrap modal for submit button-->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">

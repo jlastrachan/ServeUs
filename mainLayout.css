@@ -126,7 +126,7 @@ table{
 #btnSubmit{
 	position: 50%;
 	top: 60%;
-	left: 21%
+	left: 50%
 	
 }
 
@@ -140,6 +140,7 @@ table{
 	padding: 8px;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin-left: 47%;
 }
 
 .select-all-btn{
