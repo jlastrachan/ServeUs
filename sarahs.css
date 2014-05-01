@@ -72,7 +72,7 @@
 	position: absolute;
 	top: 5px;
 	margin-right: 10%;
-	margin-left: 10%;
+	margin-left: 18%;
 }
 
 #contactInfo {
@@ -81,8 +81,9 @@
 	z-index: 2;
 	top: 100px;
 	margin-right: 20%;
-	margin-left: 20%;
+	margin-left: 17%;
 	color: #606060;
+	font-size: 17px;
 }
 
 #request {
@@ -90,7 +91,7 @@
 	position: absolute;
 	top: 5px;
 	margin-right: 10%;
-	margin-left: 10%;
+	margin-left: 15%;
 }
 
 #requestInfo {
@@ -99,8 +100,9 @@
 	z-index: 2;
 	top: 100px;
 	margin-right: 20%;
-	margin-left: 20%;
+	margin-left: 16%;
 	color: #606060;
+	font-size: 17px;
 }
 
 
@@ -109,7 +111,8 @@
 	position: absolute;
 	top: 5px;
 	margin-right: 40%;
-	margin-left: 20%;
+	margin-left: 23%;
+
 }
 
 #menuInfo {
@@ -118,8 +121,9 @@
 	z-index: 2;
 	top: 100px;
 	margin-right: 20%;
-	margin-left: 20%;
+	margin-left: 17%;
 	color: #606060;
+	font-size: 17px;
 }
 
 
