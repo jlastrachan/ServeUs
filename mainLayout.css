@@ -71,7 +71,7 @@ table{
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 #house-manager-title{
@@ -82,7 +82,7 @@ table{
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 #food-manager-title{
@@ -93,14 +93,14 @@ table{
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
-	font-size: 18px;
+	font-size: 20px;
 }
 .row{
 	margin-bottom: 10px;
 	margin-left: 20%;
 }
 
-.btn{
+.title-btn{
 	padding: 0px;
 }
 
@@ -126,7 +126,7 @@ table{
 #btnSubmit{
 	position: 50%;
 	top: 60%;
-	left: 25%
+	left: 21%
 	
 }
 
@@ -141,6 +141,15 @@ table{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+.select-all-btn{
+	margin-left: 47%;
+	background: white; 
+	color: #19758D;
+	border: #19758D 2px solid;
+	text-align: center;
+	font-family: "Georgia", Garamound, serif;
+}
 .font{
 	font-family: "Georgia", Garamound, serif;
 }
@@ -151,7 +160,6 @@ table{
 
 .long_sticky_img{
 	//position: absolute;
-	margin-top: 2%;
 	margin-left: 5%;
 	margin-right: 5%;
 }
@@ -165,9 +173,9 @@ table{
 .long_sticky_img textarea{
 	position: absolute;
 	top: 8%;
-	left: 8%;
-	height: 130px;
-	width: 84%;
+	left: 11.5%;
+	height: 150px;
+	width: 77%;
 	background-color: transparent;
 	border-color: transparent;
 	font-family: "Georgia", Garamound, serif;
