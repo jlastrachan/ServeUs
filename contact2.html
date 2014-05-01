@@ -28,6 +28,8 @@
 
 $(document).ready(function() {
 
+  document.getElementById("text").value = '';
+
   var hasBeenClickedLeft = false;
   var hasBeenClickedMiddle = false;
   var hasBeenClickedRight = false;
@@ -118,6 +120,12 @@ $(document).ready(function() {
     }
     console.log("left" + hasBeenClickedLeft);
   });
+/*$("#btnSubmit").click(function(evt) {
+	console.log ("submitting");
+	document.getElementById("text").value = '';
+	console.log ("done submitting"); 	
+});
+*/
 
 /*
   $("#btnSubmit").click(function(evt) {
@@ -129,7 +137,8 @@ $(document).ready(function() {
 */
   /*page reload on 'close' button click for submit modal*/
   $('#myModal').on('hidden.bs.modal', function () {
-   location.reload();
+ //  location.reload();
+   document.getElementById("text").value = '';
  })
 
 //clears text box upon click
@@ -197,20 +206,19 @@ function clearContents(element) {
     <!--</div>-->
   <!-- </div>-->
 </div>
-</div>
 
 
 
- <div id = "sticky_container" class="ui-helper-center">
+ <div id = "sticky_container" class = 'col-xs-12' > <!-- class="ui-helper-center" -->
   <div class = "long_sticky_img"> 
     <img src = "blackboard.png" alt = "Comment Box" width = "100%" height= "200px">
     <div class = "form">
       <form class="form-inline" role="form">
         <div class="form-group">
-          <textarea class = "image" id="text" name = "text" rows ="5" cols="80" onfocus="this.value='';" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
+          <textarea class = "image" id="text" name = "text" rows ="5" cols="80" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
         </div>
         <br>
-        <button <button type = "button" class = "submit" id = "bthSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
+        <button <button type = "button" class = "submit" id = "btnSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
 		<br>
 		<br>
         <!--bootstrap modal for submit button-->
@@ -218,7 +226,7 @@ function clearContents(element) {
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" id = "closeModal" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="font modal-title" id="myModalLabel">Submitted. Thank you for your comments to the house team.</h4>
               </div>
               <div class="font modal-body">
@@ -233,6 +241,8 @@ function clearContents(element) {
 
     </form>        
   </div>  
+  </div>
+</div>
 </div>
 </div>
 
