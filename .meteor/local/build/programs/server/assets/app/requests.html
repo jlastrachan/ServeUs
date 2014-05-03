@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<!--
+  
+  stuff to do:
+  
+  ~~REQUESTS PAGE~~
+  
+    BACKEND: 
+	-store requests, likes & dislikes
+	-prevent user from liking the same thing multiple times (instead, remove the like if pressed twice... toggle!)
+	-prevent same request from occuring twice
+	
+	FRONTEND:
+	-decide about like/dislike buttons
+		
+	OTHER (REQUESTS PAGE)
+	- editing/deleting as normal user
+	- info (what does liking do!)
+	- organize requests (ehh)
+	- name: weird hover (like can't click)
+	
+	
+  ~~OTHER~~
+	
+	HOMEPAGE
+	
+	TOOLBAR
+	
+-->	
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requests</title>
+
+<!-- Load style sheets -->
+<link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="sarahs.css" />
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+<!-- Load any supplemental Javascript libraries here -->
+<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+
+// do javascript stuff here
+/*$.fn.editable.defaults.mode = 'inline';
+$.fn.editable.defaults.showbuttons = false;
+$.fn.editable.defaults.url = '/post';
+$.fn.editable.defaults.type = 'text';
+
+*/
+
+$(document).ready(function() {
+	$(newRequest).val('');
+	$('#houseTeam').prop('disabled', false);
+	var hTeam = false;
+	
+	$('#newRequest').focus();
+	
+	var allRequests = new Array();
+	var requestNames = new Array();
+	allRequests.push("strawberries");
+	allRequests.push ("pitachips");
+	
+	
+	// start out with 2 stickies already
+	// strawberries
+	var request = 'strawberries';
+	var requestName = 'strawberries';
+	$('#stickies').append("<li class = 'col-xs-3' id = 'requestSticky'>" +
+   			"<div style = 'margin-bottom: 45%;' class='thumbnail' id='sticky" + request+"'>" +
+      		"<img src= 'stickynote.png' id = 'stickyImage'>" +
+      		"<div class = 'requestedItem' style = 'margin-top: -95%'>" +
+      		"<span style = 'margin-left:75%; color: #FF5959;' id = 'delete"+request+"'  > </span> <br>" +
+      			"<h3 style ='cursor: default' id = '"+request+"text'>" + requestName + " </h3>" + 
+      			"<div class = 'btn-toolbar' style= 'margin-left: 20%; margin-right: 20%'>" + 
+      					"<div class = 'btn-group' id ='buttons'>"+
+      						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up' style= 'cursor:default;'>" +
+      						" </span> </span>" + 
+ 							"<span 'class='badge-info' id = 'numLiked" +request+"'>1</span> </div>" +
+ 							"<span width='100px'> </span>" + 
+ 						"<div class = 'btn-group'>"+
+ 							"<span class='badge-info' id = 'disliked"+request+"'> <span class='glyphicon glyphicon-thumbs-down'>" +
+      						" </span> </span>" + 
+ 							"<span class='badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
+      				"</div> </div> </div> </li> ");
+      	$("#likedstrawberries").click(function(evt){
+      		var currNum = parseInt($("#numLikedstrawberries").text());
+      		var newNum = currNum + 1;
+      		$("#numLikedstrawberries").text(newNum);
+     	});
+     	$("#dislikedstrawberries").click(function(evt){
+      		var currNum = parseInt($("#numDislikedstrawberries").text());
+      		var newNum = currNum + 1;
+      		$("#numDislikedstrawberries").text(newNum);
+     	});
+     	
+  
+	// pita chips
+	var request = 'pitachips';
+	var requestName = 'pita chips';
+	$('#stickies').append("<li class = 'col-xs-3' id = 'requestSticky'>" +
+   			"<div style = 'margin-bottom: 45%;' class='thumbnail'  id='sticky" + request+"'>" +
+      		"<img src= 'stickynote.png' id = 'stickyImage' >" +
+      		"<div class = 'requestedItem' style = 'margin-top: -95%'>" +
+      		"<span style = 'margin-left:75%; color: #FF5959;' id = 'delete"+request+"'  > </span> <br>" +
+      			"<h3 style ='cursor: default' id = '"+request+"text'>" + requestName + " </h3>" + 
+      			"<div class = 'btn-toolbar' style= 'margin-left: 7%; margin-right: 20%; margin-top:30%;'>" + 
+      					"<div class = 'btn-group' id ='buttons'>"+
+      						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
+      						" </span> </span>" + 
+ 							"<span class='badge-info' id = 'numLiked" +request+"'>1</span> </div>" +
+ 							 
+ 						"<div style= 'position: absolute; left: 43%' class = 'btn-group'>"+
+ 							"<span class='badge-info' id = 'disliked"+request+"'> <span class='glyphicon glyphicon-thumbs-down'>" +
+      						" </span> </span>" + 
+ 							"<span class='badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
+      				"</div> </div> </div> </li> ");
+      	$("#likedpitachips").click(function(evt){
+      		var currNum = parseInt($("#numLikedpitachips").text());
+      		var newNum = currNum + 1;
+      		$("#numLikedpitachips").text(newNum);
+     	});
+     	$("#dislikedpitachips").click(function(evt){
+      		var currNum = parseInt($("#numDislikedpitachips").text());
+      		var newNum = currNum + 1;
+      		$("#numDislikedpitachips").text(newNum);
+     	});
+	
+	
+	$('#houseTeam').click(function(evt){
+		console.log("just clicked hosue team");
+		$('#houseTeam').prop('disabled', true); // only for now... easier this way!
+		for (var i =0; i< allRequests.length; i++) {
+			var request = allRequests[i];
+			$('#'+request+'text').attr('contenteditable',"true");
+			$('#'+request+'text').css('cursor', 'text' );
+			$('#delete'+request).append("<button class = 'btn btn-sm' style='background-color:transparent' id = 'deleted" + request+"'> <span style = 'margin-left:-7px' class = 'glyphicon glyphicon-remove'></span> </button>");
+			$('#deleted'+request).click(function(evt){
+				$(this).parents('li').remove();	
+			});
+			
+		}
+		hTeam = true;
+	});
+
+	
+
+	$("#btnSubmit").click(function(evt) {
+		console.log("pressed submit button");
+		var requestName = $(newRequest).val();
+		var request = $(newRequest).val().replace(/[ .,!?]/g,'');
+		if (request == '') {return;}
+		allRequests.push(request);
+		
+		$('#stickies').append("<li class = 'col-xs-3' id = 'requestSticky'>" +
+   			"<div style = 'margin-bottom: 45%;' class='thumbnail' id='sticky" + request+"'>" +
+      		"<img src= 'stickynote.png' id = 'stickyImage'>" +
+      		"<div class = 'requestedItem' style = 'margin-top: -95%'>" +
+      		"<span style = 'margin-left:75%; color: #FF5959;' id = 'delete"+request+"'  > </span> <br>" +
+      			"<h3 style ='cursor: default' id = '"+request+"text'>" + requestName + " </h3>" + 
+      			"<div class = 'btn-toolbar' style= 'margin-left: 10%; margin-right: 10%'>" + 
+      					"<div class = 'btn-group' id ='buttons'>"+
+      						"<span class='badge-info' id = 'liked"+request+"'> <span class='glyphicon glyphicon-thumbs-up'>" +
+      						" </span> </span>" + 
+ 							"<span class='badge-info' id = 'numLiked" +request+"'>1</span> </div>" +
+ 						"<div style= 'position: absolute; left: 57%' class = 'btn-group'>"+
+ 							"<span class='badge-info' id = 'disliked"+request+"'> <span class='glyphicon glyphicon-thumbs-down'>" +
+      						" </span> </span>" + 
+ 							"<span class='badge-info' id ='numDisliked" + request+"'>0</span> </div>" + 
+      				"</div> </div> </div> </li> ");
+      	$("#liked"+request).click(function(evt){
+      		var currNum = parseInt($("#numLiked" + request).text());
+      		var newNum = currNum + 1;
+      		$("#numLiked" + request).text(newNum);
+     	});
+     	$("#disliked"+request).click(function(evt){
+      		var currNum = parseInt($("#numDisliked" + request).text());
+      		var newNum = currNum + 1;
+      		$("#numDisliked" + request).text(newNum);
+     	});
+     	if (hTeam) {
+     		$('#delete'+request).append("<button  class = 'btn btn-sm' style='background-color:transparent; margin-left:-7px' id = 'deleted" + request+"'> <span class = 'glyphicon glyphicon-remove'></span> </button>");
+			$('#deleted'+request).click(function(evt){
+				$(this).parents('li').remove();	
+			});
+			$('#'+request+'text').attr('contenteditable',"true");
+			$('#'+request+'text').css('cursor', 'text' );
+     	}
+      	$(newRequest).val('');
+      	
+	})
+});
+	
+	// add button behavior
+
+</script>
+
+</head>
+
+<body id = corkboard>
+	
+	<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand font" href="index.html" style = "font-size:25px; color:#478595;"> ServeUs </a> 
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   <ul class="nav navbar-nav">
+
+     <li class = "active font font-size"> <a href="requests.html#" class = "font font-size"> Requests </a></li>
+     <li><a href="menu.html#" class = "font font-size"> Menu </a></li>
+
+     <li class = "font"><a href="contact3.html#"> Contact </a></li>
+
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+     <li class="disabled font" ><a href="#"> Ben Bitdiddle </a></li>
+   </ul>
+ </div>
+</nav>
+
+	<div class="container">
+	
+		<!-- form for writing in a new request --> 
+  		<form style='margin-left: 34%; margin-right: 34%;' id = "requestform" class="form-inline" role="form">
+  			<div class="form-group">
+  				<!-- <label class="sr-only" for="newRequest"> New Request </label> -->   				 	
+  				<input type="text" class="form-control" id="newRequest" placeholder="New Request">
+  			</div>
+  			<button type="submit" style='background-color: white;' class="btn btn-sm" id = "btnSubmit"> Submit </button>
+  			<button type="submit" class="btn btn-sm" id = "houseTeam" > Part of House Team? </button>
+		</form>
+		
+		<br>
+		<br>
+  			
+  		<!-- start off with some stickies on the page --> 
+  		<!--<div class= 'col-xs-4' > -->
+  		<ul class="thumbnails" id = "stickies" >
+      	</ul>
+      	
+	</div>
+	
+
+</body>
+
+</html>
+	

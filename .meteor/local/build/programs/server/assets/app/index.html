@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<!--
+  
+  stuff to do:
+  
+  * fix layout/sizing stuff
+  * save data -> refreshing doesn't clear it all
+  * fix the way person in charge can edit stuff [depending on login]
+  * fix linking
+  * sign up...
+  
+-->	
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> ServeUs Homepage</title>
+
+<!-- Load style sheets -->
+<link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="sarahs.css" />
+
+
+<!-- Load any supplemental Javascript libraries here -->
+<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="external_js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+<!--<script type="text/javascript" src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script> -->
+<script type="text/javascript">
+
+
+// do javascript stuff here
+
+$(document).ready(function() {
+	$('#btnSubmit').click(function(evt){
+		//console.log('in click');
+		var user = $('#username').val();
+		//console.log ("welcome" + user);
+		$('#username').remove();
+		$('#password').remove();
+		//$('#login').remove();
+		$('btnSubmit').remove();
+
+		$('#signIn').remove();
+		$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #478595'> Welcome, " + user + "! </span> </h4> </form> <li>");
+	});
+	
+	$('#contactSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'contactInfo'> Contact members of the house team </div>");
+	});
+	
+	$('#contactSticky').mouseleave (function(){
+		$('#contactInfo').remove();
+	});
+	
+	$('#menuSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'menuInfo'> View this week's menu and comment on recent dinners </div>");
+	});
+	
+	$('#menuSticky').mouseleave (function(){
+		$('#menuInfo').remove();
+	});
+	
+	$('#requestSticky').mouseenter(function(){
+		$(this).prepend("<div class = 'text-center' id = 'requestInfo'> View current food requests and add your own </div>");
+	});
+	
+	$('#requestSticky').mouseleave (function(){
+		$('#requestInfo').remove();
+	});
+	
+	$('#modalusername').click(function(evt){
+		$('#failedlogin').remove();
+	});
+	
+	$('#modalpassword').click(function(evt){
+		$('#failedlogin').remove();
+	});
+	
+	// $('failedlogin').remove();
+	
+	$('#modalLogin').click(function(evt){
+		$('failedlogin').remove();
+		console.log("logged in!");
+		if(($('#modalusername').val()=="" )|| ($('#modalpassword').val()=="")){
+			$('#modalbody').append('<br> <div class="alert alert-danger" id ="failedlogin"> <h4> Could not log you in </h4> </div>');
+		}
+		else {
+			var user = $('#modalusername').val();	
+			$('#signinModal').hide();
+			$(this).attr("data-dismiss",'modal');
+			
+			$('#username').remove();
+			$('#password').remove();
+			$('btnSubmit').remove();
+
+			$('#signIn').remove();
+			$('#login').append("<li class='disabled'> <form class='form-inline' role='form' > <h4> <span class='label label-large label-info' style = 'background-color: #19758D;'> Welcome, " + user + "! </span> </h4> </form> <li>");
+		}
+		// do something?!
+	});
+});
+
+</script>
+</head>
+
+<body id = corkboard>
+
+	<nav class="navbar navbar-default" role="navigation">
+	<!-- <div class="container-fluid"> -->
+	<div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <a class="navbar-brand font" href="index.html" style = "font-size:25px; color:#478595;"> ServeUs </a> 
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<ul class="nav navbar-nav">
+    	
+      	<li> <a href="requests.html#" class = "font font-size"> Requests </a></li>
+ 	  	<li><a href="menu.html#" class = "font font-size"> Menu </a></li>
+    	<li><a href="contact3.html#" class = "font font-size"> Contact </a></li>
+    	
+    	</ul>
+ 		<ul class="nav navbar-nav navbar-right" id = "login">
+ 		<li class="disabled"> 
+ 			<form class="form-inline" role="form" id = "signIn">
+  				<div class="form-group">
+   				 	<input type="email" class="form-control" id="username" placeholder="Username">
+  				</div>
+  				<div class="form-group">
+   				 	<input type="password" class="form-control" id="password" placeholder="Password">
+  				</div>
+  				<button type="submit" class="btn btn-sm" id = "btnSubmit"> Login </button>
+			</form>
+			</li>
+ 		</ul>
+ 	</div>
+ 	</nav>
+ 	
+ 	<div class = "container">
+ 		<div class="jumbotron" id = "infoSection">
+  			<h1>Welcome to ServeUs!</h1>
+	  		<p style ='color:#777;'> ServeUs is a platform that allows house members living in Independent Living Groups to submit food requests for bulk grocery orders, give feedback on the requests of others,
+	  		 view menu items as well as contact the house team. </p>
+  			<p>  <a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" id = "signupbtn" style="color:#478595" > Sign Up</a>  </p>
+		</div>
+	
+	<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			 <div class="modal-header">
+      				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       				 <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+     			 </div>
+      			<div class="modal-body" id = "modalbody">
+       				 <form class="form-inline" role="form" id = "signIn">
+  						<div class="form-group">
+   				 			<input type="email" class="form-control" id="modalusername" placeholder="Username">
+		  				</div>
+  						<div class="form-group">
+   						 	<input type="password" class="form-control" id="modalpassword" placeholder="Password">
+		  				</div>
+					</form>
+      			</div>
+     			<div class="modal-footer">
+	    	    	<button type="submit" class="btn btn-sm" id = "modalLogin"> Login </button>
+    	    	</div>
+    	    </div>
+    	</div>
+    	
+		<br>
+    	
+	</div>
+	
+	<div class="container">
+		<br>
+  		<div class= 'col-xs-4' id = 'requestSticky'>
+  			<a href='requests.html#'>
+      		<img src= 'stickynote.png' id = 'stickyImage'>
+      			<h1 class = 'requests-center'> Requests</h1>
+          	</a> 
+        </div>
+        
+        <div class= 'col-xs-4' id='menuSticky'>
+  			<a href='menu.html#'>
+      		<img src= 'stickynote.png'id = 'stickyImage'>
+      			<h1 class = 'menu-center'>Menu</h1>
+          	</a> 
+        </div>
+        
+        <div class= 'col-xs-4' id= 'contactSticky'>
+  			<a href='contact3.html#'>
+      		<img src= 'stickynote.png' id = 'stickyImage'>
+      			<h1 class = 'contact-center'> Contact</h1>
+          	</a> 
+        </div>  
+   
+	</div>
+</body>

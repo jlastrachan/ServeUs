@@ -166,9 +166,9 @@ table{
 }
 
 .long_sticky_img img{
-	//display: block;
+/*	//display: block;
 //	margin-top: 10px;
-	//margin-bottom: 20%;
+	//margin-bottom: 20%;*/
 }
 
 .long_sticky_img textarea{
@@ -189,9 +189,6 @@ table{
 	/*color: #707070;*/
 }
 
-.tiles{
-	padding-right: 
-}
 .comment_container{
 	position: relative;
 	margin: 0 auto;
