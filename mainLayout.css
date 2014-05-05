@@ -95,10 +95,11 @@ table{
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
 }
+/*
 .row{
 	margin-bottom: 10px;
 	margin-left: 20%;
-}
+}*/
 
 .title-btn{
 	padding: 0px;
@@ -118,10 +119,10 @@ table{
     top: 60%;
     margin-top: 2%;
 }
-
+/*
 .btn-default{
 	margin-top: 10px;
-}
+}*/
 
 #btnSubmit{
 	position: 50%;
