@@ -14,13 +14,13 @@ Author: Eann Tuan
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand font" href="index.html" style = "font-size:25px; color:#478595;"> ServeUs </a>
+      <a class="navbar-brand font" href="/" style = "font-size:25px; color:#478595;"> ServeUs </a>
     </div>
     <div class="collapse navbar-collapse" id="navigation">
      <ul class="nav navbar-nav nav-tabs">
 
-       <li> <a href="requests.html" class = "font font-size"> Requests </a></li>
-       <li><a href="menu.html#" class = "font font-size"> Menu </a></li>
+       <li> <a href="/requests" class = "font font-size"> Requests </a></li>
+       <li><a href="/menu" class = "font font-size"> Menu </a></li>
        <li class = "active font font-size"><a href="#"> Contact </a></li>
 
      </ul>
@@ -32,8 +32,6 @@ Author: Eann Tuan
 
 
  <div class="container">
-
-
    <div class= 'col-xs-4'>
     <button type="button" class="btn btn-default" id = "chef-title" >Chef Eann</button>
     <a href="#" class="btn btn-default btn-img" role="send" data-toggle="buttons" style= "background-color: transparent">
@@ -67,10 +65,16 @@ Author: Eann Tuan
     <div class = "form">
       <form class="form-inline" role="form">
         <div class="form-group">
-          <textarea class = "image" id="text" name = "text" rows ="5" cols="80" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
+          <textarea class = "image" name = "text" rows ="5" cols="80" id="comment-box" placeholder = "Type Comment Here... " style = "font-family: 'Shadows Into Light Two', cursive; font-size:18px;"></textarea>
         </div>
         <br>
-        <button <button type = "button" class = "submit" id = "btnSubmit" value = " Send" class="btn btn-default btn-lg font" data-toggle="modal" data-target="#myModal" > Submit</button>
+
+        <!--
+        <button type = "button" id = "btnSubmit submit" value = " Send" class ="btn btn-default" > Submit</button>
+        -->
+        <button type = "button" value = " Send" class ="btn btn-default btn-lg font submit" data-toggle="modal" data-target="#myModal" style = "margin-left:46%;"> Submit</button>
+
+        <!--data-toggle="modal" data-target="#myModal" -->
         <br>
         <br>
         <!--bootstrap modal for submit button-->
