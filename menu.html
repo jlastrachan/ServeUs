@@ -19,8 +19,8 @@
      <li><a href="/contact" class = "font font-size"> Contact </a></li>
 
    </ul>
-   <ul class="nav navbar-nav navbar-right">
-     <li class="disabled font" ><a href="#"> Ben Bitdiddle </a></li>
+   <ul style="padding-top: 10px;" class="nav navbar-nav navbar-right">
+     {{> loginButtons}}
    </ul>
  </div>
 </div>
@@ -36,6 +36,7 @@
   <div class='row'  id="menu_page_row">
     <!-- make this update automatically.... SCRIPTS :D -->
     <div class="menu_row">
+      {{#if user_is_admin}}
         {{#each menu_days}}
           <div class="day">
           <span class="menu_text"><h4 class="editable">{{day}} <span class="editable" contenteditable="true">{{date}}</span></h4>
@@ -52,6 +53,18 @@
           </span>
         </div>
         {{/each}}
+      {{/if}}
+      {{#unless user_is_admin}}
+        {{#each menu_days}}
+          <div class="day">
+          <span class="menu_text"><h4 class="editable">{{day}} <span class="editable">{{date}}</span></h4>
+            {{#each items}}
+              <p>{{this}}</p>
+            {{/each}}
+          </span>
+        </div>
+        {{/each}}
+      {{/unless}}
     </div>
   </div>
 

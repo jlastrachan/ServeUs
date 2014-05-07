@@ -37,6 +37,18 @@ if (Meteor.isClient) {
   Template.menu.log = function() {
     console.log(this);
   };
+
+  Template.menu.user_is_admin = function() {
+    var user = Meteor.user();
+    console.log(user);
+    if (user != null){
+      if (user.profile.name === "House Member Julia") {
+        return true;
+      }
+    }
+    return false;
+
+  };
   
 }
 
