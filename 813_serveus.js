@@ -1,5 +1,5 @@
 Menu = new Meteor.Collection("menu");
-
+Suggestions = new Meteor.Collection("suggestions");
 
 Router.configure();
 
@@ -17,27 +17,46 @@ if (Meteor.isClient) {
     var suggestion = $('#suggest_box').val();
     if (suggestion != ''){
       $('#suggest_box').val('');
-      var li_string = '<li class = "list-group-item">'+suggestion+'</li>';
-      console.log(li_string);
-      $('.suggestions').prepend(li_string);
-      $('.suggestions li:last-child').remove();
+      Suggestions.insert({item: suggestion});
     }
   });
 
   Template.menu.menu_days = function() {
+    console.log(Menu.find({}).count());
     return Menu.find({});
   };
-  Template.menu.menu_items = function() {
-
-  }
+  Template.menu.suggestions = function() {
+    var result = [];
+    var sugg = Suggestions.find({}).fetch();
+    for (var i = 0; i < 5 ; i++) {
+      result[i] = sugg[i];
+    }
+    return result;
+    // TODO: Sort based on time
+  };
+  Template.menu.log = function() {
+    console.log(this);
+  };
   
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+    Menu.remove({});
+    Suggestions.remove({});
+
     if (Menu.find().count() === 0) {
-      Menu.insert({day: "Sunday", date: "5/4", items:"item1", items: "item2"});
+      Menu.insert({day: "Sunday", date: "5/4", items:["Grilled Cheese", "Tomato Soup", "Apple Pie"]});
+      Menu.insert({day: "Monday", date: "5/5", items:["Cheeseburgers", "Sweet Potato Fries", "Brownies"]});
+      Menu.insert({day: "Tuesday", date: "5/6", items:["Pizza", "Caesar Salad", "Cookies"]});
+      Menu.insert({day: "Wednesday", date: "5/7", items:["Salmon", "Asparagus", "Orzo", "Cupcakes"]});
+      Menu.insert({day: "Thursday", date: "5/8", items:["Chicken Teriyaki Stir Fry", "Brown Rice", "Bread Pudding"]});
     }
+    Suggestions.insert({item: "Brisket"});
+    Suggestions.insert({item: "Tacos, Rice, Beans"});
+    Suggestions.insert({item: "Spaghetti & meatballs"});
+    Suggestions.insert({item: "The quiche from the other night"});
+    Suggestions.insert({item: "Mac n' cheese!!!!"});
   });
 }
