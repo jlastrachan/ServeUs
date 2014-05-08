@@ -4,10 +4,9 @@
 
 body {
 	font-family: Georgia;
-}
-#corkboard {
 	background-image: url("corkboard.png");
 }
+
 .thumbnail {
 	background-color:transparent;
 	border-color: transparent;
@@ -43,15 +42,6 @@ body {
 	width: 300px;
 }
 
-/*
-th,td{
-	padding: 10px;
-}*/
-
-/*.row{
-	text-align: center;
-}*/
-
 table{
 	/*border-spacing: 300px;
 	width: 800px;*/
@@ -65,45 +55,39 @@ table{
 
 #chef-title{
 	padding: 8px; 
-	width: 100%;
+	width: 94%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
+	margin-left: 3%;
 }
 
 #house-manager-title{
 	padding: 8px; 
-	width: 100%;
+	width: 94%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
+	margin-left: 3%;
 }
 
 #food-manager-title{
 	padding: 8px; 
-	width: 100%;
+	width: 94%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
+	margin-left: 3%;
 }
-
-/*
-.row{
-=======
-/*.row{
->>>>>>> afe4ed644b0ac371586825c798b7794aa87f7a1f
-	margin-bottom: 10px;
-	margin-left: 20%;
-}*/
 
 .title-btn{
 	padding: 0px;
@@ -123,51 +107,32 @@ table{
     top: 60%;
     margin-top: 2%;
 }
-/*
-.btn-default{
-	margin-top: 10px;
-}*/
 
-#btnSubmit{
-	position: 50%;
-	top: 60%;
-	left: 50%
-	
-}
 
 .submit{
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
-	background-color: white;
-	font-size: 18px;
-	padding: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-left: 47%;
+	position: 10%;
+	top: 60%;
 }
 
 .select-all-btn{
-	margin-left: 47%;
+	margin-left: 45%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
+	padding-top: 5px;
+	margin-top: 1.5%;
 }
 .font{
 	font-family: "Georgia", Garamound, serif;
-}
-
-.font{
 	font-size: 18px;
 }
 
 .long_sticky_img{
 	//position: absolute;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 1.5%;
+	margin-right: 10%;
 }
 
 .long_sticky_img img{
@@ -179,9 +144,9 @@ table{
 .long_sticky_img textarea{
 	position: absolute;
 	top: 8%;
-	left: 11.5%;
+	left: 6%;
 	height: 150px;
-	width: 77%;
+	width: 88%;
 	background-color: transparent;
 	border-color: transparent;
 	font-family: "Georgia", Garamound, serif;
@@ -194,6 +159,10 @@ table{
 	/*color: #707070;*/
 }
 
+.cursive-font{
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 16px;
+}
 .comment_container{
 	position: relative;
 	margin: 0 auto;
@@ -210,22 +179,6 @@ table{
 
 .modal{
 	margin-top: 10px;
-}
-
-.glowing-border {
-    border: 7px solid #00FF66;
-    border-radius: 7px;
-    -webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 20px;
-	border-radius: 10px;
-}
-
-.glowing-border:focus { 
-    outline: none;
-    border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
-    
 }
 
 .requestedItem {
@@ -265,9 +218,9 @@ table{
 	border: 0;
 }
 
+
 .menu_text {
 	position: absolute;
-	top: -5px;
 	left: 20px;
 	width: 200px;
 	color: #43BFE8;
@@ -277,12 +230,29 @@ table{
 	background-image: url("blackboard.png");
 }
 
-h2 {
+.menu_heading {
 	color: #43BFE8;
-	background-color: #fff;
+	background-color: rgb(248, 248, 248);;
 	padding: 10px;
 	border-radius: 5px;
 	display: block;
 	position: relative;
+}
+
+.no-border{
+	border: 0px solid transparent;
+}
+
+.day_menu { 
+	margin-bottom: 10px; 
+	width: 80%;
+}
+
+[contenteditable="true"] { 
+	padding: 10px; 
+}
+
+[contenteditable="true"]:hover { 
+	outline: 2px dashed #0090D2; 
 }
 
