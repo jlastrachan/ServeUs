@@ -209,10 +209,12 @@ table{
 }
 
 .day {
-	display: inline-block;
+	/*display: inline-block;*/
 	position: relative;
-	width: 19%;
-	height: 250px;
+	float: left;
+	width: 20%;
+	height: auto;
+	min-height: inherit;
 }
 
 .sticky {
@@ -224,14 +226,19 @@ table{
 
 
 .menu_text {
-	position: absolute;
+	position: relative;
 	left: 20px;
-	width: 200px;
+	width: 80%;
 	color: #43BFE8;
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 18px;
 }
 
 #menu_page_row {
 	background-image: url("blackboard.png");
+	margin: 10px 0px;
+	min-height: 250px;
+	position: relative;
 }
 
 .menu_heading {
@@ -243,10 +250,7 @@ table{
 	position: relative;
 }
 
-.day_menu { 
-	margin-bottom: 10px; 
-	width: 80%;
-}
+
 
 [contenteditable="true"] { 
 	padding: 10px; 

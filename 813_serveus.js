@@ -10,11 +10,14 @@ Router.map(function() {
   this.route('contact');
 });
 
+
 if (Meteor.isClient) {
 
   // Menu functions
   $('#suggest_submit').click(function() {
+    console.log('clicked');
     var suggestion = $('#suggest_box').val();
+    console.log(suggestion);
     if (suggestion != ''){
       $('#suggest_box').val('');
       Suggestions.insert({item: suggestion});
@@ -22,16 +25,17 @@ if (Meteor.isClient) {
   });
 
   Template.menu.menu_days = function() {
-    console.log(Menu.find({}).count());
+    //console.log(Menu.find({}).count());
     return Menu.find({});
   };
   Template.menu.suggestions = function() {
     var result = [];
-    var sugg = Suggestions.find({}).fetch();
-    for (var i = 0; i < 5 ; i++) {
-      result[i] = sugg[i];
-    }
-    return result;
+    var sugg = Suggestions.find({}, {sort: {_id: -1}});
+    return sugg;
+    // for (var i = 0; i < 5 ; i++) {
+    //   result[i] = sugg[i];
+    // }
+    // return result;
     // TODO: Sort based on time
   };
   Template.menu.log = function() {
@@ -40,7 +44,7 @@ if (Meteor.isClient) {
 
   Template.menu.user_is_admin = function() {
     var user = Meteor.user();
-    console.log(user);
+    //console.log(user);
     if (user != null){
       if (user.profile.name === "House Member Julia") {
         return true;
@@ -59,11 +63,11 @@ if (Meteor.isServer) {
     Suggestions.remove({});
 
     if (Menu.find().count() === 0) {
-      Menu.insert({day: "Sunday", date: "5/4", items:["Grilled Cheese", "Tomato Soup", "Apple Pie"]});
-      Menu.insert({day: "Monday", date: "5/5", items:["Cheeseburgers", "Sweet Potato Fries", "Brownies"]});
-      Menu.insert({day: "Tuesday", date: "5/6", items:["Pizza", "Caesar Salad", "Cookies"]});
-      Menu.insert({day: "Wednesday", date: "5/7", items:["Salmon", "Asparagus", "Orzo", "Cupcakes"]});
-      Menu.insert({day: "Thursday", date: "5/8", items:["Chicken Teriyaki Stir Fry", "Brown Rice", "Bread Pudding"]});
+      Menu.insert({day: "Sunday", date: "4", items:["Grilled Cheese", "Tomato Soup", "Apple Pie"]});
+      Menu.insert({day: "Monday", date: "5", items:["Cheeseburgers", "Sweet Potato Fries", "Brownies"]});
+      Menu.insert({day: "Tuesday", date: "6", items:["Pizza", "Caesar Salad", "Cookies"]});
+      Menu.insert({day: "Wednesday", date: "7", items:["Salmon", "Asparagus", "Orzo", "Cupcakes"]});
+      Menu.insert({day: "Thursday", date: "8", items:["Chicken Teriyaki Stir Fry", "Brown Rice", "Bread Pudding"]});
     }
     Suggestions.insert({item: "Brisket"});
     Suggestions.insert({item: "Tacos, Rice, Beans"});
