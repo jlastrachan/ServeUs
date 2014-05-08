@@ -49,6 +49,24 @@ if (Meteor.isClient) {
     return false;
 
   };
+
+  //contact functions
+  $("#click-image-left").click(function(evt){
+    console.log("click image in here")
+    console.log(document.getElementById("chef-title").style.borderColor);
+    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      document.getElementById("chef-title").style.background="white";
+      console.log(document.getElementById("chef-title").style.borderColor);
+      hasBeenClickedLeft = false;
+    }
+    else{
+      console.log("Here before change in for loop");
+      document.getElementById("chef-title").style.backgroundColor="#FFFF99";
+      console.log("here: " + document.getElementById("chef-title").style.borderColor);
+      hasBeenClickedLeft = true;
+    }
+    console.log("left " + hasBeenClickedLeft);
+  });
   
 }
 

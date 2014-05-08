@@ -55,35 +55,38 @@ table{
 
 #chef-title{
 	padding: 8px; 
-	width: 100%;
+	width: 94%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
+	margin-left: 3%;
 }
 
 #house-manager-title{
 	padding: 8px; 
-	width: 100%;
+	width: 94%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
+	margin-left: 3%;
 }
 
 #food-manager-title{
 	padding: 8px; 
-	width: 100%;
+	width: 94%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
 	text-align: center;
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
+	margin-left: 3%;
 }
 /*.row{
 	margin-bottom: 10px;
@@ -115,15 +118,14 @@ table{
 }
 */
 
-/*
-#btnSubmit{
-	position: 50%;
+
+.submit{
+	position: 10%;
 	top: 60%;
-	margin-left: 40%
-}*/
+}
 
 .select-all-btn{
-	margin-left: 47%;
+	margin-left: 45%;
 	background: white; 
 	color: #19758D;
 	border: #19758D 2px solid;
@@ -139,8 +141,8 @@ table{
 
 .long_sticky_img{
 	//position: absolute;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 1.5%;
+	margin-right: 10%;
 }
 
 .long_sticky_img img{
@@ -152,9 +154,9 @@ table{
 .long_sticky_img textarea{
 	position: absolute;
 	top: 8%;
-	left: 9%;
+	left: 6%;
 	height: 150px;
-	width: 82%;
+	width: 88%;
 	background-color: transparent;
 	border-color: transparent;
 	font-family: "Georgia", Garamound, serif;
@@ -167,6 +169,10 @@ table{
 	/*color: #707070;*/
 }
 
+.cursive-font{
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 16px;
+}
 .comment_container{
 	position: relative;
 	margin: 0 auto;
@@ -241,6 +247,10 @@ table{
 	border-radius: 5px;
 	display: block;
 	position: relative;
+}
+
+.no-border{
+	border: 0px solid transparent;
 }
 
 .day_menu { 
