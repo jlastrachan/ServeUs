@@ -89,6 +89,20 @@ table{
 	margin-left: 3%;
 }
 
+#comment-box{
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 16px;
+
+}
+
+.background-white{
+	background: white; 
+}
+
+.background-yellow{
+	background: #FFFF99; 
+}
+
 .title-btn{
 	padding: 0px;
 }

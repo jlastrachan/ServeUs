@@ -77,10 +77,12 @@ Template.contact.rendered = function (){
   $('#myModal').on('hidden.bs.modal', function () {
  // location.reload();
  this.$("#text").value = '';
-})
+});
 
+/*
 //clears text box upon click
 function clearContents(element) {
   element.value = '';
 }
-});
+*/
+}

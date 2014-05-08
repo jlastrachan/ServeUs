@@ -51,23 +51,50 @@ if (Meteor.isClient) {
   };
 
   //contact functions
-  $("#click-image-left").click(function(evt){
-    console.log("click image in here")
-    console.log(document.getElementById("chef-title").style.borderColor);
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      console.log(document.getElementById("chef-title").style.borderColor);
-      hasBeenClickedLeft = false;
-    }
-    else{
-      console.log("Here before change in for loop");
-      document.getElementById("chef-title").style.backgroundColor="#FFFF99";
-      console.log("here: " + document.getElementById("chef-title").style.borderColor);
-      hasBeenClickedLeft = true;
-    }
-    console.log("left " + hasBeenClickedLeft);
-  });
-  
+  Template.contact.rendered = function (){
+    console.log('contact template rendered', this);
+
+    $("#comment-box").val('Type comment here');
+
+    $('#click-image-left').click(function() {
+      if($('#chef-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#chef-title").css("backgroundColor", "rgb(255, 255, 153)");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+      else{
+        $("#chef-title").css("backgroundColor", "white");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+    });
+
+    $('#click-image-middle').click(function() {
+      if($('#house-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#house-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+      else{
+        $("#house-manager-title").css("backgroundColor", "white");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+    });
+
+    $('#click-image-right').click(function() {
+      if($('#food-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+      else{
+        $("#food-manager-title").css("backgroundColor", "white");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+    });
+
+    $("#select-all").click(function(){
+     $("#chef-title").css("backgroundColor", "rgb(255, 255, 153)");
+     $("#house-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+     $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+   });
+  };
 }
 
 if (Meteor.isServer) {
