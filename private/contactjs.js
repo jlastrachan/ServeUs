@@ -1,110 +1,83 @@
 Contact = new Meteor.Collection("contact");
 
-$(document).ready(function() {
+Template.contact.rendered = function (){
+  console.log('template rendered', this);
 
-  document.getElementById("text").value = '';
+  this.$("#text").value = '';
 
-  var hasBeenClickedLeft = false;
-  var hasBeenClickedMiddle = false;
-  var hasBeenClickedRight = false;
-
-$('#text').data("Type Comment Here");
+  $('#text').data("Type Comment Here");
 
   $("#click-image-left").click(function(evt){
     console.log("click image in here")
-    console.log(document.getElementById("chef-title").style.borderColor);
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      console.log(document.getElementById("chef-title").style.borderColor);
-      hasBeenClickedLeft = false;
+    console.log(this.$("#chef-title").style.borderColor);
+    if(this.$("#chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      this.$("#chef-title").style.background="white";
+      console.log(this.$("#chef-title").style.borderColor);
     }
     else{
       console.log("Here before change in for loop");
-      document.getElementById("chef-title").style.backgroundColor="#FFFF99";
-      console.log("here: " + document.getElementById("chef-title").style.borderColor);
-      hasBeenClickedLeft = true;
+      this.$("#chef-title").style.backgroundColor="#FFFF99";
+      console.log("here: " + this.$("#chef-title").style.borderColor);
     }
-    console.log("left " + hasBeenClickedLeft);
   });
 
   $("#select-all").click(function(evt){
-   document.getElementById("chef-title").style.backgroundColor="#FFFF99";
-   document.getElementById("house-manager-title").style.background="#FFFF99";
-   document.getElementById("food-manager-title").style.background="#FFFF99";
-   });
+   this.$("#chef-title").style.backgroundColor="#FFFF99";
+   this.$("#house-manager-title").style.background="#FFFF99";
+   this.$("#food-manager-title").style.background="#FFFF99";
+ });
 
   $("#chef-title").click(function(evt){
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      hasBeenClickedLeft = false;
+    if(this.$("#chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      this.$("#chef-title").style.background="white";
     }
     else{
-      document.getElementById("chef-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
+      this.$("#chef-title").style.background="#FFFF99";
     }
-    console.log("left chef title" + hasBeenClickedLeft);
   });
 
   $("#click-image-middle").click(function(evt){
-    console.log("border color: " + document.getElementById("house-manager-title").style.backgroundColor + "here");
-    if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      console.log(document.getElementById("house-manager-title").style.borderColor);
-      document.getElementById("house-manager-title").style.backgroundColor="";
+    console.log("border color: " + this.$("#house-manager-title").style.backgroundColor + "here");
+    if(this.$("#house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      console.log(this.$("#house-manager-title").style.borderColor);
+      this.$("#house-manager-title").style.backgroundColor="";
     }
     else{
-      document.getElementById("house-manager-title").style.backgroundColor="#FFFF99";
+      this.$("#house-manager-title").style.backgroundColor="#FFFF99";
     }
   });
 
   $("#house-manager-title").click(function(evt){
-    if(document.getElementById("house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("house-manager-title").style.background="white";
-      hasBeenClickedLeft = false;
+    if(this.$("#house-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      this.$("#house-manager-title").style.background="white";
     }
     else{
-      document.getElementById("house-manager-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
+      this.$("#house-manager-title").style.background="#FFFF99";
     }
-    console.log("left" + hasBeenClickedLeft);
   });
-
-  /*$("#click-image-left").click(function(evt){
-    if(document.getElementById("chef-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("chef-title").style.background="white";
-      hasBeenClickedLeft = false;
-    }
-    else{
-      document.getElementById("chef-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
-    }
-    console.log("left" + hasBeenClickedLeft);
-  });*/
 
   $("#click-image-right").click(function(evt){
-   if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("food-manager-title").style.background="white";
-    }
-    else{
-      document.getElementById("food-manager-title").style.background="#FFFF99";
-    }
-  });
+   if(this.$("#food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+    this.$("#food-manager-title").style.background="white";
+  }
+  else{
+    this.$("#food-manager-title").style.background="#FFFF99";
+  }
+});
 
   $("#food-manager-title").click(function(evt){
-    if(document.getElementById("food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
-      document.getElementById("food-manager-title").style.background="white";
-      hasBeenClickedLeft = false;
+    if(this.$("#food-manager-title").style.backgroundColor=="rgb(255, 255, 153)"){
+      this.$("#food-manager-title").style.background="white";
     }
     else{
-      document.getElementById("food-manager-title").style.background="#FFFF99";
-      hasBeenClickedLeft = true;
+      this.$("#food-manager-title").style.background="#FFFF99";
     }
-    console.log("left" + hasBeenClickedLeft);
   });
   /*page reload on 'close' button click for submit modal*/
   $('#myModal').on('hidden.bs.modal', function () {
  // location.reload();
-   document.getElementById("text").value = '';
- })
+ this.$("#text").value = '';
+})
 
 //clears text box upon click
 function clearContents(element) {
