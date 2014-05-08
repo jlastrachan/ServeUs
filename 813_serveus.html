@@ -1,12 +1,13 @@
 <head>
-  <title>ServeUs</title>
+  <title>ServeUs HomePage</title>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> ServeUs Homepage</title>
+<!--title> ServeUs Homepage</title-->
 
 <!-- Load style sheets -->
 <!-- <link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet"> -->
 <link rel="stylesheet" type="text/css" href="sarahs.css" />
+<link rel="stylesheet" type="text/css" href="mainLayout.css" />
 
 
 <!-- Load any supplemental Javascript libraries here -->
@@ -17,29 +18,30 @@
 </head>
 
 <template name="home">
-  <div id = "corkboard">
-	<nav class="navbar navbar-default" role="navigation">
-	<!-- <div class="container-fluid"> -->
-	<div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     <a class="navbar-brand font" href="index.html" style = "font-size:25px; color:#478595;"> ServeUs </a> 
+<div id = "corkboard">
+
+<nav class="navbar navbar-default" role="navigation" style="border-bottom: 0px;">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand font" href="/home" style = "font-size:25px; color:#478595; height:100%;"> ServeUs </a> 
     </div>
-    <div class="collapse navbar-collapse" id="navigation">
-    	<ul class="nav navbar-nav nav-tabs">
-    	
-      	<li> <a href="requests.html#" class = "font font-size"> Requests </a></li>
- 	  	<li><a href="menu.html#" class = "font font-size"> Menu </a></li>
-    	<li><a href="contact2.html#" class = "font font-size"> Contact </a></li>
-    	
-    	</ul>
- 		<ul class="nav navbar-nav navbar-right" id = "login">
+  <div class="navbar-collapse" id="navigation">
+   <ul class="nav navbar-nav nav-tabs" style="border-bottom: 0px;">
+
+     <li> <a href="/requests" class = "font font-size" style="height:150%"> Requests </a></li>
+     <li class = "active font font-size"><a href="/menu" > Menu </a></li>
+     <li><a href="/contact" class = "font font-size"> Contact </a></li>
+
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
  		<li class="disabled"> 
- 			<form class="form-inline" role="form" id = "signIn">
+ 			<form class="form-inline" role="form">
   				<div class="form-group">
    				 	<input type="email" class="form-control" id="username" placeholder="Username">
   				</div>
@@ -50,10 +52,11 @@
 			</form>
 			</li>
  		</ul>
- 	</div>
- 	</nav>
- 	
- 	<div class = "container">
+ </div>
+</div>
+</nav>
+
+ <div class = "container">
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
 	  		<p style ='color:#777;'> ServeUs is a platform that allows house members living in Independent Living Groups to submit food requests for bulk grocery orders, give feedback on the requests of others,
@@ -91,7 +94,7 @@
 	<div class="container">
 		<br>
   		<div class= 'col-xs-4' id = 'requestSticky'>
-  			<a href='requests.html#' class='thumbnail'>
+  			<a href='requests#' class='thumbnail'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
       		<div id= 'request'>
       			<h1 class = 'requests-center'>Requests</h1>
@@ -100,7 +103,7 @@
         </div>
         
         <div class= 'col-xs-4' id='menuSticky'>
-  			<a href='menu.html#' class='thumbnail'>
+  			<a href='menu' class='thumbnail'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
       		<div id= 'menu' class = "text-center">
       			<h1 class = 'menu-center'>Menu</h1>
@@ -109,7 +112,7 @@
         </div>
         
         <div class= 'col-xs-4' id= 'contactSticky'>
-  			<a href='contact2.html#' class='thumbnail'>
+  			<a href='contact3' class='thumbnail'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
       		<div id = 'contact' class = "text-center">
       			<h1 class = 'contact-center'> Contact</h1>
@@ -122,7 +125,7 @@
 </div>
 </template>
 
-<template name="hello">
+<!--<template name="hello">
   <h1>Hello World!</h1>
   {{greeting}}
   <input type="button" value="Click" />
@@ -132,10 +135,7 @@
 	<h1>Requests</h1>
 </template>
 
-<template name="menu">
-	<h1>Menu</h1>
-</template>
 
 <template name="contact">
 	<h1>Contact</h1>
-</template>
+</template> -->

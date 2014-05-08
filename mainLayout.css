@@ -48,9 +48,9 @@ th,td{
 	padding: 10px;
 }*/
 
-.row{
+/*.row{
 	text-align: center;
-}
+}*/
 
 table{
 	/*border-spacing: 300px;
@@ -95,8 +95,12 @@ table{
 	font-family: "Georgia", Garamound, serif;
 	font-size: 20px;
 }
+
 /*
 .row{
+=======
+/*.row{
+>>>>>>> afe4ed644b0ac371586825c798b7794aa87f7a1f
 	margin-bottom: 10px;
 	margin-left: 20%;
 }*/
@@ -249,7 +253,6 @@ table{
 
 .day {
 	display: inline-block;
-	padding-left: 50px;
 	position: relative;
 	width: 19%;
 	height: 250px;
@@ -268,6 +271,10 @@ table{
 	left: 20px;
 	width: 200px;
 	color: #43BFE8;
+}
+
+#menu_page_row {
+	background-image: url("blackboard.png");
 }
 
 h2 {

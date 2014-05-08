@@ -1,0 +1,82 @@
+
+<template name="menu">
+<div id = "corkboard">
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand font" href="/home" style = "font-size:25px; color:#478595;"> ServeUs </a> 
+    </div>
+  <div class="navbar-collapse" id="navigation">
+   <ul class="nav navbar-nav nav-tabs">
+
+     <li> <a href="/requests" class = "font font-size"> Requests </a></li>
+     <li class = "active font font-size"><a href="/menu" > Menu </a></li>
+     <li><a href="/contact" class = "font font-size"> Contact </a></li>
+
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+     <li class="disabled font" ><a href="#"> Ben Bitdiddle </a></li>
+   </ul>
+ </div>
+</div>
+</nav>
+
+<div class="container">
+
+  <div class="row background">
+    <div><h2>Dinner Menu</h2></div>
+  </div>
+
+
+  <div class='row'  id="menu_page_row">
+    <!-- make this update automatically.... SCRIPTS :D -->
+    <div class="menu_row">
+        {{#each menu_days}}
+          <div class="day">
+          <span class="menu_text"><h4 class="editable">{{day}} {{date}}</h4>
+          <div class="editable" contenteditable="true">
+            <style scoped>
+              .day_menu { margin-bottom: 10px; width: 80%;}
+              [contenteditable="true"] { padding: 10px; }
+              [contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
+            </style>
+            {{items}}
+            </div>
+          </span>
+        </div>
+        {{/each}}
+    </div>
+  </div>
+
+  <div class = "row">
+  <div class = "col-xs-8">
+  <h2>Meal Suggestions</h2>
+  <div class="form suggest" >
+    <form role="form">
+      <div class="form-group">
+        <textarea id="suggest_box" class="form-control"></textarea>
+      </div>
+      <button type="submit" id="suggest_submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  </div>
+  <div class="col-xs-4">
+    <h2>Recent Suggestions</h2>
+    <ul class="suggestions list-group">
+      <li class="list-group-item">Brisket</li>
+      <li class="list-group-item">Tacos, Rice, Beans</li>
+      <li class="list-group-item">Spaghetti & meatballs</li>
+      <li class="list-group-item">The Quiche from the other night</li>
+      <li class="list-group-item">Mac n' cheese!!!!</li>
+    </ul>
+  </div>
+  </div>
+</div>
+</div>
+</template>
