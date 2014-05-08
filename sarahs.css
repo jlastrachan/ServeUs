@@ -137,7 +137,7 @@
 #navigation{
 	font-size: 18px;
 }
-
+/*
 .requests-center{
 	position: absolute;
 	z-index:2;
@@ -146,6 +146,7 @@
 	margin-right: 10%;
 }
 
+/*
 .menu-center{
 	position: absolute;
 	z-index:2;
@@ -153,11 +154,11 @@
 	margin-left: 27%;
 	margin-right: 20%;
 }
-
+/*
 .contact-center{
 	position: absolute;
 	z-index:2;
 	top: 0;
 	margin-left: 23%;
 	margin-right: 10%;
-}
+}*/

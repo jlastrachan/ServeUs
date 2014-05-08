@@ -1,6 +1,5 @@
 
 <template name="menu">
-<div id = "corkboard">
   <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
    <div class="navbar-header">
@@ -10,7 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand font" href="/home" style = "font-size:25px; color:#478595;"> ServeUs </a> 
+    <a class="navbar-brand font" href="/" style = "font-size:25px; color:#478595;"> ServeUs </a> 
     </div>
   <div class="navbar-collapse" id="navigation">
    <ul class="nav navbar-nav nav-tabs">
@@ -20,8 +19,8 @@
      <li><a href="/contact" class = "font font-size"> Contact </a></li>
 
    </ul>
-   <ul class="nav navbar-nav navbar-right">
-     <li class="disabled font" ><a href="#"> Ben Bitdiddle </a></li>
+   <ul style="padding-top: 10px;" class="nav navbar-nav navbar-right">
+     {{> loginButtons}}
    </ul>
  </div>
 </div>
@@ -30,33 +29,48 @@
 <div class="container">
 
   <div class="row background">
-    <div><h2>Dinner Menu</h2></div>
+    <div><h2 class="menu_heading">Dinner Menu</h2></div>
   </div>
 
 
   <div class='row'  id="menu_page_row">
     <!-- make this update automatically.... SCRIPTS :D -->
     <div class="menu_row">
+      {{#if user_is_admin}}
         {{#each menu_days}}
           <div class="day">
-          <span class="menu_text"><h4 class="editable">{{day}} {{date}}</h4>
+          <span class="menu_text"><h4 class="editable">{{day}} <span class="editable" contenteditable="true">{{date}}</span></h4>
           <div class="editable" contenteditable="true">
-            <style scoped>
+            <!--<style scoped>
               .day_menu { margin-bottom: 10px; width: 80%;}
               [contenteditable="true"] { padding: 10px; }
               [contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
-            </style>
-            {{items}}
+            </style>-->
+            {{#each items}}
+              <p>{{this}}</p>
+            {{/each}}
             </div>
           </span>
         </div>
         {{/each}}
+      {{/if}}
+      {{#unless user_is_admin}}
+        {{#each menu_days}}
+          <div class="day">
+          <span class="menu_text"><h4 class="editable">{{day}} <span class="editable">{{date}}</span></h4>
+            {{#each items}}
+              <p>{{this}}</p>
+            {{/each}}
+          </span>
+        </div>
+        {{/each}}
+      {{/unless}}
     </div>
   </div>
 
   <div class = "row">
   <div class = "col-xs-8">
-  <h2>Meal Suggestions</h2>
+  <h2 class="menu_heading">Meal Suggestions</h2>
   <div class="form suggest" >
     <form role="form">
       <div class="form-group">
@@ -67,16 +81,13 @@
   </div>
   </div>
   <div class="col-xs-4">
-    <h2>Recent Suggestions</h2>
+    <h2 class="menu_heading">Recent Suggestions</h2>
     <ul class="suggestions list-group">
-      <li class="list-group-item">Brisket</li>
-      <li class="list-group-item">Tacos, Rice, Beans</li>
-      <li class="list-group-item">Spaghetti & meatballs</li>
-      <li class="list-group-item">The Quiche from the other night</li>
-      <li class="list-group-item">Mac n' cheese!!!!</li>
+      {{#each suggestions}}
+        <li class="list-group-item">{{item}}</li>
+      {{/each}}
     </ul>
   </div>
   </div>
-</div>
 </div>
 </template>
