@@ -68,8 +68,8 @@
 	color: #478595;
 	position: absolute;
 	top: 5px;
-	margin-right: 10%;
-	margin-left: 10%;
+	text-align: center;
+	width: 98%;
 }
 
 #contactInfo {
@@ -86,8 +86,8 @@
 	color: #478595;
 	position: absolute;
 	top: 5px;
-	margin-right: 10%;
-	margin-left: 10%;
+	text-align: center;
+	width: 98%;
 }
 
 #requestInfo {
@@ -104,8 +104,8 @@
 	color: #478595;
 	position: absolute;
 	top: 5px;
-	margin-right: 40%;
-	margin-left: 20%;
+	text-align: center;
+	width: 98%;
 }
 
 #menuInfo {
@@ -140,8 +140,7 @@
 }
 
 .requests-center{
-	margin-left: 40%;
-	margin-right: 10%;
+	width: 100%;
 }
 
 .menu-center{
