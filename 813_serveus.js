@@ -17,7 +17,7 @@ if (Meteor.isClient) {
   //Home functions
   Template.home.rendered = function(){
     $('#contactSticky').mouseenter(function(){
-      $(this).prepend("<div class = 'text-center' id = 'contactInfo'> Contact members of the house team </div>");
+      $(this).prepend("<div class = 'hover-text text-center' id = 'contactInfo'> Contact members of the house team </div>");
     });
 
     $('#contactSticky').mouseleave (function(){
@@ -25,7 +25,7 @@ if (Meteor.isClient) {
     });
 
     $('#menuSticky').mouseenter(function(){
-      $(this).prepend("<div class = 'text-center' id = 'menuInfo'> View this week's menu and suggest future meals </div>");
+      $(this).prepend("<div class = 'hover-text text-center' id = 'menuInfo'> View this week's menu and suggest future meals </div>");
     });
 
     $('#menuSticky').mouseleave (function(){
@@ -33,12 +33,17 @@ if (Meteor.isClient) {
     });
 
     $('#requestSticky').mouseenter(function(){
-      $(this).prepend("<div class = 'text-center' id = 'requestInfo'> View current food requests and add your own </div>");
+      $(this).prepend("<div class = 'hover-text text-center' id = 'requestInfo'> View current food requests and add your own </div>");
     });
 
     $('#requestSticky').mouseleave (function(){
       $('#requestInfo').remove();
     });
+
+    $(".hover-text").click(function(){
+     window.location=$(this).find("a").attr("href"); 
+     return false;
+   });
 
   };
 
@@ -85,7 +90,7 @@ if (Meteor.isClient) {
   Template.contact.rendered = function (){
     console.log('contact template rendered', this);
 
-    $("#comment-box").val('Type comment here');
+    //$("#comment-box").val('Type comment here');
 
     $('#click-image-left').click(function() {
       if($('#chef-title').css("backgroundColor")=="rgb(255, 255, 255)"){
@@ -125,6 +130,10 @@ if (Meteor.isClient) {
      $("#house-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
      $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
    });
+
+    $('#comment-box').click(function(){
+      $('#comment-box').val('');
+    });
   };
   
   
@@ -231,9 +240,9 @@ $('#newRequest').focus();
 		//console.log("here 3");*/
 
 
-	
-	
-	
+
+
+
 		$('#newRequest').focus();
 		$("#btnSubmit").click(function(evt) {
 			//console.log(Requests.find().count(0).name);

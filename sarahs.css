@@ -121,9 +121,11 @@
 }
 
 #infoSection {	
-	background-color:  #FFFFA3;
+	background-color:  #FFFF99;
 	color: #478595;
 	margin-right: -2%;
+	width: 97%;
+	margin-left: 3%;
 }
 
 .font{
