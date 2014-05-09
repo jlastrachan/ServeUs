@@ -50,6 +50,18 @@ if (Meteor.isClient) {
   Template.requests.requests = function () {
    return Requests.find({});
  };
+ 
+ Template.requests.user_is_admin = function (){
+ 	var user = Meteor.user();
+    //console.log(user);
+    if (user != null){
+      if (user.profile.name === "House Manager Katie") {
+        return true;
+      }
+    }
+    return false;
+ };
+ 
   // Menu functions
   Template.menu.rendered = function() {
     $('#suggest_submit').click(function() {
