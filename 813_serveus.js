@@ -14,29 +14,24 @@ Router.map(function() {
 if (Meteor.isClient) {
 
   // Menu functions
-  $('#suggest_submit').click(function() {
-    console.log('clicked');
-    var suggestion = $('#suggest_box').val();
-    console.log(suggestion);
-    if (suggestion != ''){
-      $('#suggest_box').val('');
-      Suggestions.insert({item: suggestion});
-    }
-  });
+  Template.menu.rendered = function() {
+    $('#suggest_submit').click(function() {
+      console.log('clicked');
+      var suggestion = $('#suggest_box').val();
+      console.log(suggestion);
+      if (suggestion != ''){
+        $('#suggest_box').val('');
+        Suggestions.insert({item: suggestion, time_created: Date.now()});
+      }
+    });
+  };
 
   Template.menu.menu_days = function() {
     //console.log(Menu.find({}).count());
     return Menu.find({});
   };
   Template.menu.suggestions = function() {
-    var result = [];
-    var sugg = Suggestions.find({}, {sort: {_id: -1}});
-    return sugg;
-    // for (var i = 0; i < 5 ; i++) {
-    //   result[i] = sugg[i];
-    // }
-    // return result;
-    // TODO: Sort based on time
+    return Suggestions.find({}, {sort: {time_created: -1}});
   };
   Template.menu.log = function() {
     console.log(this);
@@ -53,7 +48,52 @@ if (Meteor.isClient) {
     return false;
 
   };
-  
+
+  //contact functions
+  Template.contact.rendered = function (){
+    console.log('contact template rendered', this);
+
+    $("#comment-box").val('Type comment here');
+
+    $('#click-image-left').click(function() {
+      if($('#chef-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#chef-title").css("backgroundColor", "rgb(255, 255, 153)");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+      else{
+        $("#chef-title").css("backgroundColor", "white");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+    });
+
+    $('#click-image-middle').click(function() {
+      if($('#house-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#house-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+      else{
+        $("#house-manager-title").css("backgroundColor", "white");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+    });
+
+    $('#click-image-right').click(function() {
+      if($('#food-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+      else{
+        $("#food-manager-title").css("backgroundColor", "white");
+        //console.log($('#chef-title').css("backgroundColor"));
+      }
+    });
+
+    $("#select-all").click(function(){
+     $("#chef-title").css("backgroundColor", "rgb(255, 255, 153)");
+     $("#house-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+     $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+   });
+  };
 }
 
 if (Meteor.isServer) {
@@ -69,10 +109,10 @@ if (Meteor.isServer) {
       Menu.insert({day: "Wednesday", date: "7", items:["Salmon", "Asparagus", "Orzo", "Cupcakes"]});
       Menu.insert({day: "Thursday", date: "8", items:["Chicken Teriyaki Stir Fry", "Brown Rice", "Bread Pudding"]});
     }
-    Suggestions.insert({item: "Brisket"});
-    Suggestions.insert({item: "Tacos, Rice, Beans"});
-    Suggestions.insert({item: "Spaghetti & meatballs"});
-    Suggestions.insert({item: "The quiche from the other night"});
-    Suggestions.insert({item: "Mac n' cheese!!!!"});
+    Suggestions.insert({item: "Brisket", time_created: Date.now()});
+    Suggestions.insert({item: "Tacos, Rice, Beans", time_created: Date.now()});
+    Suggestions.insert({item: "Spaghetti & meatballs", time_created: Date.now()});
+    Suggestions.insert({item: "The quiche from the other night", time_created: Date.now()});
+    Suggestions.insert({item: "Mac n' cheese!!!!", time_created: Date.now()});
   });
 }

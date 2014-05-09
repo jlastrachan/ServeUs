@@ -60,33 +60,37 @@
       {{#unless user_is_admin}}
         {{#each menu_days}}
           <div class="day">
-          <span class="menu_text"><h4 class="editable">{{day}} <span class="editable">{{date}}</span></h4>
+            <div>
+            <span style = 'float: left; font-family: Helvetica; font-size: 48px; color: white; margin-left: 30px' class="editable">{{date}}</span>
+            <h4 style = 'float:right; font-size: 22px; padding-right: 25px; color: white; padding-top: 10px' class="editable">{{day}}</h4>
+            </div>
+            <div style='float: left; padding: 10px;' class="menu_text">
             {{#each items}}
               <p>{{this}}</p>
-            {{/each}}
-          </span>
+            {{/each}} 
+          </div>
         </div>
         {{/each}}
       {{/unless}}
   </div>
 
   <div class = "row">
-  <div class = "col-xs-8">
-  <h2 class="menu_heading">Meal Suggestions</h2>
+  <div class = "col-xs-6">
+  <h2 class="menu_heading">Suggest a Meal</h2>
   <div class="form suggest" >
     <form role="form">
       <div class="form-group">
-        <textarea id="suggest_box" class="form-control"></textarea>
+        <input type="text" style = "font-size: 18px; height: 47px" id="suggest_box" class="form-control" placeholder = "Suggest a future meal...">
       </div>
-      <button type="submit" id="suggest_submit" class="btn btn-default">Submit</button>
+      <button type="submit" id="suggest_submit" class="btn btn-default btn-lg">Submit</button>
     </form>
   </div>
   </div>
-  <div class="col-xs-4">
+  <div class="col-xs-6">
     <h2 class="menu_heading">Recent Suggestions</h2>
-    <ul class="suggestions list-group">
+    <ul style="max-height: 250px; overflow-y: scroll;" class="suggestions list-group scroll-menu">
       {{#each suggestions}}
-        <li class="list-group-item">{{item}}</li>
+        <li style="font-size: 18px; word-wrap: break-word;" class="list-group-item">{{item}}</li>
       {{/each}}
     </ul>
   </div>
