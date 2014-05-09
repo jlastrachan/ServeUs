@@ -29,7 +29,7 @@
 
 	
 		<!-- form for writing in a new request --> 
-  		 <form style='margin-left: 34%; margin-right: 34%;' id = "requestform" class="form-inline" role="form">
+  		 <form id = "requestform" class="form-inline request-form" role="form">
   			<div class="form-group"> 
   				 <label class="sr-only" for="newRequest"> New Request </label> 				 	
   				<input type="text" class="form-control" id="newRequest" placeholder="New Request">
@@ -51,14 +51,14 @@
   			<div style = "background-image:url(stickynote.png); width: 295px; height: 298px;">
   			{{#if user_is_admin}}
   			<div class = "text-right"> 
-  				<button  class = 'btn btn-sm' style='background-color:transparent;'> <span class = 'glyphicon glyphicon-remove'></span> </button>
+  				<button  class = 'btn btn-sm' style='background-color:transparent; color:#478595'> <span class = 'glyphicon glyphicon-remove' onclick="deleteRequest(this)"></span> </button>
 				<!-- onclick(function(evt){
 					$(this).parents('li').remove();	
 				})-->
   			</div>
   			{{/if}}
   			<h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center"> 
-  			<br><br> {{name}}
+  			<br> {{name}}
   			 <!-- $('#'+request+'text').attr('contenteditable',"true");
 				$('#'+request+'text').css('cursor', 'text' ); -->
   			<br> <br>

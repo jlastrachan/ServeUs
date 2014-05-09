@@ -11,6 +11,10 @@
 	position: relative
 }
 
+.request-form{
+	width:100%;
+	text-align:center;
+}
 
 #stickyImage {
 /*	//margin-left: 0px;
@@ -66,8 +70,6 @@
 	color: #478595;
 	position: absolute;
 	top: 5px;
-/*//	margin-right: 10%;*/
-	margin-left: 3%;
 }
 
 #contactInfo {
@@ -83,8 +85,7 @@
 	color: #478595;
 	position: absolute;
 	top: 5px;
-	margin-right: 10%;
-	margin-left: 2%;
+	width: 100%;
 }
 
 #requestInfo {
@@ -101,8 +102,7 @@
 	color: #478595;
 	position: absolute;
 	top: 5px;
-	margin-right: 40%;
-	margin-left: 10%;
+	text-align: center;
 
 }
 
@@ -124,8 +124,8 @@
 	background-color:  #FFFF99;
 	color: #478595;
 	margin-right: -2%;
-	width: 96%;
-	margin-left: 3.5%;
+	width: 93%;
+	margin-left: 5%;
 	border-radius: 0px;
 }
 
