@@ -53,18 +53,30 @@
   			<div class = "text-right"> 
   				<button  class = 'btn btn-sm' id = 'deleteButton' style='background-color:transparent; color:#478595'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
   			</div>
-  			{{/if}}
-  			<h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center"> 
+
+  			
+  			<h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center" conetenteditable="true"> 
   			<br> {{name}}
   			 <!-- $('#'+request+'text').attr('contenteditable',"true");
 				$('#'+request+'text').css('cursor', 'text' ); -->
   			<br> <br>
   			</h1>
-  				<h3 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center">
-  				<!-- add in onclick function -->
+        {{/if}}
+        {{#unless user_is_admin}}
+
+
+        <h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center"> 
+        <br> {{name}}
+         <!-- $('#'+request+'text').attr('contenteditable',"true");
+        $('#'+request+'text').css('cursor', 'text' ); -->
+        <br> <br>
+        </h1>
+
+        {{/unless}}
+  				<h3 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center" id = "requestName">
   				
-  					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-up'>{{likes}}</span> </span> 
-  					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-down'>{{unlikes}}</span> </span>
+  					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-up' id = "liked">{{likes}}</span> </span> 
+  					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-down' id = "disliked">{{unlikes}}</span> </span>
 		
 				</h3>	 
 			</div>
