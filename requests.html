@@ -1,0 +1,88 @@
+
+<template name = "requests">
+<div id="corkboard">
+
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand font" href="/" style = "font-size:25px; color:#478595;"> ServeUs </a> 
+    </div>
+  <div class="navbar-collapse" id="navigation">
+   <ul class="nav navbar-nav nav-tabs">
+
+     <li class = "active font font-size"> <a href="/requests" class = "active font font-size"> Requests </a></li>
+     <li> <a href="/menu" class = "font font-size"> Menu </a></li>
+     <li> <a href="/contact" class = "font font-size"> Contact </a></li>
+
+   </ul>
+   <ul style="padding-top: 10px;" class="nav navbar-nav navbar-right">
+     {{> loginButtons}}
+   </ul>
+ </div>
+</nav>
+
+
+	
+		<!-- form for writing in a new request --> 
+  		 <form style='margin-left: 34%; margin-right: 34%;' id = "requestform" class="form-inline" role="form">
+  			<div class="form-group"> 
+  				 <label class="sr-only" for="newRequest"> New Request </label> 				 	
+  				<input type="text" class="form-control" id="newRequest" placeholder="New Request">
+  			</div>
+  			<button type="submit" style='background-color: white;' class="btn btn-sm" id = "btnSubmit"> Submit </button>
+  			<!--button type="submit" class="btn btn-sm" id = "houseTeam" > Part of House Team? </button-->
+		</form>
+		
+		<br>
+		<br> 
+  			
+  		<!-- start off with some stickies on the page --> 
+  		<!--<div class= 'col-xs-4' > -->
+  		<ul class="thumbnails" id = "stickies" >
+  		
+ 		{{#each requests}}
+  		
+  		<!-- position relative-->
+  		
+  		<li class = 'col-xs-3' id = 'requestSticky'>
+  			<h1> 
+  			<div style = "background-image:url(stickynote.png); width: 295px; height: 298px; vertical-align: middle;" class = "text-center">
+  			{{name}} 
+  			<br>
+  			<div class = 'btn-group'>
+  				<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-up'> {{likes}}
+				 </span> </span>
+  				<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-down'> {{unlikes}}
+				 </span> </span>
+				 
+			</div> 
+</div>
+</h1>
+  			
+  			
+			</li>
+		<!-- $("#liked"+item).click(function(evt){
+			//var req = Request.find({name: ""+name}); 
+			var newNum = 1+ parseInt({{likes}});
+			$("#numLiked" + item).text(newNum);
+		});
+		$("#disliked" + item).click(function(evt){
+			var newNum = 1+parseInt(request.dislikes);
+			$("#numDisliked" + item).text(newNum);
+		}); -->
+  			
+  		{{/each}}
+  		
+  		
+      	</ul>
+      	
+	</div>
+	</template>
+	
+
+	
