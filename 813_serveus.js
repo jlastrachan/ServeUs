@@ -132,8 +132,9 @@ if (Meteor.isClient) {
   };
 
   //contact functions
-  Template.contact.rendered = function (){
-    console.log('contact template rendered', this);
+  
+  Template.contact.rendered = function () {
+    //console.log('contact template rendered', this);
 
     //$("#comment-box").val('Type comment here');
 

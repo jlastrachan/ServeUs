@@ -88,14 +88,14 @@ Author: Eann Tuan
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" id = "closeModal" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" id = "closeModal" data-dismiss="modal" aria-hidden="true" onclick = '$("#comment-box").val("");'>&times;</button>
                 <h4 class="font modal-title" id="myModalLabel">Submitted. Thank you for your comments to the house team.</h4>
               </div>
               <div class="font modal-body">
                We will do our best to respond appropriately. Have a great day!
              </div>
              <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" id = 'closeModal' onclick = '$("#comment-box").val("");'>Close</button>
             </div>
           </div>
         </div>
