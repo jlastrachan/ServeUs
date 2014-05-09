@@ -16,6 +16,10 @@
 	text-align:center;
 }
 
+.request-box{
+	height: 300px;
+}
+
 #stickyImage {
 /*	//margin-left: 0px;
 //	margin-right: 0px;*/
@@ -97,6 +101,8 @@
 	font-size: 17px;
 }
 
+#requestform{
+}
 
 #menu {
 	color: #478595;
@@ -142,6 +148,11 @@
 }
 
 #navigation{
+	font-size: 18px;
+}
+
+.new-request{
+	height: 45px;
 	font-size: 18px;
 }
 /*
