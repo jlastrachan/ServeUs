@@ -25,7 +25,7 @@ if (Meteor.isClient) {
     });
 
     $('#menuSticky').mouseenter(function(){
-      $(this).prepend("<div class = 'text-center' id = 'menuInfo'> View this week's menu and comment on recent dinners </div>");
+      $(this).prepend("<div class = 'text-center' id = 'menuInfo'> View this week's menu and suggest future meals </div>");
     });
 
     $('#menuSticky').mouseleave (function(){
