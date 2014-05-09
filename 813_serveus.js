@@ -143,6 +143,7 @@ if (Meteor.isClient) {
 
 
 
+
 $('#newRequest').focus();
 		/*var allRequests = new Array();
 		var requestNames = new Array();
@@ -229,6 +230,11 @@ $('#newRequest').focus();
 		};
 		//console.log("here 3");*/
 
+
+	
+	
+	
+		$('#newRequest').focus();
 		$("#btnSubmit").click(function(evt) {
 			//console.log(Requests.find().count(0).name);
 			//console.log("pressed submit button"); 
