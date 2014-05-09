@@ -62,9 +62,12 @@ if (Meteor.isClient) {
     return false;
  };
  
- Template.requests.deleteRequest = function (request){
- 	$(request).parents('li').remove();	
- }
+ Template.requests.events({
+   'click #deleteButton' : function () {
+      console.log("trying to delete");
+      Requests.remove(this._id);
+    }
+  });
  
   // Menu functions
   Template.menu.rendered = function() {

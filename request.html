@@ -51,10 +51,7 @@
   			<div style = "background-image:url(stickynote.png); width: 295px; height: 298px;">
   			{{#if user_is_admin}}
   			<div class = "text-right"> 
-  				<button  class = 'btn btn-sm' style='background-color:transparent; color:#478595'> <span class = 'glyphicon glyphicon-remove' onclick="deleteRequest(this)"></span> </button>
-				<!-- onclick(function(evt){
-					$(this).parents('li').remove();	
-				})-->
+  				<button  class = 'btn btn-sm' id = 'deleteButton' style='background-color:transparent; color:#478595'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
   			</div>
   			{{/if}}
   			<h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center"> 
