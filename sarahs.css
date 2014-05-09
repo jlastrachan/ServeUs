@@ -73,8 +73,8 @@
 #contactInfo {
 	position: absolute;
 	top: 35%;
-	margin-right: 22%;
-	margin-left: 3%;
+	margin-right: 15%;
+	margin-left: 13%;
 	color: #606060;
 	font-size: 17px;
 }
@@ -90,8 +90,8 @@
 #requestInfo {
 	position: absolute;
 	top: 35%;
-	margin-right: 22%;
-	margin-left: 3%;
+	margin-right: 15%;
+	margin-left: 13%;
 	color: #606060;
 	font-size: 17px;
 }
@@ -102,15 +102,15 @@
 	position: absolute;
 	top: 5px;
 	margin-right: 40%;
-	margin-left: 9%;
+	margin-left: 10%;
 
 }
 
 #menuInfo {
 	position: absolute;
 	top: 35%;
-	margin-right: 22%;
-	margin-left: 3%;
+	margin-right: 15%;
+	margin-left: 13%;
 	color: #606060;
 	font-size: 17px;
 }
@@ -121,9 +121,11 @@
 }
 
 #infoSection {	
-	background-color:  #FFFFA3;
+	background-color:  #FFFF99;
 	color: #478595;
 	margin-right: -2%;
+	width: 97%;
+	margin-left: 3%;
 }
 
 .font{
@@ -132,6 +134,10 @@
 
 .font{
 	font-size: 18px;
+}
+
+.text-center{
+	text-align: center;
 }
 
 #navigation{

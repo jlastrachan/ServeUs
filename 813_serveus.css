@@ -95,8 +95,7 @@
 	position: absolute;
 	z-index: 2;
 	top: 100px;
-	margin-right: 20%;
-	margin-left: 20%;
+	text-align: center;
 	color: #606060;
 }
 
@@ -114,8 +113,6 @@
 	position: absolute;
 	z-index: 2;
 	top: 100px;
-	margin-right: 20%;
-	margin-left: 20%;
 	color: #606060;
 }
 
