@@ -29,7 +29,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand font" href="/home" style = "font-size:25px; color:#478595; height:100%;"> ServeUs </a> 
+    <a class="active navbar-brand font" href="/" style = "font-size:25px; color:#478595; height:100%;"> ServeUs </a> 
     </div>
   <div class="navbar-collapse" id="navigation">
    <ul class="nav navbar-nav nav-tabs" style="border-bottom: 0px;">
@@ -62,13 +62,15 @@
  <div class = "container">
  		<div class="jumbotron" id = "infoSection">
   			<h1>Welcome to ServeUs!</h1>
-	  		<p style ='color:#777;'> ServeUs is a platform that allows house members living in Independent Living Groups to submit food requests for bulk grocery orders, give feedback on the requests of others,
-	  		 view menu items as well as contact the house team. </p>
-  			<p>  <a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" id = "signupbtn" style="color:#478595" > Sign Up</a>  </p>
+	  		<p style ='color:#777;'> ServeUs allows house members living in Independent Living Groups to submit food requests for bulk grocery orders, view the menu, and contact the house team. </p>
+  			<p>  
+          <!--<a class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#signinModal" id = "loginbtn">Login </a> <a class="btn btn-lg" role="button" id = "signupbtn" style="color:#478595" > Sign Up</a> --> </p>
 		</div>
 	
+  <!--
 	<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  		<div class="modal-dialog">
+  		
+      <div class="modal-dialog">
     		<div class="modal-content">
      			 <div class="modal-header">
       				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -93,32 +95,33 @@
 		<br>
     	
 	</div>
-	
+	-->
+
 	<div class="container">
 		<br>
   		<div class= 'col-xs-4' id = 'requestSticky'>
-  			<a href='requests#' class='thumbnail'>
-      		<img src= 'stickynote.png' id = 'stickyImage'>
+  			<a href='requests#' class='thumbnail no-border'>
+      		<img src= 'stickynote.png' id = 'stickyImage' >
       		<div id= 'request'>
-      			<h1 class = 'requests-center'>Requests</h1>
+      			<h1 class = 'requests-center' style = "text-align: center;">Requests</h1>
           	</div>
           	</a> 
         </div>
         
         <div class= 'col-xs-4' id='menuSticky'>
-  			<a href='menu' class='thumbnail'>
+  			<a href='menu' class='thumbnail no-border'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
       		<div id= 'menu' class = "text-center">
-      			<h1 class = 'menu-center'>Menu</h1>
+      			<h1 class = 'menu-center' style = "text-align: center;">Menu</h1>
           	</div>
           	</a> 
         </div>
         
         <div class= 'col-xs-4' id= 'contactSticky'>
-  			<a href='contact' class='thumbnail'>
+  			<a href='contact' class='thumbnail no-border'>
       		<img src= 'stickynote.png' id = 'stickyImage'>
       		<div id = 'contact'>
-      			<h1 class = 'contact-center'> Contact</h1>
+      			<h1 class = 'contact-center' style = "text-align: center;"> Contact</h1>
           	</div>
           	</a> 
         </div>  
