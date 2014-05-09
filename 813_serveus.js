@@ -63,14 +63,14 @@ if (Meteor.isClient) {
           Suggestions.insert({item: suggestion, time_created: Date.now()});
         }
       });
+      $('#save').click(function() {
+        console.log($('div.editable.Sunday'));
+      });
     });
   };
 
   Template.menu.editablefn = function() {  
-      console.log($('.editable')); 
-      $('.editable').keypress(function() {
-        console.log('key');
-      });
+      
   };
 
   Template.menu.menu_days = function() {
@@ -88,7 +88,7 @@ if (Meteor.isClient) {
     var user = Meteor.user();
     //console.log(user);
     if (user != null){
-      if (user.profile.name === "House Member Julia") {
+      if (user.profile.name === "House Manager Katie") {
         return true;
       }
     }
