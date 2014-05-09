@@ -39,11 +39,11 @@
         {{#each menu_days}}
           <div id = "{{day}}" class="day">
             <div>
-            <span style = 'float: left; font-family: Helvetica; font-size: 48px; color: white; margin-left: 30px' class="{{day}} editable" contenteditable="true">{{date}}</span>
+            <span style = 'float: left; font-family: Helvetica; font-size: 48px; color: white; margin-left: 30px' class="{{day}} editable date" contenteditable="true">{{date}}</span>
             <h4 style = 'float:right; font-size: 22px; padding-right: 25px; color: white; padding-top: 10px' class="editable">{{day}}</h4>
             </div>
             <div style='float: left;' class="menu_text">
-            <div class="{{day}} editable" contenteditable="true">
+            <div class="{{day}} editable food" contenteditable="true">
               {{#each items}}
                 <p>{{this}}</p>
               {{/each}}
@@ -96,4 +96,5 @@
   </div>
   </div>
 </div>
+{{rendered}}
 </template>

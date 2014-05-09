@@ -63,10 +63,19 @@ if (Meteor.isClient) {
  };
  
   // Menu functions
-  Template.menu.rendered = function() {
-    $(document).ready(function() {
-      console.log('called render');
-      $('#suggest_submit').click(function() {
+  Template.menu.events = {
+    'click #save': function(event) {
+        console.log('saving');
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
+        var i = Menu.find({day: 'Sunday'}).fetch()[0]._id;
+        var food_items = [];
+        for (var j = 0; j < $('.Sunday.food').childNodes.length; j++) {
+          result[j] = $('.Sunday.food').childNodes[j];
+        }
+        console.log(result);
+        Menu.update({_id: i}, {$set: {date: $('.Sunday.date').val(), items: ['one', 'two']}});
+    },
+    'click #suggest_submit': function(event) {
         console.log('clicked');
         var suggestion = $('#suggest_box').val();
         console.log(suggestion);
@@ -74,11 +83,7 @@ if (Meteor.isClient) {
           $('#suggest_box').val('');
           Suggestions.insert({item: suggestion, time_created: Date.now()});
         }
-      });
-      $('#save').click(function() {
-        console.log($('div.editable.Sunday'));
-      });
-    });
+    }
   };
 
   Template.menu.editablefn = function() {  
