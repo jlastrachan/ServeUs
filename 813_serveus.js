@@ -123,7 +123,7 @@ Template.requests.requests = function () {
 			var request = $(newRequest).val().replace(/[ .,!?]/g,'');
 			if (request == '') {return;}
 			
-			Requests.insert({name: ""+request+"", likes: "1", unlikes: "0"});
+			Requests.insert({name: ""+requestName+"", item:""+request+"", likes: "1", unlikes: "0"});
 			
 			//var liked;
 			//var disliked;

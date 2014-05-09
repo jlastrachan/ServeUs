@@ -1,6 +1,6 @@
 
 <template name = "requests">
-<div id="corkboard">
+<!--<div id="corkboard"> -->
 
 <nav class="navbar navbar-default" role="navigation">
    <div class="navbar-header">
@@ -35,7 +35,6 @@
   				<input type="text" class="form-control" id="newRequest" placeholder="New Request">
   			</div>
   			<button type="submit" style='background-color: white;' class="btn btn-sm" id = "btnSubmit"> Submit </button>
-  			<!--button type="submit" class="btn btn-sm" id = "houseTeam" > Part of House Team? </button-->
 		</form>
 		
 		<br>
@@ -47,41 +46,38 @@
   		
  		{{#each requests}}
   		
-  		<!-- position relative-->
-  		
   		<li class = 'col-xs-3' id = 'requestSticky'>
-  			<h1> 
-  			<div style = "background-image:url(stickynote.png); vertical-align: middle; width: 295px; height: 298px;" class = "text-center">
-  			<br><br>
-  			
-  			{{name}} 
+
+  			<div style = "background-image:url(stickynote.png); width: 295px; height: 298px;">
+  			{{#if user_is_admin}}
+  			<div class = "text-right"> 
+  				<button  class = 'btn btn-sm' style='background-color:transparent;'> <span class = 'glyphicon glyphicon-remove'></span> </button>
+				<!-- onclick(function(evt){
+					$(this).parents('li').remove();	
+				})-->
+  			</div>
+  			{{/if}}
+  			<h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center"> 
+  			<br><br> {{name}}
+  			 <!-- $('#'+request+'text').attr('contenteditable',"true");
+				$('#'+request+'text').css('cursor', 'text' ); -->
   			<br> <br>
-  			<div class = 'btn-group'>
-  				<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-up'>{{likes}}</span> </span> 
-  				<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-down'>{{unlikes}}</span> </span>
-				 
-			</div> 
-</div>
-</h1>
-  			
-  			
+  			</h1>
+  				<h3 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center">
+  				<!-- add in onclick function -->
+  				
+  					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-up'>{{likes}}</span> </span> 
+  					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-down'>{{unlikes}}</span> </span>
+		
+				</h3>	 
+			</div>
 			</li>
-		<!-- $("#liked"+item).click(function(evt){
-			//var req = Request.find({name: ""+name}); 
-			var newNum = 1+ parseInt({{likes}});
-			$("#numLiked" + item).text(newNum);
-		});
-		$("#disliked" + item).click(function(evt){
-			var newNum = 1+parseInt(request.dislikes);
-			$("#numDisliked" + item).text(newNum);
-		}); -->
-  			
   		{{/each}}
   		
   		
       	</ul>
       	
-	</div>
+	<!--</div>-->
 	</template>
 	
 
