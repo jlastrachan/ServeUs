@@ -13,7 +13,6 @@ Router.map(function() {
 
 
 if (Meteor.isClient) {
-
   //Home functions
   Template.home.rendered = function(){
     $('#contactSticky').mouseenter(function(){
@@ -48,7 +47,19 @@ if (Meteor.isClient) {
   };
 
   Template.requests.requests = function () {
-   return Requests.find({});
+  	var sorted = Session.get("sortby");
+  	console.log("sort: " + sorted);
+  	if (sorted == 2) {
+  		console.log ("sorting by  alphabet");
+  		return Requests.find({},{sort:{name:1}});
+  	}
+  	if (sorted == 1) {
+  		return Requests.find({},{sort:{likes:-1}});
+  	}
+  	else{
+  		return Requests.find({});
+  	}
+  	
  };
  
  Template.requests.user_is_admin = function (){
@@ -73,6 +84,18 @@ if (Meteor.isClient) {
    'click #disliked' : function(){
       Requests.update (this._id, {$inc: {unlikes:1}});
    },
+    'click #dropdownButton': function (){
+    	$('.dropdown-toggle').dropdown();
+    },
+    'click #alphabetically': function () {
+    	Session.set("sortby", 2);
+    },
+    'click #chronologically': function(){
+    	Session.set("sortby", 0);
+    },
+    'click #bylikes':function () {
+    	Session.set("sortby",1);
+    }
   });
  
   // Menu functions

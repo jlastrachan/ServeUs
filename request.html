@@ -28,6 +28,17 @@
 
 		<!-- form for writing in a new request --> 
   		 <form id = "requestform" class="form-inline request-form" role="form">
+  		 
+  		 <div class="btn-group">
+  		 <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" id = "dropdownButton">Sort<span class="caret"></span>
+ 		 </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#" id = "alphabetically">Alphabetically</a></li>
+    <li><a href="#" id = "chronologically">Most Recent</a></li>
+    <li><a href="#" id = "bylikes">Number of Likes</a></li>
+  </ul>
+</div>
+  		 
   			<div class="form-group"> 
   				 <label class="sr-only" for="newRequest"> New Request </label> 				 	
   				<input type="text" class="form-control new-request" id="newRequest" placeholder="New Request">
