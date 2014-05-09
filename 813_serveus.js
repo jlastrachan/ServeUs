@@ -145,6 +145,15 @@ if (Meteor.isClient) {
         $("#chef-title").css("backgroundColor", "white");
       }
     });
+    
+    $("#chef-title").click(function(evt){
+    if($('#chef-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#chef-title").css("backgroundColor", "rgb(255, 255, 153)");
+      }
+      else{
+        $("#chef-title").css("backgroundColor", "white");
+      }
+    });
 
     $('#click-image-middle').click(function() {
       if($('#house-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
@@ -154,9 +163,27 @@ if (Meteor.isClient) {
         $("#house-manager-title").css("backgroundColor", "white");
       }
     });
+    
+    $("#house-manager-title").click(function(evt){
+    if($('#house-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#house-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+      }
+      else{
+        $("#house-manager-title").css("backgroundColor", "white");
+      }
+    });
 
     $('#click-image-right').click(function() {
       if($('#food-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
+        $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
+      }
+      else{
+        $("#food-manager-title").css("backgroundColor", "white");
+      }
+    });
+    
+    $("#food-manager-title").click(function(evt){
+    if($('#food-manager-title').css("backgroundColor")=="rgb(255, 255, 255)"){
         $("#food-manager-title").css("backgroundColor", "rgb(255, 255, 153)");
       }
       else{
