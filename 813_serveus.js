@@ -15,15 +15,25 @@ if (Meteor.isClient) {
 
   // Menu functions
   Template.menu.rendered = function() {
-    $('#suggest_submit').click(function() {
-      console.log('clicked');
-      var suggestion = $('#suggest_box').val();
-      console.log(suggestion);
-      if (suggestion != ''){
-        $('#suggest_box').val('');
-        Suggestions.insert({item: suggestion, time_created: Date.now()});
-      }
+    $(document).ready(function() {
+      console.log('called render');
+      $('#suggest_submit').click(function() {
+        console.log('clicked');
+        var suggestion = $('#suggest_box').val();
+        console.log(suggestion);
+        if (suggestion != ''){
+          $('#suggest_box').val('');
+          Suggestions.insert({item: suggestion, time_created: Date.now()});
+        }
+      });
     });
+  };
+
+  Template.menu.editablefn = function() {  
+      console.log($('.editable')); 
+      $('.editable').keypress(function() {
+        console.log('key');
+      });
   };
 
   Template.menu.menu_days = function() {
