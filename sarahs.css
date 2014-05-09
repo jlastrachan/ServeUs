@@ -11,6 +11,14 @@
 	position: relative
 }
 
+.request-form{
+	width:100%;
+	text-align:center;
+}
+
+.request-box{
+	height: 300px;
+}
 
 #stickyImage {
 /*	//margin-left: 0px;
@@ -93,6 +101,8 @@
 	font-size: 17px;
 }
 
+#requestform{
+}
 
 #menu {
 	color: #478595;
@@ -120,8 +130,8 @@
 	background-color:  #FFFF99;
 	color: #478595;
 	margin-right: -2%;
-	width: 96%;
-	margin-left: 3.5%;
+	width: 93%;
+	margin-left: 5%;
 	border-radius: 0px;
 }
 
@@ -138,6 +148,11 @@
 }
 
 #navigation{
+	font-size: 18px;
+}
+
+.new-request{
+	height: 45px;
 	font-size: 18px;
 }
 /*

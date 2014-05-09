@@ -87,7 +87,6 @@
 	position: absolute;
 	top: 5px;
 	text-align: center;
-	width: 98%;
 }
 
 #requestInfo {
@@ -140,16 +139,14 @@
 }
 
 .requests-center{
-	width: 100%;
+
 }
 
 .menu-center{
-	margin-left: 70%;
-	margin-right: 20%;
+
 }
 
 .contact-center{
-	margin-left: 53%;
-	margin-right: 10%;
+
 }
 
