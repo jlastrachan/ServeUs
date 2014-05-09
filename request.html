@@ -26,8 +26,6 @@
  </div>
 </nav>
 
-
-	
 		<!-- form for writing in a new request --> 
   		 <form id = "requestform" class="form-inline request-form" role="form">
   			<div class="form-group"> 
@@ -54,25 +52,13 @@
   				<button  class = 'btn btn-sm' id = 'deleteButton' style='background-color:transparent; color:#478595'> <span class = 'glyphicon glyphicon-remove'> </span> </button>
   			</div>
 
-  			
-  			<h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center" conetenteditable="true"> 
-  			<br> {{name}}
-  			 <!-- $('#'+request+'text').attr('contenteditable',"true");
-				$('#'+request+'text').css('cursor', 'text' ); -->
-  			<br> <br>
-  			</h1>
         {{/if}}
-        {{#unless user_is_admin}}
-
 
         <h1 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center"> 
         <br> {{name}}
-         <!-- $('#'+request+'text').attr('contenteditable',"true");
-        $('#'+request+'text').css('cursor', 'text' ); -->
         <br> <br>
         </h1>
 
-        {{/unless}}
   				<h3 style = "color:#478595; font-family: 'Shadows Into Light Two', cursive;" class = "text-center" id = "requestName">
   				
   					<span class='badge-info'> <span class='glyphicon glyphicon-thumbs-up' id = "liked">{{likes}}</span> </span> 
