@@ -11,32 +11,31 @@ Router.map(function() {
   this.route('contact');
 });
 
+
 if (Meteor.isClient) {
 
 Template.requests.requests = function () {
 	return Requests.find({});
 };
   // Menu functions
-  $('#suggest_submit').click(function() {
-    var suggestion = $('#suggest_box').val();
-    if (suggestion != ''){
-      $('#suggest_box').val('');
-      Suggestions.insert({item: suggestion});
-    }
-  });
+  Template.menu.rendered = function() {
+    $('#suggest_submit').click(function() {
+      console.log('clicked');
+      var suggestion = $('#suggest_box').val();
+      console.log(suggestion);
+      if (suggestion != ''){
+        $('#suggest_box').val('');
+        Suggestions.insert({item: suggestion, time_created: Date.now()});
+      }
+    });
+  };
 
   Template.menu.menu_days = function() {
-    console.log(Menu.find({}).count());
+    //console.log(Menu.find({}).count());
     return Menu.find({});
   };
   Template.menu.suggestions = function() {
-    var result = [];
-    var sugg = Suggestions.find({}).fetch();
-    for (var i = 0; i < 5 ; i++) {
-      result[i] = sugg[i];
-    }
-    return result;
-    // TODO: Sort based on time
+    return Suggestions.find({}, {sort: {time_created: -1}});
   };
   Template.menu.log = function() {
     console.log(this);
@@ -44,7 +43,7 @@ Template.requests.requests = function () {
 
   Template.menu.user_is_admin = function() {
     var user = Meteor.user();
-    console.log(user);
+    //console.log(user);
     if (user != null){
       if (user.profile.name === "House Member Julia") {
         return true;
@@ -273,24 +272,17 @@ if (Meteor.isServer) {
     Suggestions.remove({});
 
     if (Menu.find().count() === 0) {
-      Menu.insert({day: "Sunday", date: "5/4", items:["Grilled Cheese", "Tomato Soup", "Apple Pie"]});
-      Menu.insert({day: "Monday", date: "5/5", items:["Cheeseburgers", "Sweet Potato Fries", "Brownies"]});
-      Menu.insert({day: "Tuesday", date: "5/6", items:["Pizza", "Caesar Salad", "Cookies"]});
-      Menu.insert({day: "Wednesday", date: "5/7", items:["Salmon", "Asparagus", "Orzo", "Cupcakes"]});
-      Menu.insert({day: "Thursday", date: "5/8", items:["Chicken Teriyaki Stir Fry", "Brown Rice", "Bread Pudding"]});
+      Menu.insert({day: "Sunday", date: "4", items:["Grilled Cheese", "Tomato Soup", "Apple Pie"]});
+      Menu.insert({day: "Monday", date: "5", items:["Cheeseburgers", "Sweet Potato Fries", "Brownies"]});
+      Menu.insert({day: "Tuesday", date: "6", items:["Pizza", "Caesar Salad", "Cookies"]});
+      Menu.insert({day: "Wednesday", date: "7", items:["Salmon", "Asparagus", "Orzo", "Cupcakes"]});
+      Menu.insert({day: "Thursday", date: "8", items:["Chicken Teriyaki Stir Fry", "Brown Rice", "Bread Pudding"]});
     }
-    Suggestions.insert({item: "Brisket"});
-    Suggestions.insert({item: "Tacos, Rice, Beans"});
-    Suggestions.insert({item: "Spaghetti & meatballs"});
-    Suggestions.insert({item: "The quiche from the other night"});
-    Suggestions.insert({item: "Mac n' cheese!!!!"});
-  
-  	var arrayRequests = Requests.find({}).fetch();
-  	for (var i = 0; i < arrayRequests.length; i++){
-  		var newRequest = arrayRequests[i];
-  		console.log (i+" "+ newRequest.name+" "+newRequest.likes+" "+newRequest.unlikes);
-  	}
- 	//console.log("found:" + Requests.find({name:"apple pie"}).likes);
-  
-});
+
+    Suggestions.insert({item: "Brisket", time_created: Date.now()});
+    Suggestions.insert({item: "Tacos, Rice, Beans", time_created: Date.now()});
+    Suggestions.insert({item: "Spaghetti & meatballs", time_created: Date.now()});
+    Suggestions.insert({item: "The quiche from the other night", time_created: Date.now()});
+    Suggestions.insert({item: "Mac n' cheese!!!!", time_created: Date.now()});
+  });
 };
