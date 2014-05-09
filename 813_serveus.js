@@ -76,16 +76,36 @@ if (Meteor.isClient) {
   });
  
   // Menu functions
-  Template.menu.rendered = function() {
-    $('#suggest_submit').click(function() {
-      console.log('clicked');
-      var suggestion = $('#suggest_box').val();
-      console.log(suggestion);
-      if (suggestion != ''){
-        $('#suggest_box').val('');
-        Suggestions.insert({item: suggestion, time_created: Date.now()});
+  Template.menu.events = {
+    'click #save': function(event) {
+      console.log('saving');
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
+      for (var j = 0; j < days.length; j++){
+        var i = Menu.find({day: days[j]}).fetch();
+        var food_items = [];
+        for (var k = 0; k < $('.'+days[j]+'.food').children().length; k++) {
+          food_items[k] = $('.'+days[j]+'.food').children()[k].innerHTML;
+        }
+        console.log(food_items);
+        var d = $('.'+days[j]+'.date').html();
+        console.log(d);
+        Menu.remove({_id: i[0]._id});
+        Menu.insert({date: d, items: food_items, day: days[j]});
       }
-    });
+    },
+    'click #suggest_submit': function(event) {
+        console.log('clicked');
+        var suggestion = $('#suggest_box').val();
+        console.log(suggestion);
+        if (suggestion != ''){
+          $('#suggest_box').val('');
+          Suggestions.insert({item: suggestion, time_created: Date.now()});
+        }
+    }
+  };
+
+  Template.menu.editablefn = function() {  
+      
   };
 
   Template.menu.menu_days = function() {
@@ -103,7 +123,7 @@ if (Meteor.isClient) {
     var user = Meteor.user();
     //console.log(user);
     if (user != null){
-      if (user.profile.name === "House Member Julia") {
+      if (user.profile.name === "House Manager Katie") {
         return true;
       }
     }
