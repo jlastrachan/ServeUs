@@ -1,6 +1,6 @@
 
 <template name="menu">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation" style="border-bottom: 0px;">
   <div class="container-fluid">
    <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -69,9 +69,9 @@
       {{/unless}}
   </div>
   {{#if user_is_admin}}
-  <div class = "row" >
-    <button type="submit" style = "margin-right: 15px; float: right;" id="save" class="btn btn-default">Save</button>
-  </div>
+    <div class = "row">
+      <button style="float:right; margin-right: 15px;" type="submit" id="save" class="btn btn-default">Save</button>
+    </div>
   {{/if}}
 
   <div class = "row">

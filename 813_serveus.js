@@ -69,15 +69,20 @@ if (Meteor.isClient) {
   // Menu functions
   Template.menu.events = {
     'click #save': function(event) {
-        console.log('saving');
-        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
-        var i = Menu.find({day: 'Sunday'}).fetch()[0]._id;
+      console.log('saving');
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
+      for (var j = 0; j < days.length; j++){
+        var i = Menu.find({day: days[j]}).fetch();
         var food_items = [];
-        for (var j = 0; j < $('.Sunday.food').childNodes.length; j++) {
-          result[j] = $('.Sunday.food').childNodes[j];
+        for (var k = 0; k < $('.'+days[j]+'.food').children().length; k++) {
+          food_items[k] = $('.'+days[j]+'.food').children()[k].innerHTML;
         }
-        console.log(result);
-        Menu.update({_id: i}, {$set: {date: $('.Sunday.date').val(), items: ['one', 'two']}});
+        console.log(food_items);
+        var d = $('.'+days[j]+'.date').html();
+        console.log(d);
+        Menu.remove({_id: i[0]._id});
+        Menu.insert({date: d, items: food_items, day: days[j]});
+      }
     },
     'click #suggest_submit': function(event) {
         console.log('clicked');
